@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body class="form-elements">
+    <div class="form-elements__row">
+
+        <div class="form-elements__row1_column1">
+            <label class="field block block_mb20px">
+                <span class="field-name text text_bold text_ttu block block_mb5px">text field</span>
+                <span class="field-name text text_ttu text_1F2041-05 text_right block block_mt-3px">Default</span>
+                <input class="input text text_b text_1F2041-075" type="email" name="email" placeholder="Email">
+            </label>
+            <label class="field block block_mb20px">
+                <span class="field-name text text_bold text_ttu block block_mb5px">text field</span>
+                <span class="field-name text text_ttu text_1F2041-05 text_right block block_mb5px">Hover / Focus</span>
+                <input class="input text text_b text_1F2041-075" type="text" name="text" value="This is pretty awesome">
+            </label>
+            <div class="field block block_mb22px">
+                <span class="field-name text text_bold text_ttu block block_mb5px">Dropdown</span>
+                <span class="check-mark">
+                    <input class="input text text_b text_1F2041-075" name="amount of guests" type="text" value="Сколько гостей">
+                </span>
+            </div>
+            <label class="field block block_mb41px">
+                <span class="field-name text text_bold text_ttu block block_mb5px">masked text field</span>
+                <!-- <input class="input input-hidden text text_b text_ttu text_1F2041-075" type="date" name="masked text field"> -->
+                <input class="input input-hidden text text_b text_ttu text_1F2041-075" type="text" name="masked text field"  pattern="\d{1,2}\/d{1,2}\/d{4}" placeholder="ДД.ММ.ГГГГ" readonly>
+            </label>
+            <div class="input-wrapper block block_mb40px">
+                <label class="field field_small">
+                    <span class="field-name text text_bold text_ttu block block_mb5px">date Dropdown</span>
+                    <span class="check-mark">
+                        <input class="input input-hidden text text_b text_ttu text_1F2041-075" type="date" name="arrival" readonly>
+                    </span>
+                </label>
+                <label class="field field_small">
+                    <span class="field-name text text_bold text_ttu block block_mb5px">date Dropdown</span>
+                    <span class="check-mark">
+                        <input class="input input-hidden text text_b text_ttu text_1F2041-075" type="date" name="departure" value="2019-08-19" readonly>
+                    </span>
+                </label>
+            </div>
+
+
+
+
+            <!-- даты пребывания в отеле -->
+            <div class="filter-date block block_mb41px">
+                <span class="field-name text text_bold text_ttu block block_mb5px">filter date Dropdown</span>
+                <span class="check-mark">
+                    <input class="input text text_b text_1F2041-075" name="amount of guests" type="text" value="19 авг - 23 авг">
+                </span>
+            </div>
+
+
+
+
+
+<!-- предложения и новости (по сути нужны только форма и инпут) -->
+            <form class="form-field" action="https://echo.htmlacademy.ru" method="post">
+                <label class="field field_middle">
+                    <span class="field-name text text_bold text_ttu block block_mb5px">subscription text field</span>
+                    <input class="input text text_b text_1F2041-075" type="email" name="subscription text field" placeholder="Email">
+                </label>
+                <button class="form-field__button block_ml223px"></button>
+            </form>
+
+
+        </div>
+
+        <div class="form-elements__row1_column2">
+
+            <!-- Обернул Checkbox Buttons в div, чтобы выделить в блок. -->
+            <div class="checkbox-buttons">
+                <p class="text text_bold text_ttu block block_mb16px">Checkbox Buttons</p>
+                <label class="checkbox-button block block_mb11px">
+                    <input class="checkbox-button__input" type="checkbox" name="smoking">
+                    <span class="checkbox-button__fake-input"></span>
+                    <span class="text text_b text_lh20 text_1F2041-05 block block_ml10px">Можно курить</span>
+                </label>
+                <label class="checkbox-button block block_mb11px">
+                    <input class="checkbox-button__input" type="checkbox" name="pets" checked>
+                    <span class="checkbox-button__fake-input"></span>
+                    <span class="text text_b text_lh20 text_1F2041-05 block block_ml10px">Можно с питомцами</span>
+                </label>
+                <label class="checkbox-button block block_mb41px">
+                    <input class="checkbox-button__input" type="checkbox" name="guests" checked>
+                    <span class="checkbox-button__fake-input"></span>
+                    <span class="text text_b text_1F2041-05 block block_ml10px">Можно пригласить гостей <br>(до 10 человек)</span>
+                </label>
+            </div>
+
+
+
+            <p class="text text_bold text_ttu block block_mb16px">Radio Buttons</p>
+
+
+
+
+            <!-- правила дома -->
+            <div class="radio-button-wrapper block block_mb41px">
+                <label class="radio-button checkbox-button">
+                    <input class="radio-button__input" type="radio" name="gender" checked>
+                    <span class="checkbox-button__fake-input radio-button_round"></span>
+                    <span class="text text_b text_lh18 text_1F2041-05 block block_ml10px">Мужчина</span>
+                </label>
+                <label class="radio-button checkbox-button">
+                    <input class="radio-button__input" type="radio" name="gender">
+                    <span class="checkbox-button__fake-input radio-button_round"></span>
+                    <span class="text text_b text_lh18 text_1F2041-05 block block_ml10px">Женщина</span>
+                </label>
+            </div>
+            <p class="text text_bold text_ttu block block_mb16px">Toggle</p>
+            <label class="toggle block block_mb14px">
+                <input class="toggle__input" type="checkbox" name="special offers" checked>
+                <span class="toggle__input_fake"></span>
+                <span class="text text_b text_lh20 text_1F2041-075 block block_ml10px">Получать спецпредложения</span>
+            </label>
+            <label class="toggle block block_mb44px">
+                <input class="toggle__input" type="checkbox" name="special offers">
+                <span class="toggle__input_fake"></span>
+                <span class="text text_b text_lh20 text_1F2041-075 block block_ml10px">Получать спецпредложения</span>
+            </label>
+            <p class="text text_bold text_ttu block block_mb16px">like button</p>
+            <!-- добавил div чтобы избавиться от пробела по умолчанию между кнопками -->
+            <div class="form-elements__button-like-wr block block_mb40px">
+                <button class="button-like">
+                    <img class="button-like__heart" src="img/favorite_border.png" alt="heart_unpressed">
+                    <span class="text text_s text_1F2041-025">2</span>
+                </button>
+                <button class="button-like button-like_pressed block block_ml10px">
+                    <img class="button-like__heart" src="img/favorite.png" alt="heart_pressed">
+                    <span class="text text_s text_BC9CFF">12</span>
+                </button>
+            </div>
+            <p class="text text_bold text_ttu block block_mb16px">rate button</p>
+            <div class="form-elements__rate-button-wr">
+                <div class="rate-button">
+                    <button class=" button-star"><img src="img/star.png" alt="star"></button>
+                    <button class=" button-star"><img src="img/star.png" alt="star"></button>
+                    <button class=" button-star"><img src="img/star.png" alt="star"></button>
+                    <button class=" button-star"><img src="img/star.png" alt="star"></button>
+                    <button class=" button-star"><img src="img/star_border.png" alt="star"></button>
+                </div>
+                <div class="rate-button block block_ml20px">
+                    <button class=" button-star"><img src="img/star.png" alt="star"></button>
+                    <button class=" button-star"><img src="img/star.png" alt="star"></button>
+                    <button class=" button-star"><img src="img/star.png" alt="star"></button>
+                    <button class=" button-star"><img src="img/star.png" alt="star"></button>
+                    <button class=" button-star"><img src="img/star.png" alt="star"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-elements__row1_column3">
+
+
+
+            <!-- диапазон цены -->
+            <div class="slider block block_mb40px">
+                <span class="slider__name text text_bold text_ttu">Range Slider</span>
+                <span class="slider__name text text_1F2041-05 text_right">5 000₽ - 10 000₽</span>
+                <input type="range" name="Range Slider">
+            </div>
+
+
+
+
+            <p class="text text_bold text_ttu block block_mb16px">buttons</p>
+            <div class="form-elements__button-wr block block_mb30px">
+                <button class="button button_linear-gradient">
+                    <span class="text text_bold text_ttu text_FFF">click me</span>
+                </button>
+                <button class="button button_linear-gradient button_opacity block block_ml19px">
+                    <span class="text text_bold text_ttu text_FFF">click me</span>
+                </button>
+            </div>
+            <div class="form-elements__button-wr block block_mb31px">
+                <button class="button button_bordered">
+                    <span class="text text_bold text_ttu text_BC9CFF">click me</span>
+                </button>
+                <button class="button button_bordered button_bordered-tran block block_ml19px">
+                    <span class="text text_bold text_ttu text_BC9CFF">click me</span>
+                </button>
+            </div>
+            <div class="form-elements__button-wr block block_mb30px">
+                <button class="button_naked">
+                    <span class="text text_bold text_ttu text_BC9CFF">click me</span>
+                </button>
+                <button class="button_naked block block_ml20px">
+                    <span class="text text_bold text_ttu text_1F2041-05">click me</span>
+                </button>
+            </div>
+            <button class="button button_long block block_mb40px">
+                <span class="text text_bold text_ttu text_FFF">перейти к оплате</span>
+            </button>
+
+            <p class="text text_bold text_ttu block block_mb16px">pagination</p>
+
+
+
+
+            <!-- страницы -->
+            <div class="pagination block block_mb10px">
+                <!-- повернуть стрелку на 180 deg -->
+                <a class="pagination__href-arrow pagination_d-none" href="#"><img src="img/arrow_back.png" alt=""></a>
+                <a class="pagination__href" href="#"><span class="pagination__href_active">1</span></a>
+                <a class="pagination__href" href="#"><span class="text text_ttu text_1F2041-05">2</span></a>
+                <a class="pagination__href" href="#"><span class="text text_ttu text_1F2041-05">3</span></a>
+                <a class="pagination__href" href="#"><span class="text text_ttu text_1F2041-05">...</span></a>
+                <a class="pagination__href pagination_d-none" href="#"><span class="text text_ttu text_1F2041-05">4</span></a>
+                <a class="pagination__href pagination_d-none" href="#"><span class="text text_ttu text_1F2041-05">5</span></a>
+                <a class="pagination__href pagination_d-none" href="#"><span class="text text_ttu text_1F2041-05">6</span></a>
+                <a class="pagination__href pagination_d-none" href="#"><span class="text text_ttu text_1F2041-05">7</span></a>
+                <a class="pagination__href pagination_d-none" href="#"><span class="text text_ttu text_1F2041-05">8</span></a>
+                <a class="pagination__href pagination_d-none" href="#"><span class="text text_ttu text_1F2041-05">9</span></a>
+                <a class="pagination__href pagination_d-none" href="#"><span class="text text_ttu text_1F2041-05">10</span></a>
+                <a class="pagination__href pagination_d-none" href="#"><span class="text text_ttu text_1F2041-05">11</span></a>
+                <a class="pagination__href pagination_d-none" href="#"><span class="text text_ttu text_1F2041-05">12</span></a>
+                <a class="pagination__href pagination_d-none" href="#"><span class="text text_ttu text_1F2041-05">13</span></a>
+                <a class="pagination__href pagination_d-none" href="#"><span class="text text_ttu text_1F2041-05">14</span></a>
+                <a class="pagination__href" href="#"><span class="text text_ttu text_1F2041-05">15</span></a>
+                <a class="pagination__href-arrow" href="#"><img src="img/arrow_forward_white.png" alt=""></a>
+            </div>
+
+
+
+
+            <p class="text text_b text_lh22 text_1F2041-075 pagination_pixel">1 – 12 из 100+ вариантов аренды</p>
+        </div>
+    </div>
+    
+
+    <div class="form-elements__row2">
+        <div class="form-elements__row2_column1">
+            <div class="dropdown">
+                <label class="field block block_mb20px">
+                    <span class=" field-name text text_bold text_ttu block block_mb5px">dropdown</span>
+                    <span class="text text_ttu text_1F2041-05 text_right block block_mb5px">default</span>
+                    <span class="check-mark">
+                        <input class="input input_square-angles text text_b text_1F2041-075" type="text" name="rooms&beds" value="2 спальни, 2 кровати...">
+                    </span>
+                </label>
+            </div>
+
+
+
+            <!-- удобства номера -->
+            <div class="dropdown">
+                <label class="field">
+                    <span class=" field-name text text_bold text_ttu block block_mb5px">dropdown</span>
+                    <span class=" field-name text text_ttu text_1F2041-05 text_right block block_mb5px">expanded</span>
+                    <span class="check-mark">
+                        <input class="input input_square-angles field_border-color text text_b text_1F2041-075" type="text" name="rooms&beds" value="2 спальни, 2 кровати...">
+                    </span>
+                </label>
+                <div class="dropdown__wrapper dropdown__wrapper_off-buttons">
+                    <div class="dropdown-flex block block_mb7px">
+                        <span class="text text_bold text_ttu">спальни</span>
+                        <div class="dropdown__buttons">
+                            <button class="dropdown__button">-</button>
+                            <span class="text text_bold text_ttu dropdown__amount">2</span>
+                            <button class="dropdown__button">+</button>
+                        </div>
+                    </div>
+                    <div class="dropdown-flex block block_mb7px">
+                        <span class="text text_bold text_ttu">кровати</span>
+                        <div class="dropdown__buttons">
+                            <button class="dropdown__button">-</button>
+                            <span class="text text_bold text_ttu dropdown__amount">2</span>
+                            <button class="dropdown__button">+</button>
+                        </div>
+                    </div>
+                    <div class="dropdown-flex">
+                        <span class="text text_bold text_ttu">ванные комнаты</span>
+                        <div class="dropdown__buttons">
+                            <button class="dropdown__button dropdown__button_tran">-</button>
+                            <span class="text text_bold text_ttu dropdown__amount">0</span>
+                            <button class="dropdown__button">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="dropdown dropdown_w32 block block_ml181px">
+            <p class="text text_bold text_ttu block block_mb5px">dropdown</p>
+            <span class="check-mark">
+                <input class="input input_square-angles field_border-color text text_b text_1F2041-075" type="text" name="guests" value="Сколько гостей">
+            </span>
+            <div class="dropdown__wrapper">
+                <div class="dropdown-flex block block_mb7px">
+                    <span class="text text_bold text_ttu">взрослые</span>
+                    <div class="dropdown__buttons">
+                        <button class="dropdown__button dropdown__button_tran"><span>-</span></button>
+                        <span class="text text_bold text_ttu dropdown__amount">0</span>
+                        <button class="dropdown__button">+</button>
+                    </div>
+                </div>
+                <div class="dropdown-flex block block_mb7px">
+                    <span class="text text_bold text_ttu">дети</span>
+                    <div class="dropdown__buttons">
+                        <button class="dropdown__button dropdown__button_tran">-</button>
+                        <span class="text text_bold text_ttu dropdown__amount">0</span>
+                        <button class="dropdown__button">+</button>
+                    </div>
+                </div>
+                <div class="dropdown-flex block block_mb19px">
+                    <span class="text text_bold text_ttu">младенцы</span>
+                    <div class="dropdown__buttons">
+                        <button class="dropdown__button dropdown__button_tran">-</button>
+                        <span class="text text_bold text_ttu dropdown__amount">0</span>
+                        <button class="dropdown__button">+</button>
+                    </div>
+                </div>
+                <!-- убрал высоту и кнопка оказалась за блоком -->
+                <button class="text text_bold text_ttu text_BC9CFF text_right">применить</button>
+            </div>
+        </div>
+
+
+
+
+        <!-- гости -->
+        <div class="dropdown dropdown_w32 block block_ml72px">
+            <p class="text text_bold text_ttu block block_mb5px">dropdown</p>
+            <span class="check-mark">
+                <input class="input input_square-angles field_border-color text text_b text_1F2041-075" type="text" name="guests" value="3 гостя">
+            </span>
+            <div class="dropdown__wrapper">
+                <div class="dropdown-flex block block_mb7px">
+                    <span class="text text_bold text_ttu">взрослые</span>
+                    <div class="dropdown__buttons">
+                        <button class="dropdown__button"><span>-</span></button>
+                        <span class="text text_bold text_ttu dropdown__amount">2</span>
+                        <button class="dropdown__button">+</button>
+                    </div>
+                </div>
+                <div class="dropdown-flex block block_mb7px">
+                    <span class="text text_bold text_ttu">дети</span>
+                    <div class="dropdown__buttons">
+                        <button class="dropdown__button">-</button>
+                        <span class="text text_bold text_ttu dropdown__amount">1</span>
+                        <button class="dropdown__button">+</button>
+                    </div>
+                </div>
+                <div class="dropdown-flex block block_mb19px">
+                    <span class="text text_bold text_ttu">младенцы</span>
+                    <div class="dropdown__buttons">
+                        <button class="dropdown__button dropdown__button_tran">-</button>
+                        <span class="text text_bold text_ttu dropdown__amount">0</span>
+                        <button class="dropdown__button">+</button>
+                    </div>
+                </div>
+                <button class="text text_bold text_ttu text_BC9CFF">очистить</button>
+                <button class="text text_bold text_ttu text_BC9CFF text_right">применить</button>
+            </div>
+        </div>
+
+
+
+    </div>
+    
+
+
+
+
+    <div class="form-elements__row3">
+        <div class="form-elements__row3_column1">
+
+
+
+
+            <!-- дополнительные удобства -->
+                <details class="expandable-list">
+                    <summary class="expandable-list__summary check-mark block block_mb17px">
+                        <span class="text text_bold text_ttu">expandable checkbox list</span>
+                    </summary>
+                    <div class="checkbox-list">
+                        <label class="checkbox-button">
+                            <input class="checkbox-button__input" type="checkbox" name="breakfast">
+                            <span class="checkbox-button__fake-input"></span>
+                            <span class="text text_b text_1F2041-05 block block_ml10px">Завтрак</span>
+                        </label>
+                        <label class="checkbox-button">
+                            <input class="checkbox-button__input" type="checkbox" name="desk" checked>
+                            <span class="checkbox-button__fake-input"></span>
+                            <span class="text text_b text_1F2041-05 block block_ml10px">Письменный стол</span>
+                        </label>
+                        <label class="checkbox-button">
+                            <input class="checkbox-button__input" type="checkbox" name="feeding_chair" checked>
+                            <span class="checkbox-button__fake-input"></span>
+                            <span class="text text_b text_1F2041-05 block block_ml10px">Стул для кормления</span>
+                        </label>
+                        <label class="checkbox-button">
+                            <input class="checkbox-button__input" type="checkbox" name="child_bed" checked>
+                            <span class="checkbox-button__fake-input"></span>
+                            <span class="text text_b text_1F2041-05 block block_ml10px">Кроватка</span>
+                        </label>
+                        <label class="checkbox-button">
+                            <input class="checkbox-button__input" type="checkbox" name="tv">
+                            <span class="checkbox-button__fake-input"></span>
+                            <span class="text text_b text_1F2041-05 block block_ml10px">Телевизор</span>
+                        </label>
+                        <label class="checkbox-button">
+                            <input class="checkbox-button__input" type="checkbox" name="shampoo">
+                            <span class="checkbox-button__fake-input"></span>
+                            <span class="text text_b text_1F2041-05 block block_ml10px">Шампунь</span>
+                        </label>
+                    </div>
+                </details>
+
+
+
+
+                <!-- дополнительные удобства -->
+                <details class="expandable-list" open>
+                    <summary class="expandable-list__summary check-mark block block_mb17px">
+                        <span class="text text_bold text_ttu">expandable checkbox list</span>
+                    </summary>
+                    <div class="checkbox-list">
+                        <label class="checkbox-button">
+                            <input class="checkbox-button__input" type="checkbox" name="breakfast">
+                            <span class="checkbox-button__fake-input"></span>
+                            <span class="text text_b text_1F2041-05 block block_ml10px">Завтрак</span>
+                        </label>
+                        <label class="checkbox-button">
+                            <input class="checkbox-button__input" type="checkbox" name="desk" checked>
+                            <span class="checkbox-button__fake-input"></span>
+                            <span class="text text_b text_1F2041-05 block block_ml10px">Письменный стол</span>
+                        </label>
+                        <label class="checkbox-button">
+                            <input class="checkbox-button__input" type="checkbox" name="feeding_chair" checked>
+                            <span class="checkbox-button__fake-input"></span>
+                            <span class="text text_b text_1F2041-05 block block_ml10px">Стул для кормления</span>
+                        </label>
+                        <label class="checkbox-button">
+                            <input class="checkbox-button__input" type="checkbox" name="child_bed" checked>
+                            <span class="checkbox-button__fake-input"></span>
+                            <span class="text text_b text_1F2041-05 block block_ml10px">Кроватка</span>
+                        </label>
+                        <label class="checkbox-button">
+                            <input class="checkbox-button__input" type="checkbox" name="tv">
+                            <span class="checkbox-button__fake-input"></span>
+                            <span class="text text_b text_1F2041-05 block block_ml10px">Телевизор</span>
+                        </label>
+                        <label class="checkbox-button">
+                            <input class="checkbox-button__input" type="checkbox" name="shampoo">
+                            <span class="checkbox-button__fake-input"></span>
+                            <span class="text text_b text_1F2041-05 block block_ml10px">Шампунь</span>
+                        </label>
+                    </div>
+                </details>
+        </div>
+
+
+
+
+        <!-- доступность -->
+        <div class="rich-Checkbox-Buttons block block_ml180px">
+            <p class="text text_bold text_ttu block block_mb16px">rich Checkbox Buttons</p>
+            <label class="checkbox-button block block_mb5px">
+                <input class="checkbox-button__input" type="checkbox" name="corridor">
+                <span class="checkbox-button__fake-input"></span>
+                <span class="text text_b text_1F2041-075 text_bold block block_ml10px">Широкий коридор</span>
+            </label>
+            <p class="text text_lh14 text_1F2041-05 block block_ml30px block_mb10px">Ширина коридоров в номере <br>не менее 91 см.</p>
+            <label class="checkbox-button block block_mb5px">
+                <input class="checkbox-button__input" type="checkbox" name="helper">
+                <span class="checkbox-button__fake-input"></span>
+                <span class="text text_b text_1F2041-075 text_bold block block_ml10px">Помощник для инвалидов</span>
+            </label>
+            <p class="text text_lh14 text_1F2041-05 block block_ml30px block_mb10px">На 1 этаже вас встретит специалист <br>и проводит до номера.</p>
+        </div>
+
+
+
+
+        <!-- Правила гостиницы -->
+        <div class="bullet-list block block_ml126px">
+            <p class="text text_bold text_ttu block block_mb16px">bullet list</p>
+            <ul>
+                <li class="bullet-list__item">
+                    <span class="text text_b bullet-list__text text_1F2041-075 block block_ml10px">Нельзя с питомцами</span>
+                </li>
+                <li class="bullet-list__item">
+                    <span class="text text_b bullet-list__text text_1F2041-075 block block_ml10px">Без вечеринок и мероприятий</span>
+                </li>
+                <li class="bullet-list__item">
+                    <span class="text text_b bullet-list__text text_1F2041-075 block block_ml10px">Время прибытия — после 13:00,<br> а выезд до 12:00</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <div class="form-elements__row4">
+
+
+
+
+        <!-- Сведения о номере -->
+        <div class="room-info">
+            <div class="advantages">
+                <div class="advantages__img">
+                    <img src="img/insert_emoticon.png" alt="smile">
+                </div>
+                <p class="text text_b text_1F2041-075 block block_ml10px">
+                    <span class="text_bold display_b block block_mb8px">Комфорт</span>
+                    Шумопоглощающие стены</p>
+            </div>
+            <div class="advantages advantages_padding-down">
+                <div class="advantages__img">
+                    <img src="img/location_city.png" alt="biulding">
+                </div>
+                <p class="text text_b text_1F2041-075 block block_ml10px">
+                    <span class="text_bold display_b block block_mb8px">Удобство</span>
+                    Окно в каждой из спален</p>
+            </div>
+        </div>
+
+
+
+
+
+<!-- Отзывы посетителей номера -->
+        <div class="form-elements__row4_column2">
+            <div class="comments block block_mb15px">
+                <img src="img/image.png" alt="avatarka">
+                <p class="text text_b text_1F2041-075 block block_ml10px"><span class="text_bold display_b block block_mb8px">Мурад Сарафанов</span>5 дней назад</p>
+            </div>
+            <div class="like-comments">
+                <button class="button-like button-like_pressed">
+                    <img class="button-like__heart" src="img/favorite.png" alt="heart_pressed">
+                    <span class="text text_s text_BC9CFF">12</span>
+                </button>
+                <p class="text text_b text_lh24 text_1F2041-075 block block_ml16px block_mt-3px">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
+                И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</p>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+</html>

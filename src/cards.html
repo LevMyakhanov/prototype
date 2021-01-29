@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="cards">
+        <div class="cards__column1">
+
+
+
+<!-- форма для поиска номеров -->
+            <div class="room-search block block_mb40px">
+                <p class="text text_l block block_mb22px">Найдём номера под ваши пожелания</p>
+                <div class="input-wrapper block block_mb20px">
+                    <label class="field field_small">
+                        <span class="field-name text text_bold text_ttu block block_mb5px">прибытие</span>
+                        <span class="check-mark">
+                            <input class="input input-hidden text text_b text_ttu text_1F2041-075" type="date" name="arrival">
+                        </span>
+                    </label>
+                    <label class="field field_small">
+                        <span class="field-name text text_bold text_ttu block block_mb5px">выезд</span>
+                        <span class="check-mark">
+                            <input class="input input-hidden text text_b text_ttu text_1F2041-075" type="date" name="departure">
+                        </span>
+                    </label>
+                </div>
+                <div class="field block block_mb31px">
+                    <span class="field-name text text_bold text_ttu block block_mb5px">гости</span>
+                    <span class="check-mark">
+                        <input class="input text text_b text_1F2041-075" name="amount of guests" type="text" value="Сколько гостей">
+                    </span>
+                </div>
+                <button class="button button_long">
+                    <span class="text text_bold text_ttu text_FFF">подобрать номер</span>
+                </button>
+            </div>
+
+
+
+
+            <!-- регистрация аккаунта -->
+            <div class="account-reg">
+                <p class="text text_l account-reg_pp block block_mb22px">Регистрация аккаунта</p>
+                <input class="input text text_b text_1F2041-075 block block_mb10px" type="text" name="first name" placeholder="Имя">
+                <input class="input text text_b text_1F2041-075 block block_mb10px" type="text" name="last name" placeholder="Фамилия">
+                <div class="radio-button-wrapper block block_mb23px">
+                    <label class="radio-button">
+                        <input class="radio-button__input" type="radio" name="gender" checked>
+                        <span class="radio-button__fake-input radio-button_round"></span>
+                        <span class="text text_b text_lh20 text_1F2041-05 block block_ml10px">Мужчина</span>
+                    </label>
+                    <label class="radio-button block block_ml20px">
+                        <input class="radio-button__input" type="radio" name="gender">
+                        <span class="radio-button__fake-input radio-button_round"></span>
+                        <span class="text text_b text_lh20 text_1F2041-05 block block_ml10px">Женщина</span>
+                    </label>
+                </div>
+                <label class="field">
+                    <span class="field-name text text_bold text_ttu block block_mb5px">дата рождения</span>
+                    <input class="input input-hidden text text_b text_ttu text_1F2041-075 block block_mb20px" type="date" name="masked text field">
+                </label>
+                <span class="field-name text text_bold text_ttu block block_mb5px">данные для входа в сервис</span>
+                <input class="input text text_b text_1F2041-075 block block_mb10px" type="email" name="email" placeholder="Email">
+                <input class="input text text_b text_1F2041-075 block block_mb10px" type="password" name="password" placeholder="Пароль">
+                <label class="toggle block block_mb24px">
+                    <input class="toggle__input" type="checkbox" name="special offers">
+                    <span class="toggle__input_fake"></span>
+                    <span class="text text_b text_lh20 text_1F2041-075 block block_ml10px">Получать спецпредложения</span>
+                </label>
+                <button class="button button_long block block_mb30px">
+                    <span class="text text_bold text_ttu text_FFF">перейти к оплате</span>
+                </button>
+                <div class="href-button">
+                    <a href="#"><p class="text text_b text_000">Уже есть аккаунт на Toxin</p></a>
+                    <button class="button button_bordered">
+                        <span class="text text_bold text_ttu text_BC9CFF">войти</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cards__column1 block block_ml40px">
+
+
+
+
+
+            <!-- бронирование номера -->
+            <div class="booking block block_mb39px">
+                <div class="booking-wrapper block block_mb23px">
+                    <p class="booking__room-name text text_bold">
+                        <span class="text_fs14 text_lh17">№</span>
+                        <span class="booking__room-number text_fs24 text_lh29">888</span>
+                        <span class="text_ttu text_BC9CFF">люкс</span>
+                    </p>
+                    <p class="booking__room-price text text_lh14 text_1F2041-05">
+                        <span class="text_fs14 text_bold ">9 990₽</span>
+                        <span>в сутки</span>
+                    </p>
+                </div>
+                <div class="input-wrapper block block_mb20px">
+                    <label class="field field_small">
+                        <span class="field-name text text_bold text_ttu block block_mb5px">прибытие</span>
+                        <span class="check-mark">
+                            <input class="input input-hidden text text_b text_ttu text_1F2041-075" type="date" name="arrival" value="2019-08-19">
+                        </span>
+                    </label>
+                    <label class="field field_small">
+                        <span class="field-name text text_bold text_ttu block block_mb5px">выезд</span>
+                        <span class="check-mark">
+                            <input class="input input-hidden text text_b text_ttu text_1F2041-075" type="date" name="departure" value="2019-08-23">
+                        </span>
+                    </label>
+                </div>
+                <div class="field block block_mb20px">
+                    <span class="field-name text text_bold text_ttu block block_mb5px">гости</span>
+                    <span class="check-mark">
+                        <input class="input text text_b text_1F2041-075" name="amount of guests" type="text" value="3 гостя">
+                    </span>
+                </div>
+                <div class="booking-wrapper block block_mb13px">
+                    <p class="text text_b text_lh22 text_1F2041-075">9 990₽ х 4 суток</p>
+                    <p class="text text_b text_lh22 text_1F2041-075">39 960₽</p>
+                </div>
+                <div class="booking-wrapper_top check block block_mb15px">
+                    <div class="booking__wr">
+                        <p class="text text_b text_lh18 text_1F2041-075">Сбор за услуги: скидка 2 179₽</p>
+                        <!-- как расположить иконку -->
+                        <div class="booking__logo">
+                            <p class="booking__text">i</p>
+                        </div>
+                    </div>
+                    <p class="text text_b text_lh18 text_1F2041-075">0₽</p>
+                </div>
+                <div class="booking-wrapper_top check block block_mb30px">
+                    <div class="booking__wr">
+                        <p class="text text_b text_lh18 text_1F2041-075 booking_min-w">Сбор за дополнительные <br>услуги</p>
+                        <div class="booking__logo">
+                            <p class="booking__text">i</p>
+                        </div>
+                    </div>
+                    <p class="text text_b text_lh18 text_1F2041-075">300₽</p>
+                </div>
+                <div class="booking-wrapper block block_mb20px block_mr-9px">
+                    <p class="text text_m">Итого</p>
+                    <p class="text text_m">38 081₽</p>
+                </div>
+                <button class="button button_long">
+                    <span class="text text_bold text_ttu text_FFF">забронировать</span>
+                </button>
+            </div>
+
+
+
+
+
+            <!-- вход в аккаунт -->
+            <div class="enter">
+                <p class="enter__text-p_pp text text_l block block_mb26px">Войти</p>
+                <input class="input text text_b text_1F2041-075 enter__input_pp block block_mb10px" type="email" name="email" placeholder="Email">
+                <input class="input text text_b text_1F2041-075 block block_mb20px" type="password" name="password" placeholder="Пароль">
+                <button class="button button_long block block_mb30px">
+                    <span class="text text_bold text_ttu text_FFF">войти</span>
+                </button>
+                <div class="href-button">
+                    <a href="#"><p class="text text_b text_000">Нет аккаунта на Toxin</p></a>
+                    <button class="button button_bordered">
+                        <span class="text text_bold text_ttu text_BC9CFF">создать</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cards__column3 block block_ml40px">
+
+
+
+
+            <!-- календарь -->
+            <div class="calendar calendar__pp block block_mb40px">
+                <div class="calendar__header block block_mb30px">
+                    <a href="#"><img class="calendar__arrow_l" src="img/arrow_back.png" alt="arrow_back"></a>
+                    <p class="calendar__header_text text text_m">Август 2019</p>
+                    <a href="#"><img class="calendar__arrow_r" src="img/arrow_forward_violet.png" alt="arrow_forward"></a>
+                </div>
+
+                <table class="calendar__table block block_mb20px">
+                    <tr>
+                        <td class="calendar__td text text_bold text_BC9CFF tt_none">Пн</td>
+                        <td class="calendar__td text text_bold text_BC9CFF tt_none">Вт</td>
+                        <td class="calendar__td text text_bold text_BC9CFF tt_none">Ср</td>
+                        <td class="calendar__td text text_bold text_BC9CFF tt_none">Чт</td>
+                        <td class="calendar__td text text_bold text_BC9CFF tt_none">Пт</td>
+                        <td class="calendar__td text text_bold text_BC9CFF tt_none">Сб</td>
+                        <td class="calendar__td text text_bold text_BC9CFF tt_none">Вс</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar__td text text_1F2041-025">29</td>
+                        <td class="calendar__td text text_1F2041-025">30</td>
+                        <td class="calendar__td text text_1F2041-025">31</td>
+                        <td class="calendar__td text text_1F2041-05">1</td>
+                        <td class="calendar__td text text_1F2041-05">2</td>
+                        <td class="calendar__td text text_1F2041-05">3</td>
+                        <td class="calendar__td text text_1F2041-05">4</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar__td text text_1F2041-05">5</td>
+                        <td class="calendar__td text text_1F2041-05">6</td>
+                        <td class="calendar__td text text_1F2041-05">7</td>
+                        <td class="calendar__td calendar_green text text_bold text_FFF">8</td>
+                        <td class="calendar__td text text_1F2041-05">9</td>
+                        <td class="calendar__td text text_1F2041-05">10</td>
+                        <td class="calendar__td text text_1F2041-05">11</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar__td text text_1F2041-05">12</td>
+                        <td class="calendar__td text text_1F2041-05">13</td>
+                        <td class="calendar__td text text_1F2041-05">14</td>
+                        <td class="calendar__td text text_1F2041-05">15</td>
+                        <td class="calendar__td text text_1F2041-05">16</td>
+                        <td class="calendar__td text text_1F2041-05">17</td>
+                        <td class="calendar__td text text_1F2041-05">18</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar__td calendar_purple text text_bold text_FFF">19</td>
+                        <td class="calendar__td text text_1F2041-05">20</td>
+                        <td class="calendar__td text text_1F2041-05">21</td>
+                        <td class="calendar__td text text_1F2041-05">22</td>
+                        <td class="calendar__td calendar_purple text text_bold text_FFF">23</td>
+                        <td class="calendar__td text text_1F2041-05">24</td>
+                        <td class="calendar__td text text_1F2041-05">25</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar__td text text_1F2041-05">26</td>
+                        <td class="calendar__td text text_1F2041-05">27</td>
+                        <td class="calendar__td text text_1F2041-05">28</td>
+                        <td class="calendar__td text text_1F2041-05">29</td>
+                        <td class="calendar__td text text_1F2041-05">30</td>
+                        <td class="calendar__td text text_1F2041-05">31</td>
+                        <td class="calendar__td text text_1F2041-025">1</td>
+                    </tr>
+                </table>
+                <div class=" booking-wrapper">
+                    <button class="text text_bold text_ttu text_BC9CFF">очистить</button>
+                    <button class="text text_bold text_ttu text_BC9CFF">применить</button>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- вид отдельного номера -->
+            <div class="room block block_mb40px">
+                <!-- у картинки не скруглились углы -->
+                <!-- фотография номера -->
+                <div class="room__img-wr">
+                    <img class="room__img" src="img/image.jpg" alt="room1">
+                    <button class="room__button room__button_left"></button>
+                    <button class="room__button room__button_right"></button>
+                    <div class="room__rounds-wrapper ">
+                        <button class="room__image-scroll room__image-scroll_active"></button>
+                        <button class="room__image-scroll block block_ml4px"></button>
+                        <button class="room__image-scroll block block_ml4px"></button>
+                        <button class="room__image-scroll block block_ml4px"></button>
+                    </div>
+                </div>
+                
+                <div class="booking-wrapper room_md block block_mb20px">
+                    <p class="text text_bold">
+                        <span class="text_fs14 text_lh17">№</span>
+                        <span class="text_fs20 text_lh29">888</span>
+                        <span class=" text_ttu text_BC9CFF block_ml-3px">люкс</span>
+                    </p>
+                    <p class="booking-text-r-pp text text_lh18 text_1F2041-05">
+                        <span class="text_fs14 text_bold">9 990₽</span>
+                        <span>в сутки</span>
+                    </p>
+                </div>
+                <div class="room__like-wrapper">
+                    <div class="room__star-wrapper">
+                        <button class="room__button-star"><img src="img/star.png" alt="star"></button>
+                        <button class="room__button-star"><img src="img/star.png" alt="star"></button>
+                        <button class="room__button-star"><img src="img/star.png" alt="star"></button>
+                        <button class="room__button-star"><img src="img/star.png" alt="star"></button>
+                        <button class="room__button-star"><img src="img/star.png" alt="star"></button>
+                    </div>
+                    <p class="block block_mr9px text text_lh18 text_1F2041-05">
+                        <span class="text_fs14 text_bold ">145</span>
+                        <span>Отзывов</span>
+                    </p>
+                </div>
+            </div>
+
+
+
+
+            <!-- вид отдельного номера -->
+            <div class="room">
+                <!-- у картинки не скруглились углы -->
+                <div class="room__img-wr">
+                    <img class="room__img" src="img/image2.jpg" alt="room1">
+                    <button class="room__button room__button_left"></button>
+                    <button class="room__button room__button_right"></button>
+                    <div class="room__rounds-wrapper ">
+                        <button class="room__image-scroll room__image-scroll_active"></button>
+                        <button class="room__image-scroll block block_ml4px"></button>
+                        <button class="room__image-scroll block block_ml4px"></button>
+                        <button class="room__image-scroll block block_ml4px"></button>
+                    </div>
+                </div>
+                
+                <div class="booking-wrapper room_md block block_mb20px">
+                    <p class="text text_bold">
+                        <span class="text_fs14 text_lh17">№</span>
+                        <span class="text_fs20 text_lh29">840</span>
+                        <span class=" text_ttu text_BC9CFF block_ml-3px">люкс</span>
+                    </p>
+                    <p class="booking-text-r-pp text text_lh18 text_1F2041-05">
+                        <span class="text_fs14 text_bold">9 990₽</span>
+                        <span>в сутки</span>
+                    </p>
+                </div>
+                <div class="room__like-wrapper">
+                    <div class="room__star-wrapper">
+                        <button class="room__button-star"><img src="img/star.png" alt="star"></button>
+                        <button class="room__button-star"><img src="img/star.png" alt="star"></button>
+                        <button class="room__button-star"><img src="img/star.png" alt="star"></button>
+                        <button class="room__button-star"><img src="img/star.png" alt="star"></button>
+                        <button class="room__button-star"><img src="img/star.png" alt="star"></button>
+                    </div>
+                    <p class="block block_mr9px text text_lh18 text_1F2041-05">
+                        <span class="text_fs14 text_bold ">65</span>
+                        <span>Отзывов</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
