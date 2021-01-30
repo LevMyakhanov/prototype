@@ -50,7 +50,7 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: './formAndElements.html',
+            template: './formAndElements.pug',
             filename: 'formAndElements.html',
             minify: {
                 collapseWhitespace: isProd

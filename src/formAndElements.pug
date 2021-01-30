@@ -1,0 +1,382 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap' rel='stylesheet')
+    // <link rel="stylesheet" href="styles.css">
+  body.form-elements
+    .form-elements__row
+      .form-elements__row1_column1
+        include ./common.blocks/field/field.pug
+        label.field.block.block_mb41px
+          span.field-name.text.text_bold.text_ttu.block.block_mb5px masked text field
+          // <input class="input input-hidden text text_b text_ttu text_1F2041-075" type="date" name="masked text field">
+          input.input.input-hidden.text.text_b.text_ttu.text_1F2041-075(type='text' name='masked text field' pattern='\d{1,2}\/d{1,2}\/d{4}' placeholder='ДД.ММ.ГГГГ' readonly='')
+        .input-wrapper.block.block_mb40px
+          label.field.field_small
+            span.field-name.text.text_bold.text_ttu.block.block_mb5px date Dropdown
+            span.check-mark
+              input.input.input-hidden.text.text_b.text_ttu.text_1F2041-075(type='date' name='arrival' readonly='')
+          label.field.field_small
+            span.field-name.text.text_bold.text_ttu.block.block_mb5px date Dropdown
+            span.check-mark
+              input.input.input-hidden.text.text_b.text_ttu.text_1F2041-075(type='date' name='departure' value='2019-08-19' readonly='')
+        // даты пребывания в отеле
+        .filter-date.block.block_mb41px
+          span.field-name.text.text_bold.text_ttu.block.block_mb5px filter date Dropdown
+          span.check-mark
+            input.input.text.text_b.text_1F2041-075(name='amount of guests' type='text' value='19 авг - 23 авг')
+        // предложения и новости (по сути нужны только форма и инпут)
+        form.form-field(action='https://echo.htmlacademy.ru' method='post')
+          label.field.field_middle
+            span.field-name.text.text_bold.text_ttu.block.block_mb5px subscription text field
+            input.input.text.text_b.text_1F2041-075(type='email' name='subscription text field' placeholder='Email')
+          button.form-field__button.block_ml223px
+      .form-elements__row1_column2
+        // Обернул Checkbox Buttons в div, чтобы выделить в блок.
+        .checkbox-buttons
+          p.text.text_bold.text_ttu.block.block_mb16px Checkbox Buttons
+          label.checkbox-button.block.block_mb11px
+            input.checkbox-button__input(type='checkbox' name='smoking')
+            span.checkbox-button__fake-input
+            span.text.text_b.text_lh20.text_1F2041-05.block.block_ml10px Можно курить
+          label.checkbox-button.block.block_mb11px
+            input.checkbox-button__input(type='checkbox' name='pets' checked='')
+            span.checkbox-button__fake-input
+            span.text.text_b.text_lh20.text_1F2041-05.block.block_ml10px Можно с питомцами
+          label.checkbox-button.block.block_mb41px
+            input.checkbox-button__input(type='checkbox' name='guests' checked='')
+            span.checkbox-button__fake-input
+            span.text.text_b.text_1F2041-05.block.block_ml10px
+              | Можно пригласить гостей 
+              br
+              | (до 10 человек)
+        p.text.text_bold.text_ttu.block.block_mb16px Radio Buttons
+        // правила дома
+        .radio-button-wrapper.block.block_mb41px
+          label.radio-button.checkbox-button
+            input.radio-button__input(type='radio' name='gender' checked='')
+            span.checkbox-button__fake-input.radio-button_round
+            span.text.text_b.text_lh18.text_1F2041-05.block.block_ml10px Мужчина
+          label.radio-button.checkbox-button
+            input.radio-button__input(type='radio' name='gender')
+            span.checkbox-button__fake-input.radio-button_round
+            span.text.text_b.text_lh18.text_1F2041-05.block.block_ml10px Женщина
+        p.text.text_bold.text_ttu.block.block_mb16px Toggle
+        label.toggle.block.block_mb14px
+          input.toggle__input(type='checkbox' name='special offers' checked='')
+          span.toggle__input_fake
+          span.text.text_b.text_lh20.text_1F2041-075.block.block_ml10px Получать спецпредложения
+        label.toggle.block.block_mb44px
+          input.toggle__input(type='checkbox' name='special offers')
+          span.toggle__input_fake
+          span.text.text_b.text_lh20.text_1F2041-075.block.block_ml10px Получать спецпредложения
+        p.text.text_bold.text_ttu.block.block_mb16px like button
+        // добавил div чтобы избавиться от пробела по умолчанию между кнопками
+        .form-elements__button-like-wr.block.block_mb40px
+          button.button-like
+            img.button-like__heart(src='img/favorite_border.png' alt='heart_unpressed')
+            span.text.text_s.text_1F2041-025 2
+          button.button-like.button-like_pressed.block.block_ml10px
+            img.button-like__heart(src='img/favorite.png' alt='heart_pressed')
+            span.text.text_s.text_BC9CFF 12
+        p.text.text_bold.text_ttu.block.block_mb16px rate button
+        .form-elements__rate-button-wr
+          .rate-button
+            button.button-star
+              img(src='img/star.png' alt='star')
+            button.button-star
+              img(src='img/star.png' alt='star')
+            button.button-star
+              img(src='img/star.png' alt='star')
+            button.button-star
+              img(src='img/star.png' alt='star')
+            button.button-star
+              img(src='img/star_border.png' alt='star')
+          .rate-button.block.block_ml20px
+            button.button-star
+              img(src='img/star.png' alt='star')
+            button.button-star
+              img(src='img/star.png' alt='star')
+            button.button-star
+              img(src='img/star.png' alt='star')
+            button.button-star
+              img(src='img/star.png' alt='star')
+            button.button-star
+              img(src='img/star.png' alt='star')
+      .form-elements__row1_column3
+        // диапазон цены
+        .slider.block.block_mb40px
+          span.slider__name.text.text_bold.text_ttu Range Slider
+          span.slider__name.text.text_1F2041-05.text_right 5 000₽ - 10 000₽
+          input(type='range' name='Range Slider')
+        p.text.text_bold.text_ttu.block.block_mb16px buttons
+        .form-elements__button-wr.block.block_mb30px
+          button.button.button_linear-gradient
+            span.text.text_bold.text_ttu.text_FFF click me
+          button.button.button_linear-gradient.button_opacity.block.block_ml19px
+            span.text.text_bold.text_ttu.text_FFF click me
+        .form-elements__button-wr.block.block_mb31px
+          button.button.button_bordered
+            span.text.text_bold.text_ttu.text_BC9CFF click me
+          button.button.button_bordered.button_bordered-tran.block.block_ml19px
+            span.text.text_bold.text_ttu.text_BC9CFF click me
+        .form-elements__button-wr.block.block_mb30px
+          button.button_naked
+            span.text.text_bold.text_ttu.text_BC9CFF click me
+          button.button_naked.block.block_ml20px
+            span.text.text_bold.text_ttu.text_1F2041-05 click me
+        button.button.button_long.block.block_mb40px
+          span.text.text_bold.text_ttu.text_FFF перейти к оплате
+        p.text.text_bold.text_ttu.block.block_mb16px pagination
+        // страницы
+        .pagination.block.block_mb10px
+          // повернуть стрелку на 180 deg
+          a.pagination__href-arrow.pagination_d-none(href='#')
+            img(src='img/arrow_back.png' alt='')
+          a.pagination__href(href='#')
+            span.pagination__href_active 1
+          a.pagination__href(href='#')
+            span.text.text_ttu.text_1F2041-05 2
+          a.pagination__href(href='#')
+            span.text.text_ttu.text_1F2041-05 3
+          a.pagination__href(href='#')
+            span.text.text_ttu.text_1F2041-05 ...
+          a.pagination__href.pagination_d-none(href='#')
+            span.text.text_ttu.text_1F2041-05 4
+          a.pagination__href.pagination_d-none(href='#')
+            span.text.text_ttu.text_1F2041-05 5
+          a.pagination__href.pagination_d-none(href='#')
+            span.text.text_ttu.text_1F2041-05 6
+          a.pagination__href.pagination_d-none(href='#')
+            span.text.text_ttu.text_1F2041-05 7
+          a.pagination__href.pagination_d-none(href='#')
+            span.text.text_ttu.text_1F2041-05 8
+          a.pagination__href.pagination_d-none(href='#')
+            span.text.text_ttu.text_1F2041-05 9
+          a.pagination__href.pagination_d-none(href='#')
+            span.text.text_ttu.text_1F2041-05 10
+          a.pagination__href.pagination_d-none(href='#')
+            span.text.text_ttu.text_1F2041-05 11
+          a.pagination__href.pagination_d-none(href='#')
+            span.text.text_ttu.text_1F2041-05 12
+          a.pagination__href.pagination_d-none(href='#')
+            span.text.text_ttu.text_1F2041-05 13
+          a.pagination__href.pagination_d-none(href='#')
+            span.text.text_ttu.text_1F2041-05 14
+          a.pagination__href(href='#')
+            span.text.text_ttu.text_1F2041-05 15
+          a.pagination__href-arrow(href='#')
+            img(src='img/arrow_forward_white.png' alt='')
+        p.text.text_b.text_lh22.text_1F2041-075.pagination_pixel 1 – 12 из 100+ вариантов аренды
+    .form-elements__row2
+      .form-elements__row2_column1
+        .dropdown
+          label.field.block.block_mb20px
+            span.field-name.text.text_bold.text_ttu.block.block_mb5px dropdown
+            span.text.text_ttu.text_1F2041-05.text_right.block.block_mb5px default
+            span.check-mark
+              input.input.input_square-angles.text.text_b.text_1F2041-075(type='text' name='rooms&beds' value='2 спальни, 2 кровати...')
+        // удобства номера
+        .dropdown
+          label.field
+            span.field-name.text.text_bold.text_ttu.block.block_mb5px dropdown
+            span.field-name.text.text_ttu.text_1F2041-05.text_right.block.block_mb5px expanded
+            span.check-mark
+              input.input.input_square-angles.field_border-color.text.text_b.text_1F2041-075(type='text' name='rooms&beds' value='2 спальни, 2 кровати...')
+          .dropdown__wrapper.dropdown__wrapper_off-buttons
+            .dropdown-flex.block.block_mb7px
+              span.text.text_bold.text_ttu спальни
+              .dropdown__buttons
+                button.dropdown__button -
+                span.text.text_bold.text_ttu.dropdown__amount 2
+                button.dropdown__button +
+            .dropdown-flex.block.block_mb7px
+              span.text.text_bold.text_ttu кровати
+              .dropdown__buttons
+                button.dropdown__button -
+                span.text.text_bold.text_ttu.dropdown__amount 2
+                button.dropdown__button +
+            .dropdown-flex
+              span.text.text_bold.text_ttu ванные комнаты
+              .dropdown__buttons
+                button.dropdown__button.dropdown__button_tran -
+                span.text.text_bold.text_ttu.dropdown__amount 0
+                button.dropdown__button +
+      .dropdown.dropdown_w32.block.block_ml181px
+        p.text.text_bold.text_ttu.block.block_mb5px dropdown
+        span.check-mark
+          input.input.input_square-angles.field_border-color.text.text_b.text_1F2041-075(type='text' name='guests' value='Сколько гостей')
+        .dropdown__wrapper
+          .dropdown-flex.block.block_mb7px
+            span.text.text_bold.text_ttu взрослые
+            .dropdown__buttons
+              button.dropdown__button.dropdown__button_tran
+                span -
+              span.text.text_bold.text_ttu.dropdown__amount 0
+              button.dropdown__button +
+          .dropdown-flex.block.block_mb7px
+            span.text.text_bold.text_ttu дети
+            .dropdown__buttons
+              button.dropdown__button.dropdown__button_tran -
+              span.text.text_bold.text_ttu.dropdown__amount 0
+              button.dropdown__button +
+          .dropdown-flex.block.block_mb19px
+            span.text.text_bold.text_ttu младенцы
+            .dropdown__buttons
+              button.dropdown__button.dropdown__button_tran -
+              span.text.text_bold.text_ttu.dropdown__amount 0
+              button.dropdown__button +
+          // убрал высоту и кнопка оказалась за блоком
+          button.text.text_bold.text_ttu.text_BC9CFF.text_right применить
+      // гости
+      .dropdown.dropdown_w32.block.block_ml72px
+        p.text.text_bold.text_ttu.block.block_mb5px dropdown
+        span.check-mark
+          input.input.input_square-angles.field_border-color.text.text_b.text_1F2041-075(type='text' name='guests' value='3 гостя')
+        .dropdown__wrapper
+          .dropdown-flex.block.block_mb7px
+            span.text.text_bold.text_ttu взрослые
+            .dropdown__buttons
+              button.dropdown__button
+                span -
+              span.text.text_bold.text_ttu.dropdown__amount 2
+              button.dropdown__button +
+          .dropdown-flex.block.block_mb7px
+            span.text.text_bold.text_ttu дети
+            .dropdown__buttons
+              button.dropdown__button -
+              span.text.text_bold.text_ttu.dropdown__amount 1
+              button.dropdown__button +
+          .dropdown-flex.block.block_mb19px
+            span.text.text_bold.text_ttu младенцы
+            .dropdown__buttons
+              button.dropdown__button.dropdown__button_tran -
+              span.text.text_bold.text_ttu.dropdown__amount 0
+              button.dropdown__button +
+          button.text.text_bold.text_ttu.text_BC9CFF очистить
+          button.text.text_bold.text_ttu.text_BC9CFF.text_right применить
+    .form-elements__row3
+      .form-elements__row3_column1
+        // дополнительные удобства
+        details.expandable-list
+          summary.expandable-list__summary.check-mark.block.block_mb17px
+            span.text.text_bold.text_ttu expandable checkbox list
+          .checkbox-list
+            label.checkbox-button
+              input.checkbox-button__input(type='checkbox' name='breakfast')
+              span.checkbox-button__fake-input
+              span.text.text_b.text_1F2041-05.block.block_ml10px Завтрак
+            label.checkbox-button
+              input.checkbox-button__input(type='checkbox' name='desk' checked='')
+              span.checkbox-button__fake-input
+              span.text.text_b.text_1F2041-05.block.block_ml10px Письменный стол
+            label.checkbox-button
+              input.checkbox-button__input(type='checkbox' name='feeding_chair' checked='')
+              span.checkbox-button__fake-input
+              span.text.text_b.text_1F2041-05.block.block_ml10px Стул для кормления
+            label.checkbox-button
+              input.checkbox-button__input(type='checkbox' name='child_bed' checked='')
+              span.checkbox-button__fake-input
+              span.text.text_b.text_1F2041-05.block.block_ml10px Кроватка
+            label.checkbox-button
+              input.checkbox-button__input(type='checkbox' name='tv')
+              span.checkbox-button__fake-input
+              span.text.text_b.text_1F2041-05.block.block_ml10px Телевизор
+            label.checkbox-button
+              input.checkbox-button__input(type='checkbox' name='shampoo')
+              span.checkbox-button__fake-input
+              span.text.text_b.text_1F2041-05.block.block_ml10px Шампунь
+        // дополнительные удобства
+        details.expandable-list(open='')
+          summary.expandable-list__summary.check-mark.block.block_mb17px
+            span.text.text_bold.text_ttu expandable checkbox list
+          .checkbox-list
+            label.checkbox-button
+              input.checkbox-button__input(type='checkbox' name='breakfast')
+              span.checkbox-button__fake-input
+              span.text.text_b.text_1F2041-05.block.block_ml10px Завтрак
+            label.checkbox-button
+              input.checkbox-button__input(type='checkbox' name='desk' checked='')
+              span.checkbox-button__fake-input
+              span.text.text_b.text_1F2041-05.block.block_ml10px Письменный стол
+            label.checkbox-button
+              input.checkbox-button__input(type='checkbox' name='feeding_chair' checked='')
+              span.checkbox-button__fake-input
+              span.text.text_b.text_1F2041-05.block.block_ml10px Стул для кормления
+            label.checkbox-button
+              input.checkbox-button__input(type='checkbox' name='child_bed' checked='')
+              span.checkbox-button__fake-input
+              span.text.text_b.text_1F2041-05.block.block_ml10px Кроватка
+            label.checkbox-button
+              input.checkbox-button__input(type='checkbox' name='tv')
+              span.checkbox-button__fake-input
+              span.text.text_b.text_1F2041-05.block.block_ml10px Телевизор
+            label.checkbox-button
+              input.checkbox-button__input(type='checkbox' name='shampoo')
+              span.checkbox-button__fake-input
+              span.text.text_b.text_1F2041-05.block.block_ml10px Шампунь
+      // доступность
+      .rich-Checkbox-Buttons.block.block_ml180px
+        p.text.text_bold.text_ttu.block.block_mb16px rich Checkbox Buttons
+        label.checkbox-button.block.block_mb5px
+          input.checkbox-button__input(type='checkbox' name='corridor')
+          span.checkbox-button__fake-input
+          span.text.text_b.text_1F2041-075.text_bold.block.block_ml10px Широкий коридор
+        p.text.text_lh14.text_1F2041-05.block.block_ml30px.block_mb10px
+          | Ширина коридоров в номере 
+          br
+          | не менее 91 см.
+        label.checkbox-button.block.block_mb5px
+          input.checkbox-button__input(type='checkbox' name='helper')
+          span.checkbox-button__fake-input
+          span.text.text_b.text_1F2041-075.text_bold.block.block_ml10px Помощник для инвалидов
+        p.text.text_lh14.text_1F2041-05.block.block_ml30px.block_mb10px
+          | На 1 этаже вас встретит специалист 
+          br
+          | и проводит до номера.
+      // Правила гостиницы
+      .bullet-list.block.block_ml126px
+        p.text.text_bold.text_ttu.block.block_mb16px bullet list
+        ul
+          li.bullet-list__item
+            span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px Нельзя с питомцами
+          li.bullet-list__item
+            span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px Без вечеринок и мероприятий
+          li.bullet-list__item
+            span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px
+              | Время прибытия — после 13:00,
+              br
+              |  а выезд до 12:00
+    .form-elements__row4
+      // Сведения о номере
+      .room-info
+        .advantages
+          .advantages__img
+            img(src='img/insert_emoticon.png' alt='smile')
+          p.text.text_b.text_1F2041-075.block.block_ml10px
+            span.text_bold.display_b.block.block_mb8px Комфорт
+            |                     Шумопоглощающие стены
+        .advantages.advantages_padding-down
+          .advantages__img
+            img(src='img/location_city.png' alt='biulding')
+          p.text.text_b.text_1F2041-075.block.block_ml10px
+            span.text_bold.display_b.block.block_mb8px Удобство
+            |                     Окно в каждой из спален
+      // Отзывы посетителей номера
+      .form-elements__row4_column2
+        .comments.block.block_mb15px
+          img(src='img/image.png' alt='avatarka')
+          p.text.text_b.text_1F2041-075.block.block_ml10px
+            span.text_bold.display_b.block.block_mb8px Мурад Сарафанов
+            | 5 дней назад
+        .like-comments
+          button.button-like.button-like_pressed
+            img.button-like__heart(src='img/favorite.png' alt='heart_pressed')
+            span.text.text_s.text_BC9CFF 12
+          p.text.text_b.text_lh24.text_1F2041-075.block.block_ml16px.block_mt-3px
+            | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
+            | И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.

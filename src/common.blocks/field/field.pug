@@ -1,0 +1,17 @@
+//- mixin field-name(text, classes=".text_bold.text_ttu.block.block_mb5px")
+//- mixin field(text1, Isfield-name=true,Isfield-name2=false, IsInput, Ischeck-mark)
+//-   if Isfield-name +field-name(field-name)
+//-   if Isfield-name2 +field-name(field-name2)
+//-   if IsInput +input(field-name2)
+label.field.block.block_mb20px
+  span.field-name.text.text_bold.text_ttu.block.block_mb5px text field
+  span.field-name.text.text_ttu.text_1F2041-05.text_right.block.block_mt-3px Default
+  input.input.text.text_b.text_1F2041-075(type='email' name='email' placeholder='Email')
+label.field.block.block_mb20px
+  span.field-name.text.text_bold.text_ttu.block.block_mb5px text field
+  span.field-name.text.text_ttu.text_1F2041-05.text_right.block.block_mb5px Hover / Focus
+  input.input.text.text_b.text_1F2041-075(type='text' name='text' value='This is pretty awesome')
+.field.block.block_mb22px
+  span.field-name.text.text_bold.text_ttu.block.block_mb5px Dropdown
+  span.check-mark
+    input.input.text.text_b.text_1F2041-075(name='amount of guests' type='text' value='Сколько гостей')
