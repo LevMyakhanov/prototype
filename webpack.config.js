@@ -35,7 +35,7 @@ module.exports = {
     },
     devtool: false,
     devServer: {
-        contentBase: 'dist'
+        contentBase: path.resolve(__dirname, 'dist')
     },
     output: {
         filename: '[name].js',

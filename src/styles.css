@@ -1,6 +1,7 @@
 @import 'common.blocks/field/field.css';
 @import 'common.blocks/field-name/field-name.css';
-@import 'common.blocks/input/input.css'
+@import 'common.blocks/input/input.css';
+
 
 html {
     font-size:  10px;
