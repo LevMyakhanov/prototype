@@ -360,7 +360,7 @@ a {
 }
 .checkbox-button__fake-input, .radio-button__fake-input {
     position: relative;
-    width: 2rem;
+    min-width: 2rem;
     height: 2rem;
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 0.4rem;

@@ -10,50 +10,71 @@ html(lang='ru')
   body.form-elements
     .form-elements__row
       .form-elements__row1_column1
+        include ./common.blocks/field-name/field-name.pug
         include ./common.blocks/field/field.pug
-        label.field.block.block_mb41px
-          span.field-name.text.text_bold.text_ttu.block.block_mb5px masked text field
-          // <input class="input input-hidden text text_b text_ttu text_1F2041-075" type="date" name="masked text field">
-          input.input.input-hidden.text.text_b.text_ttu.text_1F2041-075(type='text' name='masked text field' pattern='\d{1,2}\/d{1,2}\/d{4}' placeholder='ДД.ММ.ГГГГ' readonly='')
-        .input-wrapper.block.block_mb40px
-          label.field.field_small
-            span.field-name.text.text_bold.text_ttu.block.block_mb5px date Dropdown
-            span.check-mark
-              input.input.input-hidden.text.text_b.text_ttu.text_1F2041-075(type='date' name='arrival' readonly='')
-          label.field.field_small
-            span.field-name.text.text_bold.text_ttu.block.block_mb5px date Dropdown
-            span.check-mark
-              input.input.input-hidden.text.text_b.text_ttu.text_1F2041-075(type='date' name='departure' value='2019-08-19' readonly='')
+        include ./common.blocks/input/input.pug
+        include ./common.blocks/input-wrapper/input-wrapper.pug
+        include ./common.blocks/filter-name/filter-name.pug
+        include ./common.blocks/form-field/form-field.pug
+        include ./common.blocks/check-mark/check-mark.pug
+        include ./common.blocks/form-field/form-field__button.pug
+        include ./common.blocks/checkbox-buttons/checkbox-button.pug
+        include ./common.blocks/checkbox-buttons/checkbox-button__input.pug
+        include ./common.blocks/checkbox-buttons/checkbox-button__fake-input.pug
+        include ./common.blocks/text/textH3.pug
+        include ./common.blocks/text/text050.pug
+
+        +field()
+          +field-name()
+          +field-name('Default', ['text_ttu','text_1F2041-05','text_right','block','block_mt-3px'])
+          +inputP('email', 'email', 'Email')
+        +field()
+          +field-name()
+          +field-name('Hover / Focus', ['text_ttu','text_1F2041-05','text_right','block','block_mb5px'])
+          +inputV('text', 'text', 'This is pretty awesome')
+        +field('div', 'block_mb22px')
+          +field-name('Dropdown')
+          +check-mark
+            +inputV('text', 'amount of guests', 'Сколько гостей')
+        +field('label','block_mb41px')
+          +field-name('masked text field')
+          +inputP('text', 'masked text field', 'ДД.ММ.ГГГГ', 'input-hidden', '\d{1,2}\/d{1,2}\/d{4}', '')
+        +input-wrapper(['block', 'block_mb40px'])
+          +field('label','field_small')
+            +field-name('date Dropdown')
+            +check-mark
+              +inputD('date', 'arrival', '')
+          +field('label','field_small')
+            +field-name('date Dropdown')
+            +check-mark
+              +inputD('date', 'departure', '', '2019-08-19')
         // даты пребывания в отеле
-        .filter-date.block.block_mb41px
-          span.field-name.text.text_bold.text_ttu.block.block_mb5px filter date Dropdown
-          span.check-mark
-            input.input.text.text_b.text_1F2041-075(name='amount of guests' type='text' value='19 авг - 23 авг')
+        +filter-name(['block', 'block_mb41px'])
+          +field-name('filter date Dropdown')
+          +check-mark
+            +inputV('text', 'amount of guests', '19 авг - 23 авг')
         // предложения и новости (по сути нужны только форма и инпут)
-        form.form-field(action='https://echo.htmlacademy.ru' method='post')
-          label.field.field_middle
-            span.field-name.text.text_bold.text_ttu.block.block_mb5px subscription text field
-            input.input.text.text_b.text_1F2041-075(type='email' name='subscription text field' placeholder='Email')
-          button.form-field__button.block_ml223px
+        +form-field('https://echo.htmlacademy.ru', 'post')
+          +fieldM()
+            +field-name('subscription text field')
+            +inputP('email', 'subscription text field', 'Email')
+          +form-field__button('block_ml223px')
       .form-elements__row1_column2
         // Обернул Checkbox Buttons в div, чтобы выделить в блок.
         .checkbox-buttons
-          p.text.text_bold.text_ttu.block.block_mb16px Checkbox Buttons
-          label.checkbox-button.block.block_mb11px
-            input.checkbox-button__input(type='checkbox' name='smoking')
-            span.checkbox-button__fake-input
-            span.text.text_b.text_lh20.text_1F2041-05.block.block_ml10px Можно курить
-          label.checkbox-button.block.block_mb11px
-            input.checkbox-button__input(type='checkbox' name='pets' checked='')
-            span.checkbox-button__fake-input
-            span.text.text_b.text_lh20.text_1F2041-05.block.block_ml10px Можно с питомцами
-          label.checkbox-button.block.block_mb41px
-            input.checkbox-button__input(type='checkbox' name='guests' checked='')
-            span.checkbox-button__fake-input
-            span.text.text_b.text_1F2041-05.block.block_ml10px
-              | Можно пригласить гостей 
-              br
-              | (до 10 человек)
+          +textH3('Checkbox Buttons', ['block','block_mb16px'])
+          +checkbox-button('block_mb11px')
+            +checkbox-button__input('checkbox', 'smoking')
+            +checkbox-button__fake-input()
+            +text050lh20('Можно курить', ['block','block_ml10px'])
+          +checkbox-button('block_mb11px')
+            +checkbox-button__inputC('checkbox', 'pets')
+            +checkbox-button__fake-input()
+            +text050lh20('Можно с питомцами', ['block','block_ml10px'])
+          +checkbox-button('block_mb41px')
+            +checkbox-button__inputC('checkbox', 'guests')
+            +checkbox-button__fake-input()
+            +text050lh20('Можно пригласить гостей (до 10 человек)', ['block','block_ml10px'])
         p.text.text_bold.text_ttu.block.block_mb16px Radio Buttons
         // правила дома
         .radio-button-wrapper.block.block_mb41px
