@@ -299,10 +299,6 @@ a {
 .form-elements__row1_column1 {
     width: 32rem;
 }
-.input-hidden::-webkit-calendar-picker-indicator {
-    opacity: 0;
-    margin: 0;
-}
 .check-mark {
     position: relative;
     display: block;

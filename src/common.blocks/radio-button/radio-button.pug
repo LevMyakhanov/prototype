@@ -1,0 +1,9 @@
+mixin radio-button
+    label.radio-button.checkbox-button
+        block
+
+mixin radio-button__input(types, names)
+    input.radio-button__input(type=types, name=names)
+
+mixin radio-button__input-checked(types, names)
+    input.radio-button__input(type=types, name=names, checked)
