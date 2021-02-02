@@ -368,27 +368,25 @@ html(lang='ru')
       // Правила гостиницы
       +bullet-list(['block', 'block_ml126px'])
         +text('p', 'bullet list', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
-        +list
-        //- ul
-        //-   li.bullet-list__item
-        //-     span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px Нельзя с питомцами
-        //-   li.bullet-list__item
-        //-     span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px Без вечеринок и мероприятий
-        //-   li.bullet-list__item
-        //-     span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px
-        //-       | Время прибытия — после 13:00,
-        //-       br
-        //-       |  а выезд до 12:00
+        //- +list
+        ul
+          li.bullet-list__item
+            span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px Нельзя с питомцами
+          li.bullet-list__item
+            span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px Без вечеринок и мероприятий
+          li.bullet-list__item
+            span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px
+              | Время прибытия — после 13:00,
+              br
+              |  а выезд до 12:00
     .form-elements__row4
       // Сведения о номере
       +room-info
         +advantages
           +advantages__img
             img(src='img/insert_emoticon.png' alt='smile')
-          +text('p', )
-          p.text.text_b.text_1F2041-075.block.block_ml10px
-            span.text_bold.display_b.block.block_mb8px Комфорт
-            |                     Шумопоглощающие стены
+          +text('p', 'Комфорт', ['text_bold', 'display_b', 'block', 'block_mb8px', 'block_ml10px'])
+          +text('p', 'Шумопоглощающие стены', ['text_b', 'text_1F2041-075', 'block', 'block_ml10px'])
         .advantages.advantages_padding-down
           .advantages__img
             img(src='img/location_city.png' alt='biulding')

@@ -5,5 +5,5 @@ mixin bullet-list(classes)
 mixin list
     ul
         each name in ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
-            li(class='bullet-list__item')
-                span(class=['text' 'text_b', 'bullet-list__text', 'text_1F2041-075', 'block', 'block_ml10px'])= name
+            li.bullet-list__item
+                span(class=['text', 'text_b', 'bullet-list__text', 'text_1F2041-075', 'block', 'block_ml10px'])= name
