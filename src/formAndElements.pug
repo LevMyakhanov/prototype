@@ -23,6 +23,19 @@ html(lang='ru')
         include ./common.blocks/radio-button-wrapper/radio-button-wrapper.pug
         include ./common.blocks/radio-button/radio-button.pug
         include ./common.blocks/toggle/toggle.pug
+        include ./common.blocks/button-like/button-like.pug
+        include ./common.blocks/rate-button/rate-button.pug
+        include ./common.blocks/button-star/button-star.pug
+        include ./common.blocks/slider/slider.pug
+        include ./common.blocks/button/button.pug
+        include ./common.blocks/pagination/pagination.pug
+        include ./common.blocks/dropdown/dropdown.pug
+        include ./common.blocks/expandable-list/expandable-list.pug
+        include ./common.blocks/checkbox-list/checkbox-list.pug
+        include ./common.blocks/rich-Checkbox-Buttons/rich-Checkbox-Buttons.pug
+        include ./common.blocks/bullet-list/bullet-list.pug
+        include ./common.blocks/room-info/room-info.pug
+        include ./common.blocks/advantages/advantages.pug
 
         +field()
           +field-name()
@@ -63,15 +76,15 @@ html(lang='ru')
         // Обернул Checkbox Buttons в div, чтобы выделить в блок.
         .checkbox-buttons
           +text('p', 'Checkbox Buttons', ['text_bold', 'text_ttu', 'block','block_mb16px'])
-          +checkbox-button('block_mb11px')
+          +checkbox-button(['block', 'block_mb11px'])
             +checkbox-button__input('checkbox', 'smoking')
             +checkbox-button__fake-input()
             +text('span', 'Можно курить', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'])
-          +checkbox-button('block_mb11px')
+          +checkbox-button(['block', 'block_mb11px'])
             +checkbox-button__input-checked('checkbox', 'pets')
             +checkbox-button__fake-input()
             +text('span', 'Можно с питомцами', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'])
-          +checkbox-button('block_mb41px')
+          +checkbox-button(['block', 'block_mb41px'])
             +checkbox-button__input-checked('checkbox', 'guests')
             +checkbox-button__fake-input()
             +text('span', 'Можно пригласить гостей', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'])
@@ -99,286 +112,280 @@ html(lang='ru')
           +text('span', 'Получать спецпредложения', ['text_b', 'text_lh20', 'text_1F2041-075', 'block', 'block_ml10px'])
         +text('p', 'like button', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         .form-elements__button-like-wr.block.block_mb40px
-          button.button-like
+          +button-like
             img.button-like__heart(src='img/favorite_border.png' alt='heart_unpressed')
-            span.text.text_s.text_1F2041-025 2
-          button.button-like.button-like_pressed.block.block_ml10px
+            +text('span', '2', ['text_s', 'text_1F2041-025'])
+          +button-like(['button-like_pressed', 'block', 'block_ml10px'])
             img.button-like__heart(src='img/favorite.png' alt='heart_pressed')
-            span.text.text_s.text_BC9CFF 12
-        p.text.text_bold.text_ttu.block.block_mb16px rate button
+            +text('span', '12', ['text_s', 'text_BC9CFF'])
+        +text('p', 'rate button', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         .form-elements__rate-button-wr
-          .rate-button
-            button.button-star
+          +rate-button
+            +button-star
               img(src='img/star.png' alt='star')
-            button.button-star
+            +button-star
               img(src='img/star.png' alt='star')
-            button.button-star
+            +button-star
               img(src='img/star.png' alt='star')
-            button.button-star
+            +button-star
               img(src='img/star.png' alt='star')
-            button.button-star
+            +button-star
               img(src='img/star_border.png' alt='star')
-          .rate-button.block.block_ml20px
-            button.button-star
+          +rate-button(['block', 'block_ml20px'])
+            +button-star
               img(src='img/star.png' alt='star')
-            button.button-star
+            +button-star
               img(src='img/star.png' alt='star')
-            button.button-star
+            +button-star
               img(src='img/star.png' alt='star')
-            button.button-star
+            +button-star
               img(src='img/star.png' alt='star')
-            button.button-star
+            +button-star
               img(src='img/star.png' alt='star')
       .form-elements__row1_column3
         // диапазон цены
-        .slider.block.block_mb40px
-          span.slider__name.text.text_bold.text_ttu Range Slider
-          span.slider__name.text.text_1F2041-05.text_right 5 000₽ - 10 000₽
+        +slider(['block', 'block_mb40px'])
+          +text('span', 'Range Slider', ['slider__name', 'text_bold', 'text_ttu'])
+          +text('span', '5 000₽ - 10 000₽', ['slider__name', 'text_1F2041-05', 'text_right'])
           input(type='range' name='Range Slider')
-        p.text.text_bold.text_ttu.block.block_mb16px buttons
+        +text('p', 'buttons', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         .form-elements__button-wr.block.block_mb30px
-          button.button.button_linear-gradient
-            span.text.text_bold.text_ttu.text_FFF click me
-          button.button.button_linear-gradient.button_opacity.block.block_ml19px
-            span.text.text_bold.text_ttu.text_FFF click me
+          +button(['button', 'button_linear-gradient'])
+            +text('span', 'click me', ['text_bold', 'text_ttu', 'text_FFF'])
+          +button(['button', 'button_linear-gradient', 'button_opacity', 'block', 'block_ml19px'])
+            +text('span', 'click me', ['text_bold', 'text_ttu', 'text_FFF'])
         .form-elements__button-wr.block.block_mb31px
-          button.button.button_bordered
-            span.text.text_bold.text_ttu.text_BC9CFF click me
-          button.button.button_bordered.button_bordered-tran.block.block_ml19px
-            span.text.text_bold.text_ttu.text_BC9CFF click me
+          +button(['button', 'button_bordered'])
+            +text('span', 'click me', ['text_bold', 'text_ttu', 'text_BC9CFF'])
+          +button(['button', 'button_bordered', 'button_bordered-tran', 'block', 'block_ml19px'])
+            +text('span', 'click me', ['text_bold', 'text_ttu', 'text_BC9CFF'])
         .form-elements__button-wr.block.block_mb30px
-          button.button_naked
-            span.text.text_bold.text_ttu.text_BC9CFF click me
-          button.button_naked.block.block_ml20px
-            span.text.text_bold.text_ttu.text_1F2041-05 click me
-        button.button.button_long.block.block_mb40px
-          span.text.text_bold.text_ttu.text_FFF перейти к оплате
-        p.text.text_bold.text_ttu.block.block_mb16px pagination
+          +button('button_naked')
+            +text('span', 'click me', ['text_bold', 'text_ttu', 'text_BC9CFF'])
+          +button(['button_naked', 'block', 'block_ml20px'])
+            +text('span', 'click me', ['text_bold', 'text_ttu', 'text_1F2041-05'])
+        +button(['button', 'button_long', 'block', 'block_mb40px'])
+          +text('span', 'перейти к оплате', ['text_bold', 'text_ttu', 'text_FFF'])
+        +text('p', 'pagination', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         // страницы
-        .pagination.block.block_mb10px
+        +pagination(['block', 'block_mb10px'])
           // повернуть стрелку на 180 deg
-          a.pagination__href-arrow.pagination_d-none(href='#')
+          +pagination__href-arrow('#', 'pagination_d-none')
             img(src='img/arrow_back.png' alt='')
-          a.pagination__href(href='#')
-            span.pagination__href_active 1
-          a.pagination__href(href='#')
-            span.text.text_ttu.text_1F2041-05 2
-          a.pagination__href(href='#')
-            span.text.text_ttu.text_1F2041-05 3
-          a.pagination__href(href='#')
-            span.text.text_ttu.text_1F2041-05 ...
-          a.pagination__href.pagination_d-none(href='#')
-            span.text.text_ttu.text_1F2041-05 4
-          a.pagination__href.pagination_d-none(href='#')
-            span.text.text_ttu.text_1F2041-05 5
-          a.pagination__href.pagination_d-none(href='#')
-            span.text.text_ttu.text_1F2041-05 6
-          a.pagination__href.pagination_d-none(href='#')
-            span.text.text_ttu.text_1F2041-05 7
-          a.pagination__href.pagination_d-none(href='#')
-            span.text.text_ttu.text_1F2041-05 8
-          a.pagination__href.pagination_d-none(href='#')
-            span.text.text_ttu.text_1F2041-05 9
-          a.pagination__href.pagination_d-none(href='#')
-            span.text.text_ttu.text_1F2041-05 10
-          a.pagination__href.pagination_d-none(href='#')
-            span.text.text_ttu.text_1F2041-05 11
-          a.pagination__href.pagination_d-none(href='#')
-            span.text.text_ttu.text_1F2041-05 12
-          a.pagination__href.pagination_d-none(href='#')
-            span.text.text_ttu.text_1F2041-05 13
-          a.pagination__href.pagination_d-none(href='#')
-            span.text.text_ttu.text_1F2041-05 14
-          a.pagination__href(href='#')
-            span.text.text_ttu.text_1F2041-05 15
-          a.pagination__href-arrow(href='#')
+          +pagination__href('#')
+            +pagination__href_active('1')
+          +pagination__href('#')
+            +text('span', '2', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#')
+            +text('span', '3', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#')
+            +text('span', '...', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#', 'pagination_d-none')
+            +text('span', '4', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#', 'pagination_d-none')
+            +text('span', '5', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#', 'pagination_d-none')
+            +text('span', '6', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#', 'pagination_d-none')
+            +text('span', '7', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#', 'pagination_d-none')
+            +text('span', '8', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#', 'pagination_d-none')
+            +text('span', '9', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#', 'pagination_d-none')
+            +text('span', '10', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#', 'pagination_d-none')
+            +text('span', '11', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#', 'pagination_d-none')
+            +text('span', '12', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#', 'pagination_d-none')
+            +text('span', '13', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#', 'pagination_d-none')
+            +text('span', '14', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href('#', 'pagination_d-none')
+            +text('span', '15', ['text_ttu', 'text_1F2041-05'])
+          +pagination__href-arrow('#')
             img(src='img/arrow_forward_white.png' alt='')
-        p.text.text_b.text_lh22.text_1F2041-075.pagination_pixel 1 – 12 из 100+ вариантов аренды
+        +text('p', '1 – 12 из 100+ вариантов аренды', ['text_b', 'text_lh22', 'text_1F2041-075', 'pagination_pixel'])
     .form-elements__row2
       .form-elements__row2_column1
-        .dropdown
-          label.field.block.block_mb20px
-            span.field-name.text.text_bold.text_ttu.block.block_mb5px dropdown
-            span.text.text_ttu.text_1F2041-05.text_right.block.block_mb5px default
-            span.check-mark
-              input.input.input_square-angles.text.text_b.text_1F2041-075(type='text' name='rooms&beds' value='2 спальни, 2 кровати...')
+        +dropdown
+          +field()
+            +field-name('dropdown')
+            +text('span', 'default', ['text_ttu', 'text_1F2041-05', 'text_right', 'block', 'block_mb5px'])
+            +check-mark
+              +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...' class='input_square-angles')
         // удобства номера
-        .dropdown
-          label.field
-            span.field-name.text.text_bold.text_ttu.block.block_mb5px dropdown
-            span.field-name.text.text_ttu.text_1F2041-05.text_right.block.block_mb5px expanded
-            span.check-mark
-              input.input.input_square-angles.input_border-color.text.text_b.text_1F2041-075(type='text' name='rooms&beds' value='2 спальни, 2 кровати...')
-          .dropdown__wrapper.dropdown__wrapper_off-buttons
-            .dropdown-flex.block.block_mb7px
-              span.text.text_bold.text_ttu спальни
-              .dropdown__buttons
-                button.dropdown__button -
-                span.text.text_bold.text_ttu.dropdown__amount 2
-                button.dropdown__button +
-            .dropdown-flex.block.block_mb7px
-              span.text.text_bold.text_ttu кровати
-              .dropdown__buttons
-                button.dropdown__button -
-                span.text.text_bold.text_ttu.dropdown__amount 2
-                button.dropdown__button +
-            .dropdown-flex
-              span.text.text_bold.text_ttu ванные комнаты
-              .dropdown__buttons
-                button.dropdown__button.dropdown__button_tran -
-                span.text.text_bold.text_ttu.dropdown__amount 0
-                button.dropdown__button +
-      .dropdown.dropdown_w32.block.block_ml181px
-        p.text.text_bold.text_ttu.block.block_mb5px dropdown
-        span.check-mark
-          input.input.input_square-angles.input_border-color.text.text_b.text_1F2041-075(type='text' name='guests' value='Сколько гостей')
-        .dropdown__wrapper
-          .dropdown-flex.block.block_mb7px
-            span.text.text_bold.text_ttu взрослые
-            .dropdown__buttons
-              button.dropdown__button.dropdown__button_tran
-                span -
-              span.text.text_bold.text_ttu.dropdown__amount 0
-              button.dropdown__button +
-          .dropdown-flex.block.block_mb7px
-            span.text.text_bold.text_ttu дети
-            .dropdown__buttons
-              button.dropdown__button.dropdown__button_tran -
-              span.text.text_bold.text_ttu.dropdown__amount 0
-              button.dropdown__button +
-          .dropdown-flex.block.block_mb19px
-            span.text.text_bold.text_ttu младенцы
-            .dropdown__buttons
-              button.dropdown__button.dropdown__button_tran -
-              span.text.text_bold.text_ttu.dropdown__amount 0
-              button.dropdown__button +
+        +dropdown
+          +field('label', '')
+            +field-name('dropdown')
+            +text('span', 'expanded', ['text_ttu', 'text_1F2041-05', 'text_right', 'block', 'block_mb5px'])
+            +check-mark
+              +input-bold(type='text' name='rooms&beds' value='2 спальни, 2 кровати...')
+          +dropdown__wrapper('dropdown__wrapper_off-buttons')
+            +dropdown__flex(['block', 'block_mb7px'])
+              +text('span', 'спальни', ['text_bold', 'text_ttu'])
+              +dropdown__buttons
+                +dropdown__button('-')
+                +text('span', '2', ['text_bold', 'text_ttu', 'dropdown__amount'])
+                +dropdown__button('+')
+            +dropdown__flex(['block', 'block_mb7px'])
+              +text('span', 'кровати', ['text_bold', 'text_ttu'])
+              +dropdown__buttons
+                +dropdown__button('-')
+                +text('span', '2', ['text_bold', 'text_ttu', 'dropdown__amount'])
+                +dropdown__button('+')
+            +dropdown__flex
+              +text('span', 'ванные комнаты', ['text_bold', 'text_ttu'])
+              +dropdown__buttons
+                +dropdown__button('-', 'dropdown__button_tran')
+                +text('span', '0', ['text_bold', 'text_ttu', 'dropdown__amount'])
+                +dropdown__button('+')
+      +dropdown(['dropdown_w32', 'block', 'block_ml181px'])
+        +text('p', 'dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
+        +check-mark
+          +input-bold(type='text' name='guests' value='Сколько гостей')
+        +dropdown__wrapper
+          +dropdown__flex(['block', 'block_mb7px'])
+            +text('span', 'взрослые', ['text_bold', 'text_ttu'])
+            +dropdown__buttons
+              +dropdown__button('-', 'dropdown__button_tran')
+              +text('span', '0', ['text_bold', 'text_ttu', 'dropdown__amount'])
+              +dropdown__button('+')
+          +dropdown__flex(['block', 'block_mb7px'])
+            +text('span', 'дети', ['text_bold', 'text_ttu'])
+            +dropdown__buttons
+              +dropdown__button('-', 'dropdown__button_tran')
+              +text('span', '0', ['text_bold', 'text_ttu', 'dropdown__amount'])
+              +dropdown__button('+')
+          +dropdown__flex(['block', 'block_mb19px'])
+            +text('span', 'младенцы', ['text_bold', 'text_ttu'])
+            +dropdown__buttons
+              +dropdown__button('-', 'dropdown__button_tran')
+              +text('span', '0', ['text_bold', 'text_ttu', 'dropdown__amount'])
+              +dropdown__button('+')
           // убрал высоту и кнопка оказалась за блоком
-          button.text.text_bold.text_ttu.text_BC9CFF.text_right применить
+          +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'text_right'], 'применить')
       // гости
-      .dropdown.dropdown_w32.block.block_ml72px
-        p.text.text_bold.text_ttu.block.block_mb5px dropdown
-        span.check-mark
-          input.input.input_square-angles.input_border-color.text.text_b.text_1F2041-075(type='text' name='guests' value='3 гостя')
-        .dropdown__wrapper
-          .dropdown-flex.block.block_mb7px
-            span.text.text_bold.text_ttu взрослые
-            .dropdown__buttons
-              button.dropdown__button
-                span -
-              span.text.text_bold.text_ttu.dropdown__amount 2
-              button.dropdown__button +
-          .dropdown-flex.block.block_mb7px
-            span.text.text_bold.text_ttu дети
-            .dropdown__buttons
-              button.dropdown__button -
-              span.text.text_bold.text_ttu.dropdown__amount 1
-              button.dropdown__button +
-          .dropdown-flex.block.block_mb19px
-            span.text.text_bold.text_ttu младенцы
-            .dropdown__buttons
-              button.dropdown__button.dropdown__button_tran -
-              span.text.text_bold.text_ttu.dropdown__amount 0
-              button.dropdown__button +
-          button.text.text_bold.text_ttu.text_BC9CFF очистить
-          button.text.text_bold.text_ttu.text_BC9CFF.text_right применить
+      +dropdown(['dropdown_w32', 'block', 'block_ml72px'])
+        +text('p', 'dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
+        +check-mark
+          +input-bold(type='text' name='guests' value='3 гостя')
+        +dropdown__wrapper
+          +dropdown__flex(['block', 'block_mb7px'])
+            +text('span', 'взрослые', ['text_bold', 'text_ttu'])
+            +dropdown__buttons
+              +dropdown__button('-', 'dropdown__button_tran')
+              +text('span', '2', ['text_bold', 'text_ttu', 'dropdown__amount'])
+              +dropdown__button('+')
+          +dropdown__flex(['block', 'block_mb7px'])
+            +text('span', 'дети', ['text_bold', 'text_ttu'])
+            +dropdown__buttons
+              +dropdown__button('-', 'dropdown__button_tran')
+              +text('span', '1', ['text_bold', 'text_ttu', 'dropdown__amount'])
+              +dropdown__button('+')
+          +dropdown__flex(['block', 'block_mb19px'])
+            +text('span', 'младенцы', ['text_bold', 'text_ttu'])
+            +dropdown__buttons
+              +dropdown__button('-', 'dropdown__button_tran')
+              +text('span', '0', ['text_bold', 'text_ttu', 'dropdown__amount'])
+              +dropdown__button('+')
+          +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF'], 'очистить')
+          +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'text_right'], 'применить')
     .form-elements__row3
       .form-elements__row3_column1
         // дополнительные удобства
-        details.expandable-list
-          summary.expandable-list__summary.check-mark.block.block_mb17px
-            span.text.text_bold.text_ttu expandable checkbox list
-          .checkbox-list
-            label.checkbox-button
-              input.checkbox-button__input(type='checkbox' name='breakfast')
-              span.checkbox-button__fake-input
-              span.text.text_b.text_1F2041-05.block.block_ml10px Завтрак
-            label.checkbox-button
-              input.checkbox-button__input(type='checkbox' name='desk' checked='')
-              span.checkbox-button__fake-input
-              span.text.text_b.text_1F2041-05.block.block_ml10px Письменный стол
-            label.checkbox-button
-              input.checkbox-button__input(type='checkbox' name='feeding_chair' checked='')
-              span.checkbox-button__fake-input
-              span.text.text_b.text_1F2041-05.block.block_ml10px Стул для кормления
-            label.checkbox-button
-              input.checkbox-button__input(type='checkbox' name='child_bed' checked='')
-              span.checkbox-button__fake-input
-              span.text.text_b.text_1F2041-05.block.block_ml10px Кроватка
-            label.checkbox-button
-              input.checkbox-button__input(type='checkbox' name='tv')
-              span.checkbox-button__fake-input
-              span.text.text_b.text_1F2041-05.block.block_ml10px Телевизор
-            label.checkbox-button
-              input.checkbox-button__input(type='checkbox' name='shampoo')
-              span.checkbox-button__fake-input
-              span.text.text_b.text_1F2041-05.block.block_ml10px Шампунь
+        +expandable-list
+          +expandable-list__summary(['check-mark', 'block', 'block_mb17px'])
+            +text('span', 'expandable checkbox list', ['text_bold', 'text_ttu'])
+          +checkbox-list
+            +checkbox-button()
+              +checkbox-button__input(type='checkbox' name='breakfast')
+              +checkbox-button__fake-input()
+              +text('span', 'Завтрак', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button()
+              +checkbox-button__input-checked(type='checkbox' name='desk')
+              +checkbox-button__fake-input()
+              +text('span', 'Письменный стол', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button()
+              +checkbox-button__input-checked(type='checkbox' name='feeding_chair')
+              +checkbox-button__fake-input()
+              +text('span', 'Стул для кормления', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button()
+              +checkbox-button__input-checked(type='checkbox' name='child_bed')
+              +checkbox-button__fake-input()
+              +text('span', 'Кроватка', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button()
+              +checkbox-button__input(type='checkbox' name='tv')
+              +checkbox-button__fake-input()
+              +text('span', 'Телевизор', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button()
+              +checkbox-button__input(type='checkbox' name='shampoo')
+              +checkbox-button__fake-input()
+              +text('span', 'Шампунь', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
         // дополнительные удобства
-        details.expandable-list(open='')
-          summary.expandable-list__summary.check-mark.block.block_mb17px
-            span.text.text_bold.text_ttu expandable checkbox list
-          .checkbox-list
-            label.checkbox-button
-              input.checkbox-button__input(type='checkbox' name='breakfast')
-              span.checkbox-button__fake-input
-              span.text.text_b.text_1F2041-05.block.block_ml10px Завтрак
-            label.checkbox-button
-              input.checkbox-button__input(type='checkbox' name='desk' checked='')
-              span.checkbox-button__fake-input
-              span.text.text_b.text_1F2041-05.block.block_ml10px Письменный стол
-            label.checkbox-button
-              input.checkbox-button__input(type='checkbox' name='feeding_chair' checked='')
-              span.checkbox-button__fake-input
-              span.text.text_b.text_1F2041-05.block.block_ml10px Стул для кормления
-            label.checkbox-button
-              input.checkbox-button__input(type='checkbox' name='child_bed' checked='')
-              span.checkbox-button__fake-input
-              span.text.text_b.text_1F2041-05.block.block_ml10px Кроватка
-            label.checkbox-button
-              input.checkbox-button__input(type='checkbox' name='tv')
-              span.checkbox-button__fake-input
-              span.text.text_b.text_1F2041-05.block.block_ml10px Телевизор
-            label.checkbox-button
-              input.checkbox-button__input(type='checkbox' name='shampoo')
-              span.checkbox-button__fake-input
-              span.text.text_b.text_1F2041-05.block.block_ml10px Шампунь
+        +expandable-list
+          +expandable-list__summary(['check-mark', 'block', 'block_mb17px'])
+            +text('span', 'expandable checkbox list', ['text_bold', 'text_ttu'])
+          +checkbox-list
+            +checkbox-button()
+              +checkbox-button__input(type='checkbox' name='breakfast')
+              +checkbox-button__fake-input()
+              +text('span', 'Завтрак', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button()
+              +checkbox-button__input-checked(type='checkbox' name='desk')
+              +checkbox-button__fake-input()
+              +text('span', 'Письменный стол', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button()
+              +checkbox-button__input-checked(type='checkbox' name='feeding_chair')
+              +checkbox-button__fake-input()
+              +text('span', 'Стул для кормления', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button()
+              +checkbox-button__input-checked(type='checkbox' name='child_bed')
+              +checkbox-button__fake-input()
+              +text('span', 'Кроватка', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button()
+              +checkbox-button__input(type='checkbox' name='tv')
+              +checkbox-button__fake-input()
+              +text('span', 'Телевизор', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button()
+              +checkbox-button__input(type='checkbox' name='shampoo')
+              +checkbox-button__fake-input()
+              +text('span', 'Шампунь', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
       // доступность
-      .rich-Checkbox-Buttons.block.block_ml180px
-        p.text.text_bold.text_ttu.block.block_mb16px rich Checkbox Buttons
-        label.checkbox-button.block.block_mb5px
-          input.checkbox-button__input(type='checkbox' name='corridor')
-          span.checkbox-button__fake-input
-          span.text.text_b.text_1F2041-075.text_bold.block.block_ml10px Широкий коридор
-        p.text.text_lh14.text_1F2041-05.block.block_ml30px.block_mb10px
-          | Ширина коридоров в номере 
-          br
-          | не менее 91 см.
-        label.checkbox-button.block.block_mb5px
-          input.checkbox-button__input(type='checkbox' name='helper')
-          span.checkbox-button__fake-input
-          span.text.text_b.text_1F2041-075.text_bold.block.block_ml10px Помощник для инвалидов
-        p.text.text_lh14.text_1F2041-05.block.block_ml30px.block_mb10px
-          | На 1 этаже вас встретит специалист 
-          br
-          | и проводит до номера.
+      +rich-Checkbox-Buttons(['block', 'block_ml180px'])
+        +text('p', 'rich Checkbox Buttons', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
+        +checkbox-button()
+          +checkbox-button__input(type='checkbox' name='corridor')
+          +checkbox-button__fake-input()
+          +text('span', 'Широкий коридор', ['text_b', 'text_1F2041-05', 'text_bold', 'block', 'block_ml10px'])
+        +text('p', 'Ширина коридоров в номере не менее 91 см.', ['text_lh14', 'text_1F2041-05', 'block', 'block_ml30px', 'block_mb10px'])
+        +checkbox-button()
+          +checkbox-button__input(type='checkbox' name='helper')
+          +checkbox-button__fake-input()
+          +text('span', 'Помощник для инвалидов', ['text_b', 'text_1F2041-05', 'text_bold', 'block', 'block_ml10px'])
+        +text('p', 'На 1 этаже вас встретит специалист и проводит до номера.', ['text_lh14', 'text_1F2041-05', 'block', 'block_ml30px'])
       // Правила гостиницы
-      .bullet-list.block.block_ml126px
-        p.text.text_bold.text_ttu.block.block_mb16px bullet list
-        ul
-          li.bullet-list__item
-            span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px Нельзя с питомцами
-          li.bullet-list__item
-            span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px Без вечеринок и мероприятий
-          li.bullet-list__item
-            span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px
-              | Время прибытия — после 13:00,
-              br
-              |  а выезд до 12:00
+      +bullet-list(['block', 'block_ml126px'])
+        +text('p', 'bullet list', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
+        +list
+        //- ul
+        //-   li.bullet-list__item
+        //-     span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px Нельзя с питомцами
+        //-   li.bullet-list__item
+        //-     span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px Без вечеринок и мероприятий
+        //-   li.bullet-list__item
+        //-     span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px
+        //-       | Время прибытия — после 13:00,
+        //-       br
+        //-       |  а выезд до 12:00
     .form-elements__row4
       // Сведения о номере
-      .room-info
-        .advantages
-          .advantages__img
+      +room-info
+        +advantages
+          +advantages__img
             img(src='img/insert_emoticon.png' alt='smile')
+          +text('p', )
           p.text.text_b.text_1F2041-075.block.block_ml10px
             span.text_bold.display_b.block.block_mb8px Комфорт
             |                     Шумопоглощающие стены

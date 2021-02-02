@@ -652,7 +652,7 @@ a {
 .dropdown__wrapper_off-buttons {
     padding-bottom: 0.8rem;
 }
-.dropdown-flex {
+.dropdown__flex {
     display: flex;
     justify-content: space-between;
     align-items: center;

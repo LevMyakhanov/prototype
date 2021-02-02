@@ -1,0 +1,18 @@
+mixin dropdown(classes)
+    .dropdown(class=classes)
+        block
+
+mixin dropdown__wrapper(classes)
+    .dropdown__wrapper(class=classes)
+        block
+
+mixin dropdown__flex(classes)
+    .dropdown__flex(class=classes)
+        block
+
+mixin dropdown__buttons()
+    .dropdown__buttons
+        block
+
+mixin dropdown__button(text, classes)
+    button.dropdown__button(class=classes)= text
