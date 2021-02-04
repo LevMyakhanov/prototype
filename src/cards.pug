@@ -9,254 +9,251 @@ html(lang='ru')
     title Document
   body
     .cards
-      .cards__column1
-        include ./common.blocks/room-search/room-search.pug
-        include ./common.blocks/text/text.pug
-        include ./common.blocks/input-wrapper/input-wrapper.pug
-        include ./common.blocks/field/field.pug
+        .cards__column1
+            include ./common.blocks/room-search/room-search.pug
+            include ./common.blocks/text/text.pug
+            include ./common.blocks/input-wrapper/input-wrapper.pug
+            include ./common.blocks/field/field.pug
+            include ./common.blocks/field-name/field-name.pug
+            include ./common.blocks/check-mark/check-mark.pug
+            include ./common.blocks/input/input.pug
+            include ./common.blocks/button/button.pug
+            include ./common.blocks/account-reg/account-reg.pug
+            include ./common.blocks/radio-button-wrapper/radio-button-wrapper.pug
+            include ./common.blocks/radio-button/radio-button.pug
+            include ./common.blocks/toggle/toggle.pug
+            include ./common.blocks/href-button/href-button.pug
+            include ./common.blocks/booking/booking.pug
+            include ./common.blocks/booking-wrapper/booking-wrapper.pug
+            include ./common.blocks/enter/enter.pug
+            include ./common.blocks/calendar/calendar.pug
+            include ./common.blocks/room/room.pug
 
 
-
-        // форма для поиска номеров
-        +room-search(['block', 'block_mb40px'])
-            +text('p', 'Найдём номера под ваши пожелания', ['text_l', 'block', 'block_mb22px'])
-            +input-wrapper(['block', 'block_mb20px'])
-                +field('label', 'field_small')
-                    +field-name('прибытие')
+            // форма для поиска номеров
+            +room-search(['block', 'block_mb40px'])
+                +text('p', 'Найдём номера под ваши пожелания', ['text_l', 'block', 'block_mb22px'])
+                +input-wrapper(['block', 'block_mb20px'])
+                    +field('label', 'field_small')
+                        +field-name('прибытие')
+                        +check-mark
+                            +input(type='date' name='arrival', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
+                    +field('label', 'field_small')
+                        +field-name('выезд')
+                        +check-mark
+                            +input(type='date' name='departure', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
+                +field('div', ['block', 'block_mb31px'])
+                    +field-name('гости')
                     +check-mark
-                        +input(type='date' name='arrival', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
-                +field('label', 'field_small')
-                    +field-name('выезд')
+                        +input(type='text', name='amount of guests',  value='Сколько гостей', class=['text', 'text_b', 'text_1F2041-075'])
+                +button(['button', 'button_long'])
+                    +text('span', 'подобрать номер', ['text_bold', 'text_ttu', 'text_FFF'])
+            // регистрация аккаунта
+            +account-reg
+                +text('p', 'Регистрация аккаунта', ['text_l', 'account-reg_pp', 'block', 'block_mb22px'])
+                +input(type='text' name='first name' placeholder='Имя', class=['text', 'text_b', 'text_1F2041-075', 'block', 'block_mb10px'])
+                +input(type='text' name='last name' placeholder='Фамилия', class=['text', 'text_b', 'text_1F2041-075', 'block', 'block_mb10px'])        
+                +radio-button-wrapper(['block', 'block_mb23px'])
+                    +radio-button('gender', 'Мужчина', true)
+                    +radio-button('gender', 'Женщина')
+                +field('label')
+                    +field-name('дата рождения')
+                    +input(type='date' name='masked text field', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075', 'block', 'block_mb20px'])
+                +field-name('данные для входа в сервис')
+                +input(type='email' name='email' placeholder='Email', class=['text', 'text_b', 'text_1F2041-075', 'block', 'block_mb10px'])
+                +input(type='password' name='password' placeholder='Пароль', class=['text', 'text_b', 'text_1F2041-075', 'block', 'block_mb10px'])
+                +toggle(['block', 'block_mb24px'], 'Получать спецпредложения')
+                +button(['button', 'button_long', 'block', 'block_mb30px'])
+                    +text('span', 'перейти к оплате', ['text_bold', 'text_ttu', 'text_FFF'])
+                +href-button
+                    a(href='#')
+                        +text('p', 'Уже есть аккаунт на Toxin', ['text_b', 'text_000'])
+                    +button(['button', 'button_bordered'])
+                        +text('span', 'войти', ['text_bold', 'text_ttu', 'text_BC9CFF'])
+        .cards__column1.block.block_ml40px
+            // бронирование номера
+            +booking(['block', 'block_mb39px'])
+                +booking-wrapper(['block', 'block_mb23px'])
+                    +booking__room-name(['text', 'text_bold'])
+                        +text('span', '№', ['text_fs14', 'text_lh17'])
+                        +text('span', '888', ['booking__room-number', 'text_fs24', 'text_lh29'])
+                        +text('span', 'люкс', ['text_ttu', 'text_BC9CFF'])                    
+                    +booking__room-price('text', 'text_lh14', 'text_1F2041-05')
+                        +text('span', '9 990₽ ', ['text_fs14', 'text_bold'])
+                        +text('span', 'в сутки')               
+                +input-wrapper(['block', 'block_mb20px'])
+                    +field('label','field_small')
+                        +field-name('выезд')
+                        +check-mark
+                            +input(type='date', name='arrival', value='2019-08-19', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
+                    +field('label','field_small')
+                        +field-name('прибытие')
+                        +check-mark
+                            +input(type='date', name='departure', value='2019-08-23', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
+                +field('div', ['block', 'block_mb20px'])
+                    +field-name('гости')
                     +check-mark
-                        +input(type='date' name='departure', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
-            +field('div', ['block', 'block_mb31px'])
-                +field-name('гости')
-                +check-mark
-                    +input(type='text', name='amount of guests',  value='Сколько гостей', ['text', 'text_b', 'text_1F2041-075'])
-            
-          button.button.button_long
-            span.text.text_bold.text_ttu.text_FFF подобрать номер
-        // регистрация аккаунта
-        .account-reg
-          p.text.text_l.account-reg_pp.block.block_mb22px Регистрация аккаунта
-          input.input.text.text_b.text_1F2041-075.block.block_mb10px(type='text' name='first name' placeholder='Имя')
-          input.input.text.text_b.text_1F2041-075.block.block_mb10px(type='text' name='last name' placeholder='Фамилия')
-          .radio-button-wrapper.block.block_mb23px
-            label.radio-button
-              input.radio-button__input(type='radio' name='gender' checked='')
-              span.radio-button__fake-input.radio-button_round
-              span.text.text_b.text_lh20.text_1F2041-05.block.block_ml10px Мужчина
-            label.radio-button.block.block_ml20px
-              input.radio-button__input(type='radio' name='gender')
-              span.radio-button__fake-input.radio-button_round
-              span.text.text_b.text_lh20.text_1F2041-05.block.block_ml10px Женщина
-          label.field
-            span.field-name.text.text_bold.text_ttu.block.block_mb5px дата рождения
-            input.input.input_hidden.text.text_b.text_ttu.text_1F2041-075.block.block_mb20px(type='date' name='masked text field')
-          span.field-name.text.text_bold.text_ttu.block.block_mb5px данные для входа в сервис
-          input.input.text.text_b.text_1F2041-075.block.block_mb10px(type='email' name='email' placeholder='Email')
-          input.input.text.text_b.text_1F2041-075.block.block_mb10px(type='password' name='password' placeholder='Пароль')
-          label.toggle.block.block_mb24px
-            input.toggle__input(type='checkbox' name='special offers')
-            span.toggle__input_fake
-            span.text.text_b.text_lh20.text_1F2041-075.block.block_ml10px Получать спецпредложения
-          button.button.button_long.block.block_mb30px
-            span.text.text_bold.text_ttu.text_FFF перейти к оплате
-          .href-button
-            a(href='#')
-              p.text.text_b.text_000 Уже есть аккаунт на Toxin
-            button.button.button_bordered
-              span.text.text_bold.text_ttu.text_BC9CFF войти
-      .cards__column1.block.block_ml40px
-        // бронирование номера
-        .booking.block.block_mb39px
-          .booking-wrapper.block.block_mb23px
-            p.booking__room-name.text.text_bold
-              span.text_fs14.text_lh17 №
-              span.booking__room-number.text_fs24.text_lh29 888
-              span.text_ttu.text_BC9CFF люкс
-            p.booking__room-price.text.text_lh14.text_1F2041-05
-              span.text_fs14.text_bold 9 990₽
-              span в сутки
-          .input-wrapper.block.block_mb20px
-            label.field.field_small
-              span.field-name.text.text_bold.text_ttu.block.block_mb5px прибытие
-              span.check-mark
-                input.input.input_hidden.text.text_b.text_ttu.text_1F2041-075(type='date' name='arrival' value='2019-08-19')
-            label.field.field_small
-              span.field-name.text.text_bold.text_ttu.block.block_mb5px выезд
-              span.check-mark
-                input.input.input_hidden.text.text_b.text_ttu.text_1F2041-075(type='date' name='departure' value='2019-08-23')
-          .field.block.block_mb20px
-            span.field-name.text.text_bold.text_ttu.block.block_mb5px гости
-            span.check-mark
-              input.input.text.text_b.text_1F2041-075(name='amount of guests' type='text' value='3 гостя')
-          .booking-wrapper.block.block_mb13px
-            p.text.text_b.text_lh22.text_1F2041-075 9 990₽ х 4 суток
-            p.text.text_b.text_lh22.text_1F2041-075 39 960₽
-          .booking-wrapper_top.check.block.block_mb15px
-            .booking__wr
-              p.text.text_b.text_lh18.text_1F2041-075 Сбор за услуги: скидка 2 179₽
-              // как расположить иконку
-              .booking__logo
-                p.booking__text i
-            p.text.text_b.text_lh18.text_1F2041-075 0₽
-          .booking-wrapper_top.check.block.block_mb30px
-            .booking__wr
-              p.text.text_b.text_lh18.text_1F2041-075.booking_min-w
-                | Сбор за дополнительные 
-                br
-                | услуги
-              .booking__logo
-                p.booking__text i
-            p.text.text_b.text_lh18.text_1F2041-075 300₽
-          .booking-wrapper.block.block_mb20px.block_mr-9px
-            p.text.text_m Итого
-            p.text.text_m 38 081₽
-          button.button.button_long
-            span.text.text_bold.text_ttu.text_FFF забронировать
-        // вход в аккаунт
-        .enter
-          p.enter__text-p_pp.text.text_l.block.block_mb26px Войти
-          input.input.text.text_b.text_1F2041-075.enter__input_pp.block.block_mb10px(type='email' name='email' placeholder='Email')
-          input.input.text.text_b.text_1F2041-075.block.block_mb20px(type='password' name='password' placeholder='Пароль')
-          button.button.button_long.block.block_mb30px
-            span.text.text_bold.text_ttu.text_FFF войти
-          .href-button
-            a(href='#')
-              p.text.text_b.text_000 Нет аккаунта на Toxin
-            button.button.button_bordered
-              span.text.text_bold.text_ttu.text_BC9CFF создать
-      .cards__column3.block.block_ml40px
-        // календарь
-        .calendar.calendar__pp.block.block_mb40px
-          .calendar__header.block.block_mb30px
-            a(href='#')
-              img.calendar__arrow_l(src='img/arrow_back.png' alt='arrow_back')
-            p.calendar__header_text.text.text_m Август 2019
-            a(href='#')
-              img.calendar__arrow_r(src='img/arrow_forward_violet.png' alt='arrow_forward')
-          table.calendar__table.block.block_mb20px
-            tbody
-              tr
-                td.calendar__td.text.text_bold.text_BC9CFF.tt_none Пн
-                td.calendar__td.text.text_bold.text_BC9CFF.tt_none Вт
-                td.calendar__td.text.text_bold.text_BC9CFF.tt_none Ср
-                td.calendar__td.text.text_bold.text_BC9CFF.tt_none Чт
-                td.calendar__td.text.text_bold.text_BC9CFF.tt_none Пт
-                td.calendar__td.text.text_bold.text_BC9CFF.tt_none Сб
-                td.calendar__td.text.text_bold.text_BC9CFF.tt_none Вс
-              tr
-                td.calendar__td.text.text_1F2041-025 29
-                td.calendar__td.text.text_1F2041-025 30
-                td.calendar__td.text.text_1F2041-025 31
-                td.calendar__td.text.text_1F2041-05 1
-                td.calendar__td.text.text_1F2041-05 2
-                td.calendar__td.text.text_1F2041-05 3
-                td.calendar__td.text.text_1F2041-05 4
-              tr
-                td.calendar__td.text.text_1F2041-05 5
-                td.calendar__td.text.text_1F2041-05 6
-                td.calendar__td.text.text_1F2041-05 7
-                td.calendar__td.calendar_green.text.text_bold.text_FFF 8
-                td.calendar__td.text.text_1F2041-05 9
-                td.calendar__td.text.text_1F2041-05 10
-                td.calendar__td.text.text_1F2041-05 11
-              tr
-                td.calendar__td.text.text_1F2041-05 12
-                td.calendar__td.text.text_1F2041-05 13
-                td.calendar__td.text.text_1F2041-05 14
-                td.calendar__td.text.text_1F2041-05 15
-                td.calendar__td.text.text_1F2041-05 16
-                td.calendar__td.text.text_1F2041-05 17
-                td.calendar__td.text.text_1F2041-05 18
-              tr
-                td.calendar__td.calendar_purple.text.text_bold.text_FFF 19
-                td.calendar__td.text.text_1F2041-05 20
-                td.calendar__td.text.text_1F2041-05 21
-                td.calendar__td.text.text_1F2041-05 22
-                td.calendar__td.calendar_purple.text.text_bold.text_FFF 23
-                td.calendar__td.text.text_1F2041-05 24
-                td.calendar__td.text.text_1F2041-05 25
-              tr
-                td.calendar__td.text.text_1F2041-05 26
-                td.calendar__td.text.text_1F2041-05 27
-                td.calendar__td.text.text_1F2041-05 28
-                td.calendar__td.text.text_1F2041-05 29
-                td.calendar__td.text.text_1F2041-05 30
-                td.calendar__td.text.text_1F2041-05 31
-                td.calendar__td.text.text_1F2041-025 1
-          .booking-wrapper
-            button.text.text_bold.text_ttu.text_BC9CFF очистить
-            button.text.text_bold.text_ttu.text_BC9CFF применить
-        // вид отдельного номера
-        .room.block.block_mb40px
-          // у картинки не скруглились углы
-          // фотография номера
-          .room__img-wr
-            img.room__img(src='img/image.jpg' alt='room1')
-            button.room__button.room__button_left
-            button.room__button.room__button_right
-            .room__rounds-wrapper
-              button.room__image-scroll.room__image-scroll_active
-              button.room__image-scroll.block.block_ml4px
-              button.room__image-scroll.block.block_ml4px
-              button.room__image-scroll.block.block_ml4px
-          .booking-wrapper.room_md.block.block_mb20px
-            p.text.text_bold
-              span.text_fs14.text_lh17 №
-              span.text_fs20.text_lh29 888
-              span.text_ttu.text_BC9CFF.block_ml-3px люкс
-            p.booking-text-r-pp.text.text_lh18.text_1F2041-05
-              span.text_fs14.text_bold 9 990₽
-              span в сутки
-          .room__like-wrapper
-            .room__star-wrapper
-              button.room__button-star
-                img(src='img/star.png' alt='star')
-              button.room__button-star
-                img(src='img/star.png' alt='star')
-              button.room__button-star
-                img(src='img/star.png' alt='star')
-              button.room__button-star
-                img(src='img/star.png' alt='star')
-              button.room__button-star
-                img(src='img/star.png' alt='star')
-            p.block.block_mr9px.text.text_lh18.text_1F2041-05
-              span.text_fs14.text_bold 145
-              span Отзывов
-        // вид отдельного номера
-        .room
-          // у картинки не скруглились углы
-          .room__img-wr
-            img.room__img(src='img/image2.jpg' alt='room1')
-            button.room__button.room__button_left
-            button.room__button.room__button_right
-            .room__rounds-wrapper
-              button.room__image-scroll.room__image-scroll_active
-              button.room__image-scroll.block.block_ml4px
-              button.room__image-scroll.block.block_ml4px
-              button.room__image-scroll.block.block_ml4px
-          .booking-wrapper.room_md.block.block_mb20px
-            p.text.text_bold
-              span.text_fs14.text_lh17 №
-              span.text_fs20.text_lh29 840
-              span.text_ttu.text_BC9CFF.block_ml-3px люкс
-            p.booking-text-r-pp.text.text_lh18.text_1F2041-05
-              span.text_fs14.text_bold 9 990₽
-              span в сутки
-          .room__like-wrapper
-            .room__star-wrapper
-              button.room__button-star
-                img(src='img/star.png' alt='star')
-              button.room__button-star
-                img(src='img/star.png' alt='star')
-              button.room__button-star
-                img(src='img/star.png' alt='star')
-              button.room__button-star
-                img(src='img/star.png' alt='star')
-              button.room__button-star
-                img(src='img/star.png' alt='star')
-            p.block.block_mr9px.text.text_lh18.text_1F2041-05
-              span.text_fs14.text_bold 65
-              span Отзывов
+                        +input(type='text', name='amount of guests', value='3 гостя', class=['text', 'text_b', 'text_1F2041-075'])
+                +booking-wrapper('block', 'block_mb13px')
+                    +text('p', '9 990₽ х 4 суток', ['text_b', 'text_lh22', 'text_1F2041-075'])
+                    +text('p', '39 960₽', ['text_b', 'text_lh22', 'text_1F2041-075'])                
+                +booking-wrapper_top(['check', 'block', 'block_mb15px'])
+                    +booking__wr
+                        +text('p', 'Сбор за услуги: скидка 2 179₽', ['text_b', 'text_lh18', 'text_1F2041-075'])                       
+                        +booking__logo
+                    +text('p', '0₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
+                +booking-wrapper_top(['check', 'block', 'block_mb30px'])                   
+                    +booking__wr
+                        +text('p', 'Сбор за дополнительные услуги', ['text_b', 'text_lh18', 'text_1F2041-075', 'booking_min-w'])
+                        +booking__logo
+                    +text('p', '300₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
+                +booking-wrapper(['block', 'block_mb20px', 'block_mr-9px'])
+                    +text('p', 'Итого', 'text_m')
+                    +text('p', '38 081₽', 'text_m')
+                +button(['button', 'button_long'])
+                    +text('span', 'забронировать', ['text_bold', 'text_ttu', 'text_FFF'])
+                // вход в аккаунт
+            +enter
+                +text('p', 'Войти', ['enter__text-p_pp', 'text_l', 'block', 'block_mb26px'])
+                +input(type='email' name='email' placeholder='Email', class=['text', 'text_b', 'text_1F2041-075', 'enter__input_pp', 'block', 'block_mb10px'])
+                +input(type='password' name='password' placeholder='Пароль', class=['text', 'text_b', 'text_1F2041-075', 'block', 'block_mb20px'])               
+                +button(['button', 'button_long', 'block', 'block_mb30px'])
+                    +text('span', 'войти', ['text_bold', 'text_ttu', 'text_FFF'])
+                +href-button
+                    a(href='#')
+                        +text('p', 'Уже есть аккаунт на Toxin', ['text_b', 'text_000'])
+                    +button(['button', 'button_bordered'])
+                        +text('span', 'создать', ['text_bold', 'text_ttu', 'text_BC9CFF'])
+        .cards__column3.block.block_ml40px
+            // календарь
+            +calendar(['calendar__pp', 'block', 'block_mb40px'])
+                +calendar__header(['block', 'block_mb30px'])
+                    a(href='#')
+                        img.calendar__arrow_l(src='img/arrow_back.png' alt='arrow_back')
+                    +text('p', 'Август 2019', ['calendar__header_text', 'text_m'])
+                    a(href='#')
+                        img.calendar__arrow_r(src='img/arrow_forward_violet.png' alt='arrow_forward')
+                +calendar__table(['block', 'block_mb20px'])
+                    +week(['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'])
+                    //- tr
+                    //-     td.calendar__td.text.text_bold.text_BC9CFF.tt_none Пн
+                    //-     td.calendar__td.text.text_bold.text_BC9CFF.tt_none Вт
+                    //-     td.calendar__td.text.text_bold.text_BC9CFF.tt_none Ср
+                    //-     td.calendar__td.text.text_bold.text_BC9CFF.tt_none Чт
+                    //-     td.calendar__td.text.text_bold.text_BC9CFF.tt_none Пт
+                    //-     td.calendar__td.text.text_bold.text_BC9CFF.tt_none Сб
+                    //-     td.calendar__td.text.text_bold.text_BC9CFF.tt_none Вс
+                    tr
+                        td.calendar__td.text.text_1F2041-025 29
+                        td.calendar__td.text.text_1F2041-025 30
+                        td.calendar__td.text.text_1F2041-025 31
+                        td.calendar__td.text.text_1F2041-05 1
+                        td.calendar__td.text.text_1F2041-05 2
+                        td.calendar__td.text.text_1F2041-05 3
+                        td.calendar__td.text.text_1F2041-05 4
+                    tr
+                        td.calendar__td.text.text_1F2041-05 5
+                        td.calendar__td.text.text_1F2041-05 6
+                        td.calendar__td.text.text_1F2041-05 7
+                        td.calendar__td.calendar_green.text.text_bold.text_FFF 8
+                        td.calendar__td.text.text_1F2041-05 9
+                        td.calendar__td.text.text_1F2041-05 10
+                        td.calendar__td.text.text_1F2041-05 11
+                    tr
+                        td.calendar__td.text.text_1F2041-05 12
+                        td.calendar__td.text.text_1F2041-05 13
+                        td.calendar__td.text.text_1F2041-05 14
+                        td.calendar__td.text.text_1F2041-05 15
+                        td.calendar__td.text.text_1F2041-05 16
+                        td.calendar__td.text.text_1F2041-05 17
+                        td.calendar__td.text.text_1F2041-05 18
+                    tr
+                        td.calendar__td.calendar_purple.text.text_bold.text_FFF 19
+                        td.calendar__td.text.text_1F2041-05 20
+                        td.calendar__td.text.text_1F2041-05 21
+                        td.calendar__td.text.text_1F2041-05 22
+                        td.calendar__td.calendar_purple.text.text_bold.text_FFF 23
+                        td.calendar__td.text.text_1F2041-05 24
+                        td.calendar__td.text.text_1F2041-05 25
+                    tr
+                        td.calendar__td.text.text_1F2041-05 26
+                        td.calendar__td.text.text_1F2041-05 27
+                        td.calendar__td.text.text_1F2041-05 28
+                        td.calendar__td.text.text_1F2041-05 29
+                        td.calendar__td.text.text_1F2041-05 30
+                        td.calendar__td.text.text_1F2041-05 31
+                        td.calendar__td.text.text_1F2041-025 1
+                +booking-wrapper
+                    +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF'], 'очистить')
+                    +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF'], 'применить')
+            // вид отдельного номера
+            +room(['block', 'block_mb40px'])
+                // у картинки не скруглились углы
+                // фотография номера
+                +room__img-wr
+                    img.room__img(src='img/image.jpg' alt='room1')
+                    +button(['room__button', 'room__button_left'])
+                    +button(['room__button', 'room__button_right'])                   
+                    +room__rounds-wrapper
+                        +button(['room__image-scroll', 'room__image-scroll_active'])
+                        +button(['room__image-scroll', 'block', 'block_ml4px'])
+                        +button(['room__image-scroll', 'block', 'block_ml4px'])
+                        +button(['room__image-scroll', 'block', 'block_ml4px'])
+                +booking-wrapper(['room_md', 'block', 'block_mb20px'])
+                    p.text.text_bold
+                        span.text_fs14.text_lh17 №
+                        span.text_fs20.text_lh29 888
+                        span.text_ttu.text_BC9CFF.block_ml-3px люкс
+                    p.booking-text-r-pp.text.text_lh18.text_1F2041-05
+                        span.text_fs14.text_bold 9 990₽
+                        span в сутки
+                .room__like-wrapper
+                    .room__star-wrapper
+                    button.room__button-star
+                        img(src='img/star.png' alt='star')
+                    button.room__button-star
+                        img(src='img/star.png' alt='star')
+                    button.room__button-star
+                        img(src='img/star.png' alt='star')
+                    button.room__button-star
+                        img(src='img/star.png' alt='star')
+                    button.room__button-star
+                        img(src='img/star.png' alt='star')
+                    p.block.block_mr9px.text.text_lh18.text_1F2041-05
+                        span.text_fs14.text_bold 145
+                        span Отзывов
+            // вид отдельного номера
+            .room
+                // у картинки не скруглились углы
+                .room__img-wr
+                    img.room__img(src='img/image2.jpg' alt='room1')
+                    button.room__button.room__button_left
+                    button.room__button.room__button_right
+                    .room__rounds-wrapper
+                    button.room__image-scroll.room__image-scroll_active
+                    button.room__image-scroll.block.block_ml4px
+                    button.room__image-scroll.block.block_ml4px
+                    button.room__image-scroll.block.block_ml4px
+                .booking-wrapper.room_md.block.block_mb20px
+                    p.text.text_bold
+                    span.text_fs14.text_lh17 №
+                    span.text_fs20.text_lh29 840
+                    span.text_ttu.text_BC9CFF.block_ml-3px люкс
+                    p.booking-text-r-pp.text.text_lh18.text_1F2041-05
+                    span.text_fs14.text_bold 9 990₽
+                    span в сутки
+                .room__like-wrapper
+                    .room__star-wrapper
+                    button.room__button-star
+                        img(src='img/star.png' alt='star')
+                    button.room__button-star
+                        img(src='img/star.png' alt='star')
+                    button.room__button-star
+                        img(src='img/star.png' alt='star')
+                    button.room__button-star
+                        img(src='img/star.png' alt='star')
+                    button.room__button-star
+                        img(src='img/star.png' alt='star')
+                    p.block.block_mr9px.text.text_lh18.text_1F2041-05
+                    span.text_fs14.text_bold 65
+                    span Отзывов

@@ -1,0 +1,99 @@
+.text {
+    font-family: "Montserrat", sans-serif, Helvetica;
+    font-size: 1.2rem;
+    color: #1f2041;
+    line-height: 1.5rem;
+    /* во всех браузерах по умолчанию font-weight: 400, font-style: normal */
+}
+.text_s {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+}
+.text_b {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+.text_m {
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+    font-weight: 700;
+}
+.text_l {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    font-weight: 700;
+}
+.text_c {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: rgba(31, 32, 65, 0.5);
+}
+
+
+.text_fs14 {
+    font-size: 1.4rem;
+}
+.text_fs24 {
+    font-size: 2.4rem;
+}
+.text_fs20 {
+    font-size: 2rem;
+}
+
+
+.text_lh17 {
+    line-height: 1.7rem;
+}
+.text_lh18 {
+    line-height: 1.8rem;
+}
+.text_lh29 {
+    line-height: 2.9rem;
+}
+.text_lh20 {
+    line-height: 2rem;
+}
+.text_lh22 {
+    line-height: 2.2rem;
+}
+.text_lh14 {
+    line-height: 1.4rem;
+}
+.text_lh24 {
+    line-height: 2.4rem;
+}
+
+
+.text_bold {
+    font-weight: 700;
+}
+.text_ttu {
+    text-transform: uppercase;
+}
+.text_ttn {
+    text-transform: none;
+}
+
+
+.text_BC9CFF {
+    color: #BC9CFF;
+}
+.text_1F2041-05 {
+    color: rgba(31, 32, 65, 0.5);
+}
+.text_1F2041-075 {
+    color: rgba(31, 32, 65, 0.75);
+}
+.text_1F2041-025 {
+    color: rgba(31, 32, 65, 0.25);
+}
+.text_FFF {
+    color: #FFF;
+}
+.text_000 {
+    color: #000;
+}
+
+.text_right {
+    float: right;
+}

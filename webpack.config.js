@@ -49,16 +49,16 @@ module.exports = {
         port: 4200
     },
     plugins: [
+        // new HTMLWebpackPlugin({
+        //     template: './formAndElements.pug',
+        //     // filename: 'formAndElements.html',
+        //     minify: {
+        //         collapseWhitespace: isProd
+        //     }
+        // }),
         new HTMLWebpackPlugin({
-            template: './formAndElements.pug',
-            // filename: 'formAndElements.html',
-            minify: {
-                collapseWhitespace: isProd
-            }
-        }),
-        new HTMLWebpackPlugin({
-            template: './cards.html',
-            filename: 'cards.html',
+            template: './cards.pug',
+            // filename: 'cards.html',
             minify: {
                 collapseWhitespace: isProd
             }

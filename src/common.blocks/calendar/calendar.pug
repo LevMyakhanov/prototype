@@ -1,0 +1,16 @@
+mixin calendar(classes)
+    .calendar(class=classes)
+        block
+
+mixin calendar__header(classes)
+    .calendar__header(class=classes)
+        block
+
+mixin calendar__table(classes)
+    table.calendar__table(class=classes)
+        block
+
+mixin week(array)
+    tr
+        each name in array
+            td.calendar__td.text.text_bold.text_BC9CFF.tt_none= name
