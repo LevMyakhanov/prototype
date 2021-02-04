@@ -1,0 +1,37 @@
+.pagination {
+    display: flex;
+}
+.pagination__href_active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: #FFFFFF;
+}
+.pagination__href {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: #FFFFFF;
+}
+.pagination__href-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+/* если display_n поднять выше не работает */
+.pagination_d-none {
+    display: none;
+}
+.pagination_pixel {
+    padding-left: 0.6rem
+}

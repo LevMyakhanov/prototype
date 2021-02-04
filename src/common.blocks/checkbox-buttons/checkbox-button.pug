@@ -1,12 +1,5 @@
-mixin checkbox-button(classes)
+mixin checkbox-button(name, text, array, classes, checked)
   label.checkbox-button(class=classes)
-    block
-
-mixin checkbox-button__input(types, names)
-    input.checkbox-button__input(type=types, name=names)
-
-mixin checkbox-button__input-checked(types, names)
-    input.checkbox-button__input(type=types, name=names, checked)
-
-mixin checkbox-button__fake-input(classes)
-    span.checkbox-button__fake-input(class=classes)
+    input.checkbox-button__input(type='checkbox', name=name, checked=checked)
+    span.checkbox-button__fake-input
+    +text('span', text, array)

@@ -1,0 +1,17 @@
+.expandable-list {
+    outline: none;
+}
+.expandable-list:first-child {
+    margin-bottom: 4.9rem;
+}
+.expandable-list__summary {
+    display: block;
+    outline: none;
+}
+.expandable-list__summary::-webkit-details-marker {
+    display: none;
+}
+.expandable-list[open] > .expandable-list__summary::after {
+    transform: rotate(-135deg);
+    margin-top: -0.2rem;
+}

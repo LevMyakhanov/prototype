@@ -14,10 +14,9 @@ html(lang='ru')
         include ./common.blocks/field-name/field-name.pug
         include ./common.blocks/input/input.pug
         include ./common.blocks/input-wrapper/input-wrapper.pug
-        include ./common.blocks/filter-name/filter-name.pug
+        include ./common.blocks/filter-date/filter-date.pug
         include ./common.blocks/form-field/form-field.pug
         include ./common.blocks/check-mark/check-mark.pug
-        include ./common.blocks/form-field/form-field__button.pug
         include ./common.blocks/checkbox-buttons/checkbox-button.pug
         include ./common.blocks/text/text.pug
         include ./common.blocks/radio-button-wrapper/radio-button-wrapper.pug
@@ -36,80 +35,58 @@ html(lang='ru')
         include ./common.blocks/bullet-list/bullet-list.pug
         include ./common.blocks/room-info/room-info.pug
         include ./common.blocks/advantages/advantages.pug
+        include ./common.blocks/comments/comments.pug
+        include ./common.blocks/like-comments/like-comments.pug
 
-        +field()
+        +field('label', ['block', 'block_mb20px'])
           +field-name()
           +field-name('Default', ['text_ttu','text_1F2041-05','text_right','block','block_mt-3px'])
-          +input(type='email', name='email', placeholder='Email')
-        +field()
+          +input(type='email', name='email', placeholder='Email', class=['text', 'text_b', 'text_1F2041-075'])
+        +field('label', ['block', 'block_mb20px'])
           +field-name()
           +field-name('Hover / Focus', ['text_ttu','text_1F2041-05','text_right','block','block_mb5px'])
-          +input(type='text', name='text', value='This is pretty awesome')
-        +field('div', 'block_mb22px')
+          +input(type='text', name='text', value='This is pretty awesome', class=['text', 'text_b', 'text_1F2041-075'])
+        +field('div', ['block', 'block_mb22px'])
           +field-name('Dropdown')
           +check-mark
-            +input(type='text', name='amount of guests', value='Сколько гостей')
-        +field('label','block_mb41px')
+            +input(type='text', name='amount of guests', value='Сколько гостей', class=['text', 'text_b', 'text_1F2041-075'])
+        +field('label', ['block', 'block_mb41px'])
           +field-name('masked text field')
-          +input(type='text', name='masked text field', placeholder='ДД.ММ.ГГГГ', pattern='\d{1,2}\/d{1,2}\/d{4}', class='text_ttu', readonly)
+          +input(type='text', name='masked text field', placeholder='ДД.ММ.ГГГГ', pattern='\d{1,2}\/d{1,2}\/d{4}', class=['text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
         +input-wrapper(['block', 'block_mb40px'])
           +field('label','field_small')
             +field-name('date Dropdown')
             +check-mark
-              +input(type='date', name='arrival', class=['input_hidden', 'text_ttu'], readonly)
-          +field('label','field_small')
+              +input(type='date', name='arrival', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
+          +field('label', 'field_small')
             +field-name('date Dropdown')
             +check-mark
-              +input(type='date', name='departure', value='2019-08-19', class=['input_hidden', 'text_ttu'], readonly)
+              +input(type='date', name='departure', value='2019-08-19', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
         // даты пребывания в отеле
-        +filter-name(['block', 'block_mb41px'])
+        +filter-date(['filter-date', 'block', 'block_mb41px'])
           +field-name('filter date Dropdown')
           +check-mark
-            +input(type='text', name='dates', value='19 авг - 23 авг')
-        // предложения и новости (по сути нужны только форма и инпут)
+            +input(type='text', name='dates', value='19 авг - 23 авг', class=['text', 'text_b', 'text_1F2041-075'])
         +form-field('https://echo.htmlacademy.ru', 'post')
           +field('label', 'field_middle')
             +field-name('subscription text field')
-            +input(type='email', name='subscription text field', placeholder='Email')
+            +input(type='email', name='subscription text field', placeholder='Email', class=['text', 'text_b', 'text_1F2041-075'])
           +form-field__button('block_ml223px')
       .form-elements__row1_column2
         // Обернул Checkbox Buttons в div, чтобы выделить в блок.
         .checkbox-buttons
           +text('p', 'Checkbox Buttons', ['text_bold', 'text_ttu', 'block','block_mb16px'])
-          +checkbox-button(['block', 'block_mb11px'])
-            +checkbox-button__input('checkbox', 'smoking')
-            +checkbox-button__fake-input()
-            +text('span', 'Можно курить', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'])
-          +checkbox-button(['block', 'block_mb11px'])
-            +checkbox-button__input-checked('checkbox', 'pets')
-            +checkbox-button__fake-input()
-            +text('span', 'Можно с питомцами', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'])
-          +checkbox-button(['block', 'block_mb41px'])
-            +checkbox-button__input-checked('checkbox', 'guests')
-            +checkbox-button__fake-input()
-            +text('span', 'Можно пригласить гостей', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'])
+          +checkbox-button('smoking', 'Можно курить', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'], ['block', 'block_mb11px'])
+          +checkbox-button('smoking', 'Можно с питомцами', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'], ['block', 'block_mb11px'], true)
+          +checkbox-button('smoking', 'Можно пригласить гостей (до 10 человек)', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'], ['block', 'block_mb41px'], true)
         +text('p', 'Radio Buttons', ['text_bold', 'text_ttu', 'block', 'block_mb16px']) 
         // правила дома
         +radio-button-wrapper()
-          +radio-button
-            +radio-button__input-checked('radio', 'gender')
-            // не по БЭМ
-            +checkbox-button__fake-input('radio-button_round')
-            +text('span', 'Мужчина', ['text_b', 'text_lh18', 'text_1F2041-05', 'block', 'block_ml10px'])
-          +radio-button
-            +radio-button__input('radio', 'gender')
-            // не по БЭМ
-            +checkbox-button__fake-input('radio-button_round')
-            +text('span', 'Женщина', ['text_b', 'text_lh18', 'text_1F2041-05', 'block', 'block_ml10px'])
+          +radio-button('gender', 'Мужчина', true)
+          +radio-button('gender', 'Женщина')
         +text('p', 'Toggle', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
-        +toggle(['block', 'block_mb14px'])
-          +toggle__input(type='checkbox', name='special offers', checked)
-          +toggle__input_fake
-          +text('span', 'Получать спецпредложения', ['text_b', 'text_lh20', 'text_1F2041-075', 'block', 'block_ml10px'])
-        +toggle(['block', 'block_mb44px'])
-          +toggle__input(type='checkbox' name='special offers')
-          +toggle__input_fake
-          +text('span', 'Получать спецпредложения', ['text_b', 'text_lh20', 'text_1F2041-075', 'block', 'block_ml10px'])
+        +toggle(['block', 'block_mb14px'], 'Получать спецпредложения', true)
+        +toggle(['block', 'block_mb14px'], 'Получать спецпредложения')
         +text('p', 'like button', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         .form-elements__button-like-wr.block.block_mb40px
           +button-like
@@ -209,19 +186,19 @@ html(lang='ru')
         +text('p', '1 – 12 из 100+ вариантов аренды', ['text_b', 'text_lh22', 'text_1F2041-075', 'pagination_pixel'])
     .form-elements__row2
       .form-elements__row2_column1
-        +dropdown
-          +field()
+        +dropdown(['block', 'block_mb20px'])
+          +field('label')
             +field-name('dropdown')
             +text('span', 'default', ['text_ttu', 'text_1F2041-05', 'text_right', 'block', 'block_mb5px'])
             +check-mark
-              +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...' class='input_square-angles')
+              +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...' class=['input_square-angles', 'text', 'text_b', 'text_1F2041-075'])
         // удобства номера
         +dropdown
-          +field('label', '')
+          +field('label')
             +field-name('dropdown')
             +text('span', 'expanded', ['text_ttu', 'text_1F2041-05', 'text_right', 'block', 'block_mb5px'])
             +check-mark
-              +input-bold(type='text' name='rooms&beds' value='2 спальни, 2 кровати...')
+              +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
           +dropdown__wrapper('dropdown__wrapper_off-buttons')
             +dropdown__flex(['block', 'block_mb7px'])
               +text('span', 'спальни', ['text_bold', 'text_ttu'])
@@ -244,7 +221,7 @@ html(lang='ru')
       +dropdown(['dropdown_w32', 'block', 'block_ml181px'])
         +text('p', 'dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
         +check-mark
-          +input-bold(type='text' name='guests' value='Сколько гостей')
+          +input(type='text' name='guests' value='Сколько гостей', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
         +dropdown__wrapper
           +dropdown__flex(['block', 'block_mb7px'])
             +text('span', 'взрослые', ['text_bold', 'text_ttu'])
@@ -270,7 +247,7 @@ html(lang='ru')
       +dropdown(['dropdown_w32', 'block', 'block_ml72px'])
         +text('p', 'dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
         +check-mark
-          +input-bold(type='text' name='guests' value='3 гостя')
+          +input(type='text' name='guests' value='3 гостя', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
         +dropdown__wrapper
           +dropdown__flex(['block', 'block_mb7px'])
             +text('span', 'взрослые', ['text_bold', 'text_ttu'])
@@ -299,111 +276,57 @@ html(lang='ru')
           +expandable-list__summary(['check-mark', 'block', 'block_mb17px'])
             +text('span', 'expandable checkbox list', ['text_bold', 'text_ttu'])
           +checkbox-list
-            +checkbox-button()
-              +checkbox-button__input(type='checkbox' name='breakfast')
-              +checkbox-button__fake-input()
-              +text('span', 'Завтрак', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
-            +checkbox-button()
-              +checkbox-button__input-checked(type='checkbox' name='desk')
-              +checkbox-button__fake-input()
-              +text('span', 'Письменный стол', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
-            +checkbox-button()
-              +checkbox-button__input-checked(type='checkbox' name='feeding_chair')
-              +checkbox-button__fake-input()
-              +text('span', 'Стул для кормления', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
-            +checkbox-button()
-              +checkbox-button__input-checked(type='checkbox' name='child_bed')
-              +checkbox-button__fake-input()
-              +text('span', 'Кроватка', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
-            +checkbox-button()
-              +checkbox-button__input(type='checkbox' name='tv')
-              +checkbox-button__fake-input()
-              +text('span', 'Телевизор', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
-            +checkbox-button()
-              +checkbox-button__input(type='checkbox' name='shampoo')
-              +checkbox-button__fake-input()
-              +text('span', 'Шампунь', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button('breakfast', 'Завтрак', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button('desk', 'Письменный стол', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ' ', true)
+            +checkbox-button('feeding_chair', 'Стул для кормления', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ' ', true)
+            +checkbox-button('child_bed', 'Кроватка', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ' ', true)
+            +checkbox-button('tv', 'Телевизор', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button('shampoo', 'Шампунь', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
         // дополнительные удобства
-        +expandable-list
+        +expandable-list(true)
           +expandable-list__summary(['check-mark', 'block', 'block_mb17px'])
             +text('span', 'expandable checkbox list', ['text_bold', 'text_ttu'])
           +checkbox-list
-            +checkbox-button()
-              +checkbox-button__input(type='checkbox' name='breakfast')
-              +checkbox-button__fake-input()
-              +text('span', 'Завтрак', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
-            +checkbox-button()
-              +checkbox-button__input-checked(type='checkbox' name='desk')
-              +checkbox-button__fake-input()
-              +text('span', 'Письменный стол', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
-            +checkbox-button()
-              +checkbox-button__input-checked(type='checkbox' name='feeding_chair')
-              +checkbox-button__fake-input()
-              +text('span', 'Стул для кормления', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
-            +checkbox-button()
-              +checkbox-button__input-checked(type='checkbox' name='child_bed')
-              +checkbox-button__fake-input()
-              +text('span', 'Кроватка', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
-            +checkbox-button()
-              +checkbox-button__input(type='checkbox' name='tv')
-              +checkbox-button__fake-input()
-              +text('span', 'Телевизор', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
-            +checkbox-button()
-              +checkbox-button__input(type='checkbox' name='shampoo')
-              +checkbox-button__fake-input()
-              +text('span', 'Шампунь', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button('breakfast', 'Завтрак', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button('desk', 'Письменный стол', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], '',true)
+            +checkbox-button('feeding_chair', 'Стул для кормления', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], '',true)
+            +checkbox-button('child_bed', 'Кроватка', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], '',true)
+            +checkbox-button('tv', 'Телевизор', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+            +checkbox-button('shampoo', 'Шампунь', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
       // доступность
       +rich-Checkbox-Buttons(['block', 'block_ml180px'])
         +text('p', 'rich Checkbox Buttons', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
-        +checkbox-button()
-          +checkbox-button__input(type='checkbox' name='corridor')
-          +checkbox-button__fake-input()
-          +text('span', 'Широкий коридор', ['text_b', 'text_1F2041-05', 'text_bold', 'block', 'block_ml10px'])
+        +checkbox-button('corridor', 'Широкий коридор', ['text_b', 'text_1F2041-05', 'text_bold', 'block', 'block_ml10px'])
         +text('p', 'Ширина коридоров в номере не менее 91 см.', ['text_lh14', 'text_1F2041-05', 'block', 'block_ml30px', 'block_mb10px'])
-        +checkbox-button()
-          +checkbox-button__input(type='checkbox' name='helper')
-          +checkbox-button__fake-input()
-          +text('span', 'Помощник для инвалидов', ['text_b', 'text_1F2041-05', 'text_bold', 'block', 'block_ml10px'])
+        +checkbox-button('helper', 'Помощник для инвалидов', ['text_b', 'text_1F2041-05', 'text_bold', 'block', 'block_ml10px'])
         +text('p', 'На 1 этаже вас встретит специалист и проводит до номера.', ['text_lh14', 'text_1F2041-05', 'block', 'block_ml30px'])
       // Правила гостиницы
-      +bullet-list(['block', 'block_ml126px'])
-        +text('p', 'bullet list', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
-        //- +list
-        ul
-          li.bullet-list__item
-            span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px Нельзя с питомцами
-          li.bullet-list__item
-            span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px Без вечеринок и мероприятий
-          li.bullet-list__item
-            span.text.text_b.bullet-list__text.text_1F2041-075.block.block_ml10px
-              | Время прибытия — после 13:00,
-              br
-              |  а выезд до 12:00
+      +bullet-list('bullet list', ['block', 'block_ml126px'], ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'])
     .form-elements__row4
       // Сведения о номере
       +room-info
         +advantages
           +advantages__img
             img(src='img/insert_emoticon.png' alt='smile')
-          +text('p', 'Комфорт', ['text_bold', 'display_b', 'block', 'block_mb8px', 'block_ml10px'])
-          +text('p', 'Шумопоглощающие стены', ['text_b', 'text_1F2041-075', 'block', 'block_ml10px'])
-        .advantages.advantages_padding-down
-          .advantages__img
+          +advantades__text
+            +text('p', 'Комфорт', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_mb8px', 'block_ml10px'])
+            +text('p', 'Шумопоглощающие стены', ['text_b', 'text_1F2041-075', 'text_b', 'text_1F2041-075', 'block', 'block_ml10px'])
+        +advantages('advantages_padding-down')
+          +advantages__img
             img(src='img/location_city.png' alt='biulding')
-          p.text.text_b.text_1F2041-075.block.block_ml10px
-            span.text_bold.display_b.block.block_mb8px Удобство
-            |                     Окно в каждой из спален
+          +advantades__text
+            +text('p', 'Удобство', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_mb8px', 'block_ml10px'])
+            +text('p', 'Окно в каждой из спален', ['text_b', 'text_1F2041-075', 'block', 'block_ml10px'])                
       // Отзывы посетителей номера
       .form-elements__row4_column2
-        .comments.block.block_mb15px
+        +comments(['block', 'block_mb15px'])
           img(src='img/image.png' alt='avatarka')
-          p.text.text_b.text_1F2041-075.block.block_ml10px
-            span.text_bold.display_b.block.block_mb8px Мурад Сарафанов
-            | 5 дней назад
-        .like-comments
-          button.button-like.button-like_pressed
+          +comments__text
+            +text('p', 'Мурад Сарафанов', ['text_b', 'text_1F2041-075','text_bold', 'block', 'block_mb8px', 'block_ml10px'])
+            +text('p', '5 дней назад', ['text_b', 'text_1F2041-075', 'block', 'block_ml10px'])  
+        +like-comments
+          +button-like('button-like_pressed')
             img.button-like__heart(src='img/favorite.png' alt='heart_pressed')
-            span.text.text_s.text_BC9CFF 12
-          p.text.text_b.text_lh24.text_1F2041-075.block.block_ml16px.block_mt-3px
-            | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
-            | И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+            +text('span', '12', ['text_s', 'text_BC9CFF'])
+          +text('p', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+          ['text_b', 'text_lh24', 'text_1F2041-075', 'block', 'block_ml16px', 'block_mt-3px'])

@@ -1,0 +1,45 @@
+.toggle {
+    display: flex;
+}
+.toggle__input {
+    display: none;
+}
+.toggle__input_fake {
+    position: relative;
+    min-width: 4rem;
+    height: 2rem;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 1rem;
+}
+.toggle__input_fake::before {
+    content: "";
+    position: absolute;
+    left: 0.3rem;
+    top: 50%;
+    margin-top: -0.6rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    background: rgba(31, 32, 65, 0.25);
+}
+.toggle__input_fake::after {
+    content: "";
+    position: absolute;
+    display: none;
+    right: 0.3rem;
+    top: 50%;
+    margin-top: -0.6rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    background:linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.toggle__input:checked + .toggle__input_fake {
+    border: 1px solid #BC9CFF;
+}
+.toggle__input:checked + .toggle__input_fake::before {
+    display: none;
+}
+.toggle__input:checked + .toggle__input_fake::after {
+    display: block;
+}

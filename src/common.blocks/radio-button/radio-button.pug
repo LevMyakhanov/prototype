@@ -1,9 +1,5 @@
-mixin radio-button
+mixin radio-button(name, text, checked)
     label.radio-button.checkbox-button
-        block
-
-mixin radio-button__input(types, names)
-    input.radio-button__input(type=types, name=names)
-
-mixin radio-button__input-checked(types, names)
-    input.radio-button__input(type=types, name=names, checked)
+        input.radio-button__input(type='radio', name=name, checked=checked)
+        span.checkbox-button__fake-input.radio-button_round
+        +text('span', text, ['text_b', 'text_lh18', 'text_1F2041-05', 'block', 'block_ml10px'])

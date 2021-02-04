@@ -1,9 +1,8 @@
-mixin bullet-list(classes)
+mixin bullet-list(text, classes, array)
     .bullet-list(class=classes)
-        block
-
-mixin list
-    ul
-        each name in ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
+        +text('p', text, ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
+        ul
+        each name in array
             li.bullet-list__item
-                span(class=['text', 'text_b', 'bullet-list__text', 'text_1F2041-075', 'block', 'block_ml10px'])= name
+                span(class=['text', 'text_b', 'bullet-list__text', 'text_1F2041-075', 'block', 'block_ml10px'])!= name
+    

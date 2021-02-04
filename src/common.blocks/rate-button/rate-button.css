@@ -1,0 +1,10 @@
+.rate-button {
+    display: flex;
+}
+.button-star {
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: #FFFFFF;
+    padding: 0;
+    border: none;
+}

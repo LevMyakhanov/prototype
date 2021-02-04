@@ -1,9 +1,6 @@
-mixin toggle(classes)
+mixin toggle(classes, text, checked)
     label.toggle(class=classes)
-        block
-
-mixin toggle__input
-    input.toggle__input&attributes(attributes)
-
-mixin toggle__input_fake
-    span.toggle__input_fake
+        input.toggle__input(type='checkbox', name='special offers', checked=checked)
+        span.toggle__input_fake
+        +text('span', text, ['text_b', 'text_lh20', 'text_1F2041-075', 'block', 'block_ml10px'])
+    

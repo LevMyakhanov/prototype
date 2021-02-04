@@ -1,0 +1,27 @@
+.button-like {
+    display: flex;
+    align-items: center;
+    min-width: 4rem;
+    height: 2rem;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 1rem;
+    background: #FFFFFF;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.6rem;
+}
+.button-like__heart {
+    width: 0.9rem;
+    margin-right: 0.6rem;
+}
+.button-like__text { 
+    min-width: 0.8rem;
+    text-align: center;
+}
+.button-like_pressed {
+    border-color: #BC9CFF;
+}
+.button-like_pressed .button-like__text {
+    color: #BC9CFF;
+}

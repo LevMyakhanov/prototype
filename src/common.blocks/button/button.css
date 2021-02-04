@@ -1,0 +1,56 @@
+.button {
+    width: 9.9rem;
+    height: 4.4rem;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_opacity {
+    opacity: 0.5;
+}
+.button_sm {
+    width: 8.7rem;
+    height: 3.4rem;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_bordered {
+    position: relative;
+    z-index: 0;
+}
+.button_bordered::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #fff;
+    border-radius: 2.2rem;
+    left: 0.2rem;
+    top: 0.2rem;
+    right: 0.2rem;
+    bottom: 0.2rem;
+}
+.button_bordered-tran {
+    background: linear-gradient(180deg, rgba(188,156,255,0.5) 0%, rgba(139,164,249,0.5) 100%);
+}
+.button_long {
+    width: 32rem;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    position: relative;
+}
+.button_long::after {
+    content:"";
+    position: absolute;
+    width: 4.4rem;
+    height: 4.4rem;
+    right: 0;
+    top: 50%;
+    margin-top: -2.2rem;
+    background-image: url("../../img/arrow_forward_white.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}

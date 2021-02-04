@@ -1,0 +1,9 @@
+.form-field__button {
+    display: block;
+    margin-top: -4.4rem;
+    width: 4.4rem;
+    height: 4.4rem;
+}
+.form-field__button::after {
+    content: url("../../img/arrow_forward_violet.png");
+}

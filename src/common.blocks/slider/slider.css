@@ -1,0 +1,7 @@
+.slider {
+    width: 26.6rem;
+    height: 4.7rem;
+}
+.slider__name {
+    display: inline-block;
+}
