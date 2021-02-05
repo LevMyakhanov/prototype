@@ -49,16 +49,22 @@ module.exports = {
         port: 4200
     },
     plugins: [
-        // new HTMLWebpackPlugin({
-        //     template: './formAndElements.pug',
-        //     // filename: 'formAndElements.html',
-        //     minify: {
-        //         collapseWhitespace: isProd
-        //     }
-        // }),
+        new HTMLWebpackPlugin({
+            template: './index.pug',
+            minify: {
+                collapseWhitespace: isProd
+            }
+        }),
+        new HTMLWebpackPlugin({
+            template: './formAndElements.pug',
+            filename: 'formAndElements.html',
+            minify: {
+                collapseWhitespace: isProd
+            }
+        }),
         new HTMLWebpackPlugin({
             template: './cards.pug',
-            // filename: 'cards.html',
+            filename: 'cards.html',
             minify: {
                 collapseWhitespace: isProd
             }
@@ -74,13 +80,6 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'styles.css'
         })
-        // new HTMLWebpackPlugin({
-        //     template: './pug.pug',
-        //     filename: 'pug.html',
-        //     minify: {
-        //         collapseWhitespace: isProd
-        //     }
-        // })
     ],
     module: {
         rules: [

@@ -1,3 +1,27 @@
+include ../text/text.pug
+include ../input-wrapper/input-wrapper.pug
+include ../field/field.pug
+include ../field-name/field-name.pug
+include ../check-mark/check-mark.pug
+include ../input/input.pug
+include ../button/button.pug
+
 mixin room-search(classes)
     .room-search(class=classes)
+        +text('p', 'Найдём номера под ваши пожелания', ['text_l', 'block', 'block_mb22px'])
+        +input-wrapper(['block', 'block_mb20px'])
+            +field('label', 'field_small')
+                +field-name('прибытие')
+                +check-mark
+                    +input(type='date' name='arrival', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
+            +field('label', 'field_small')
+                +field-name('выезд')
+                +check-mark
+                    +input(type='date' name='departure', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
+        +field('div', ['block', 'block_mb31px'])
+            +field-name('гости')
+            +check-mark
+                +input(type='text', name='amount of guests',  value='Сколько гостей', class=['text', 'text_b', 'text_1F2041-075'])
+        +button(['button', 'button_long'])
+            +text('span', 'подобрать номер', ['text_bold', 'text_ttu', 'text_FFF'])
         block

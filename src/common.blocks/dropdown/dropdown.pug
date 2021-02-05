@@ -6,13 +6,13 @@ mixin dropdown__wrapper(classes)
     .dropdown__wrapper(class=classes)
         block
 
-mixin dropdown__flex(classes)
+mixin dropdown__flex(classes, text, text2, classesButton)
     .dropdown__flex(class=classes)
-        block
-
-mixin dropdown__buttons()
-    .dropdown__buttons
-        block
+        +text('span', text, ['text_bold', 'text_ttu'])
+        .dropdown__buttons
+            +dropdown__button('-', classesButton)
+            +text('span', text2, ['text_bold', 'text_ttu', 'dropdown__amount'])
+            +dropdown__button('+')
 
 mixin dropdown__button(text, classes)
     button.dropdown__button(class=classes)= text

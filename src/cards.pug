@@ -32,22 +32,6 @@ html(lang='ru')
 
             // форма для поиска номеров
             +room-search(['block', 'block_mb40px'])
-                +text('p', 'Найдём номера под ваши пожелания', ['text_l', 'block', 'block_mb22px'])
-                +input-wrapper(['block', 'block_mb20px'])
-                    +field('label', 'field_small')
-                        +field-name('прибытие')
-                        +check-mark
-                            +input(type='date' name='arrival', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
-                    +field('label', 'field_small')
-                        +field-name('выезд')
-                        +check-mark
-                            +input(type='date' name='departure', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
-                +field('div', ['block', 'block_mb31px'])
-                    +field-name('гости')
-                    +check-mark
-                        +input(type='text', name='amount of guests',  value='Сколько гостей', class=['text', 'text_b', 'text_1F2041-075'])
-                +button(['button', 'button_long'])
-                    +text('span', 'подобрать номер', ['text_bold', 'text_ttu', 'text_FFF'])
             // регистрация аккаунта
             +account-reg
                 +text('p', 'Регистрация аккаунта', ['text_l', 'account-reg_pp', 'block', 'block_mb22px'])
@@ -104,7 +88,7 @@ html(lang='ru')
                     +text('p', '0₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
                 +booking-wrapper_top(['check', 'block', 'block_mb30px'])                   
                     +booking__wr
-                        +text('p', 'Сбор за дополнительные услуги', ['text_b', 'text_lh18', 'text_1F2041-075', 'booking_min-w'])
+                        +text('p', 'Сбор за дополнительные <br> услуги', ['text_b', 'text_lh18', 'text_1F2041-075', 'booking_min-w'])
                         +booking__logo
                     +text('p', '300₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
                 +booking-wrapper(['block', 'block_mb20px', 'block_mr-9px'])
@@ -200,10 +184,10 @@ html(lang='ru')
                         +button(['room__image-scroll', 'block', 'block_ml4px'])
                         +button(['room__image-scroll', 'block', 'block_ml4px'])
                 +booking-wrapper(['room_md', 'block', 'block_mb20px'])
-                    p.text.text_bold
-                        span.text_fs14.text_lh17 №
-                        span.text_fs20.text_lh29 888
-                        span.text_ttu.text_BC9CFF.block_ml-3px люкс
+                    p
+                        span.text.text_bold.text_fs14.text_lh17 №
+                        span.text.text_bold.text_fs20.text_lh29 888
+                        span.text.text_bold.text_ttu.text_BC9CFF.block_ml-3px люкс
                     p.booking-text-r-pp.text.text_lh18.text_1F2041-05
                         span.text_fs14.text_bold 9 990₽
                         span в сутки

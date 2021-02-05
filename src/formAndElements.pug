@@ -98,27 +98,23 @@ html(lang='ru')
         +text('p', 'rate button', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         .form-elements__rate-button-wr
           +rate-button
-            +button-star
-              img(src='img/star.png' alt='star')
-            +button-star
-              img(src='img/star.png' alt='star')
-            +button-star
-              img(src='img/star.png' alt='star')
-            +button-star
-              img(src='img/star.png' alt='star')
-            +button-star
-              img(src='img/star_border.png' alt='star')
+            - let nRate = 5;
+            - for(let i=1; i<=nRate; i++){
+              - if(i===nRate) {
+                +button-star
+                  img(src='img/star_border.png' alt='star')
+              - }
+              - else {
+                +button-star
+                  img(src='img/star.png' alt='star')
+              - }            
+            - }           
           +rate-button(['block', 'block_ml20px'])
-            +button-star
-              img(src='img/star.png' alt='star')
-            +button-star
-              img(src='img/star.png' alt='star')
-            +button-star
-              img(src='img/star.png' alt='star')
-            +button-star
-              img(src='img/star.png' alt='star')
-            +button-star
-              img(src='img/star.png' alt='star')
+            - let nRate = 5;
+            - for(let i=1; i<=nRate; i++){
+                +button-star
+                  img(src='img/star.png' alt='star')
+            - }
       .form-elements__row1_column3
         // диапазон цены
         +slider(['block', 'block_mb40px'])
@@ -146,7 +142,7 @@ html(lang='ru')
         +text('p', 'pagination', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         // страницы
         +pagination(['block', 'block_mb10px'])
-          // повернуть стрелку на 180 deg
+          
           +pagination__href-arrow('#', 'pagination_d-none')
             img(src='img/arrow_back.png' alt='')
           +pagination__href('#')
@@ -200,48 +196,17 @@ html(lang='ru')
             +check-mark
               +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
           +dropdown__wrapper('dropdown__wrapper_off-buttons')
-            +dropdown__flex(['block', 'block_mb7px'])
-              +text('span', 'спальни', ['text_bold', 'text_ttu'])
-              +dropdown__buttons
-                +dropdown__button('-')
-                +text('span', '2', ['text_bold', 'text_ttu', 'dropdown__amount'])
-                +dropdown__button('+')
-            +dropdown__flex(['block', 'block_mb7px'])
-              +text('span', 'кровати', ['text_bold', 'text_ttu'])
-              +dropdown__buttons
-                +dropdown__button('-')
-                +text('span', '2', ['text_bold', 'text_ttu', 'dropdown__amount'])
-                +dropdown__button('+')
-            +dropdown__flex
-              +text('span', 'ванные комнаты', ['text_bold', 'text_ttu'])
-              +dropdown__buttons
-                +dropdown__button('-', 'dropdown__button_tran')
-                +text('span', '0', ['text_bold', 'text_ttu', 'dropdown__amount'])
-                +dropdown__button('+')
+            +dropdown__flex(['block', 'block_mb7px'], 'спальни', '2')
+            +dropdown__flex(['block', 'block_mb7px'], 'кровати', '2')
+            +dropdown__flex('', 'ванные комнаты', '0', 'dropdown__button_tran')
       +dropdown(['dropdown_w32', 'block', 'block_ml181px'])
         +text('p', 'dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
         +check-mark
           +input(type='text' name='guests' value='Сколько гостей', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
         +dropdown__wrapper
-          +dropdown__flex(['block', 'block_mb7px'])
-            +text('span', 'взрослые', ['text_bold', 'text_ttu'])
-            +dropdown__buttons
-              +dropdown__button('-', 'dropdown__button_tran')
-              +text('span', '0', ['text_bold', 'text_ttu', 'dropdown__amount'])
-              +dropdown__button('+')
-          +dropdown__flex(['block', 'block_mb7px'])
-            +text('span', 'дети', ['text_bold', 'text_ttu'])
-            +dropdown__buttons
-              +dropdown__button('-', 'dropdown__button_tran')
-              +text('span', '0', ['text_bold', 'text_ttu', 'dropdown__amount'])
-              +dropdown__button('+')
-          +dropdown__flex(['block', 'block_mb19px'])
-            +text('span', 'младенцы', ['text_bold', 'text_ttu'])
-            +dropdown__buttons
-              +dropdown__button('-', 'dropdown__button_tran')
-              +text('span', '0', ['text_bold', 'text_ttu', 'dropdown__amount'])
-              +dropdown__button('+')
-          // убрал высоту и кнопка оказалась за блоком
+          +dropdown__flex(['block', 'block_mb7px'], 'взрослые', '0', 'dropdown__button_tran')
+          +dropdown__flex(['block', 'block_mb7px'], 'дети', '0', 'dropdown__button_tran')
+          +dropdown__flex(['block', 'block_mb19px'], 'младенцы', '0', 'dropdown__button_tran')
           +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'text_right'], 'применить')
       // гости
       +dropdown(['dropdown_w32', 'block', 'block_ml72px'])
@@ -249,24 +214,9 @@ html(lang='ru')
         +check-mark
           +input(type='text' name='guests' value='3 гостя', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
         +dropdown__wrapper
-          +dropdown__flex(['block', 'block_mb7px'])
-            +text('span', 'взрослые', ['text_bold', 'text_ttu'])
-            +dropdown__buttons
-              +dropdown__button('-', 'dropdown__button_tran')
-              +text('span', '2', ['text_bold', 'text_ttu', 'dropdown__amount'])
-              +dropdown__button('+')
-          +dropdown__flex(['block', 'block_mb7px'])
-            +text('span', 'дети', ['text_bold', 'text_ttu'])
-            +dropdown__buttons
-              +dropdown__button('-', 'dropdown__button_tran')
-              +text('span', '1', ['text_bold', 'text_ttu', 'dropdown__amount'])
-              +dropdown__button('+')
-          +dropdown__flex(['block', 'block_mb19px'])
-            +text('span', 'младенцы', ['text_bold', 'text_ttu'])
-            +dropdown__buttons
-              +dropdown__button('-', 'dropdown__button_tran')
-              +text('span', '0', ['text_bold', 'text_ttu', 'dropdown__amount'])
-              +dropdown__button('+')
+          +dropdown__flex(['block', 'block_mb7px'], 'взрослые', '2')            
+          +dropdown__flex(['block', 'block_mb7px'], 'дети', '1')            
+          +dropdown__flex(['block', 'block_mb19px'], 'младенцы', '0', 'dropdown__button_tran')
           +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF'], 'очистить')
           +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'text_right'], 'применить')
     .form-elements__row3
