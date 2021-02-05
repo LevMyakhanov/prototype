@@ -143,16 +143,16 @@ html(lang='ru')
         // страницы
         +pagination(['block', 'block_mb10px'])
           - let nPag = 18;
-          - for(let i=0; i<nRate; i++){
+          - for(let i=0; i<nPag; i++){
             - if(i===0){
               +pagination__href-arrow('#', 'pagination_d-none')
                 img(src='img/arrow_back.png' alt='')
             - }
             - else if(i===1){
               +pagination__href('#')
-                +pagination__href_active('1')
+                +pagination__href_active(i)
             - }
-            - else if(i<2 && i<4){
+            - else if(i>1 && i<4){
               +pagination__href('#')
                 +text('span', i, ['text_ttu', 'text_1F2041-05'])
             - }
@@ -160,13 +160,13 @@ html(lang='ru')
               +pagination__href('#')
                 +text('span', '...', ['text_ttu', 'text_1F2041-05'])
             - }
-            - else if(i<5 && i<15){
+            - else if(i>4 && i<15){
               +pagination__href('#', 'pagination_d-none')
                 +text('span', i-1, ['text_ttu', 'text_1F2041-05'])
             - }
             - else if(i===16){
-              +pagination__href('#', 'pagination_d-none')
-                +text('span', '15', ['text_ttu', 'text_1F2041-05'])
+              +pagination__href('#')
+                +text('span', i-1, ['text_ttu', 'text_1F2041-05'])
             - }
             - else if(i===17){
               +pagination__href-arrow('#')
