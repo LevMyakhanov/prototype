@@ -7,6 +7,12 @@
 .block_mt5px {
     margin-top: 0.5rem;
 }
+.block_mt2px {
+    margin-top: 0.2rem;
+}
+.block_mt4px {
+    margin-top: 0.4rem;
+}
 
 .block_mb20px {
     margin-bottom: 2rem;

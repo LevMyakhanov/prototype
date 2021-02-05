@@ -1,3 +1,50 @@
+include ../booking-wrapper/booking-wrapper.pug
+include ../text/text.pug
+include ../input-wrapper/input-wrapper.pug
+include ../field/field.pug
+include ../field-name/field-name.pug
+include ../check-mark/check-mark.pug
+include ../input/input.pug
+include ../button/button.pug
+
 mixin booking(classes)
     .booking(class=classes)
-        block
+        +booking-wrapper(['block', 'block_mb23px'])
+            +booking__room-name(['text', 'text_bold'])
+                +text('span', '№', ['text_fs14', 'text_lh17'])
+                +text('span', '888', ['booking__room-number', 'text_fs24', 'text_lh29'])
+                +text('span', 'люкс', ['text_ttu', 'text_BC9CFF'])                    
+            +booking__room-price('text', 'text_lh14', 'text_1F2041-05')
+                +text('span', '9 990₽ ', ['text_fs14', 'text_bold'])
+                +text('span', 'в сутки')               
+        +input-wrapper(['block', 'block_mb20px'])
+            +field('label','field_small')
+                +field-name('выезд')
+                +check-mark
+                    +input(type='date', name='arrival', value='2019-08-19', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
+            +field('label','field_small')
+                +field-name('прибытие')
+                +check-mark
+                    +input(type='date', name='departure', value='2019-08-23', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
+        +field('div', ['block', 'block_mb20px'])
+            +field-name('гости')
+            +check-mark
+                +input(type='text', name='amount of guests', value='3 гостя', class=['text', 'text_b', 'text_1F2041-075'])
+        +booking-wrapper(['block', 'block_mb13px'])
+            +text('p', '9 990₽ х 4 суток', ['text_b', 'text_lh22', 'text_1F2041-075'])
+            +text('p', '39 960₽', ['text_b', 'text_lh22', 'text_1F2041-075'])                
+        +booking-wrapper_top(['check', 'block', 'block_mb15px'])
+            +booking__wr
+                +text('p', 'Сбор за услуги: скидка 2 179₽', ['text_b', 'text_lh18', 'text_1F2041-075'])                       
+                +booking__logo
+            +text('p', '0₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
+        +booking-wrapper_top(['check', 'block', 'block_mb30px'])                   
+            +booking__wr
+                +text('p', 'Сбор за дополнительные <br> услуги', ['text_b', 'text_lh18', 'text_1F2041-075', 'booking_min-w'])
+                +booking__logo
+            +text('p', '300₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
+        +booking-wrapper(['block', 'block_mb20px', 'block_mr-9px'])
+            +text('p', 'Итого', 'text_m')
+            +text('p', '38 081₽', 'text_m')
+        +button(['button', 'button_long'])
+            +text('span', 'забронировать', ['text_bold', 'text_ttu', 'text_FFF'])

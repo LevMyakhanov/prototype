@@ -1,3 +1,18 @@
+include ../text/text.pug
+include ../input/input.pug
+include ../button/button.pug
+include ../href-button/href-button.pug
+
+
 mixin enter
     .enter
-        block
+        +text('p', 'Войти', ['enter__text-p_pp', 'text_l', 'block', 'block_mb26px'])
+        +input(type='email' name='email' placeholder='Email', class=['text', 'text_b', 'text_1F2041-075', 'enter__input_pp', 'block', 'block_mb10px'])
+        +input(type='password' name='password' placeholder='Пароль', class=['text', 'text_b', 'text_1F2041-075', 'block', 'block_mb20px'])               
+        +button(['button', 'button_long', 'block', 'block_mb30px'])
+            +text('span', 'войти', ['text_bold', 'text_ttu', 'text_FFF'])
+        +href-button
+            a(href='#')
+                +text('p', 'Уже есть аккаунт на Toxin', ['text_b', 'text_000'])
+            +button(['button', 'button_bordered'])
+                +text('span', 'создать', ['text_bold', 'text_ttu', 'text_BC9CFF'])

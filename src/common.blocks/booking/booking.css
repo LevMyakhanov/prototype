@@ -1,0 +1,58 @@
+.booking {
+    width: 38rem;
+    background: #FFFFFF;
+    border: 0.1rem solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 2.5rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.4rem;
+    padding: 4rem 3rem 3rem 3rem;
+    height: 51.1rem;
+}
+.booking-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.booking-text-r-pp {
+    margin-top: 1px;
+    margin-right: 1px;
+}
+.booking-wrapper_top {
+    display: flex;
+    justify-content: space-between;
+}
+.booking__room-name {
+    display: flex;
+    align-items: flex-end;
+}
+.booking__room-number {
+    margin-left: 4px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+.booking__room-price {
+    margin-top: 9px;
+}
+.booking__wr {
+    display: flex;
+}
+.booking_min-w {
+    min-width: 21.4rem;
+}
+.booking__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    margin-top: -0.1rem;
+    margin-left: 0.5rem;
+}
+.booking__text {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(31, 32, 65, 0.25);
+}

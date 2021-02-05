@@ -1,4 +1,4 @@
-.account-reg {
+.enter {
     width: 38rem;
     background: #FFFFFF;
     border: 0.1rem solid rgba(0, 0, 0, 0.12);
@@ -6,7 +6,13 @@
     border-radius: 0.4rem;
     padding: 4rem 3rem 3rem 3rem;
 }
-.account-reg_pp {
+.enter {
+    height: 35.8rem;
+}
+.enter__text-p_pp {
     margin-left: -1px;
     margin-top: -2px;
+}
+.enter__input_pp {
+    margin-top: -6px;
 }

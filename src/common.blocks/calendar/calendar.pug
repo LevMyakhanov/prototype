@@ -1,6 +1,25 @@
+include ../text/text.pug
+include ../booking-wrapper/booking-wrapper.pug
+include ../button/button.pug
+
 mixin calendar(classes)
     .calendar(class=classes)
-        block
+        +calendar__header(['block', 'block_mb30px'])
+            a(href='#')
+                img.calendar__arrow_l(src='img/arrow_back.png' alt='arrow_back')
+            +text('p', 'Август 2019', ['calendar__header_text', 'text_m'])
+            a(href='#')
+                img.calendar__arrow_r(src='img/arrow_forward_violet.png' alt='arrow_forward')
+        +calendar__table(['block', 'block_mb20px'])
+            +week(['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'])
+            +calendarDates(['29', '30', '31', '1', '2', '3', '4'])
+            +calendarDates(['5', '6', '7', '8', '9', '10', '11'])
+            +calendarDates(['12', '13', '14', '15', '16', '17', '18'])
+            +calendarDates(['19', '20', '21', '22', '23', '24', '25'])
+            +calendarDates(['26', '27', '28', '29', '30', '31', '1'])
+        +booking-wrapper
+            +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF'], 'очистить')
+            +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF'], 'применить')
 
 mixin calendar__header(classes)
     .calendar__header(class=classes)
@@ -14,3 +33,16 @@ mixin week(array)
     tr
         each name in array
             td.calendar__td.text.text_bold.text_BC9CFF.tt_none= name
+
+mixin calendarDates(array)
+    tr
+        each name in array
+            - if(name==='8'){
+                td.calendar__td.calendar_green.text.text_bold.text_FFF= name
+            - } else if(name==='19'){
+                td.calendar__td.calendar_purple.text.text_bold.text_FFF= name
+            - } else if(name==='23'){
+                td.calendar__td.calendar_purple.text.text_bold.text_FFF= name
+            - } else {
+                td.calendar__td.text.text_1F2041-05= name
+            - }

@@ -27,7 +27,11 @@
 @import 'common.blocks/like-comments/like-comments.css';
 @import 'common.blocks/radio-button-wrapper/radio-button-wrapper.css';
 @import 'common.blocks/href-button/href-button.css';
-
+@import 'common.blocks/room-search/room-search.css';
+@import 'common.blocks/account-reg/account-reg.css';
+@import 'common.blocks/booking/booking.css';
+@import 'common.blocks/enter/enter.css';
+@import 'common.blocks/calendar/calendar.css';
 
 
 .form-elements {
@@ -41,8 +45,6 @@
 .form-elements__row1_column1 {
     width: 32rem;
 }
-
-
 .form-elements__row1_column2 {
     margin-left: 12.6rem;
     width: 26.2rem;
@@ -53,8 +55,6 @@
 .form-elements__rate-button-wr {
     display: flex;
 }
-
-
 .form-elements__row1_column3 {
     margin-left: 13rem;
 }
@@ -62,8 +62,6 @@
 .form-elements__button-wr {
     display: flex;
 }
-
-
 .form-elements__row2 {
     display: flex;
     margin-top: 10.1rem;
@@ -72,8 +70,6 @@
 .form-elements__row2_column1 {
     width: 26.6rem;
 }
-
-
 .form-elements__row3 {
     display: flex;
     margin-bottom: 10.2rem;
@@ -81,8 +77,6 @@
 .form-elements__row3_column1 {
     width: 26.6rem;
 }
-
-
 .form-elements__row4 {
     display: flex;
 }
@@ -91,12 +85,6 @@
     margin-top: 1rem;
     margin-left: 15.6rem;
 }
-
-
-
-
-
-
 
 
 .cards {
@@ -109,127 +97,6 @@
 .cards__column1 {
     width: 38rem;
 }
-.room-search, .account-reg, .booking, .enter {
-    width: 38rem;
-    background: #FFFFFF;
-    border: 0.1rem solid rgba(0, 0, 0, 0.12);
-    box-shadow: 0px 0px 2.5rem rgba(0, 0, 0, 0.2);
-    border-radius: 0.4rem;
-    padding: 4rem 3rem 3rem 3rem;
-}
-.room-search {
-    margin-top: 2px;
-}
-.booking {
-    height: 51.1rem;
-    margin-top: 0.4rem;
-}
-.booking-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.booking-text-r-pp {
-    margin-top: 1px;
-    margin-right: 1px;
-}
-.booking-wrapper_top {
-    display: flex;
-    justify-content: space-between;
-}
-.booking__room-name {
-    display: flex;
-    align-items: flex-end;
-}
-.booking__room-number {
-    margin-left: 4px;
-    margin-top: -2px;
-    margin-bottom: -2px;
-}
-.booking__room-price {
-    margin-top: 9px;
-}
-.booking__wr {
-    display: flex;
-}
-.booking_min-w {
-    min-width: 21.4rem;
-}
-.booking__logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    margin-top: -0.1rem;
-    margin-left: 0.5rem;
-}
-.booking__text {
-    font-family: Montserrat;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-    color: rgba(31, 32, 65, 0.25);
-}
-.enter {
-    height: 35.8rem;
-}
-.enter__text-p_pp {
-    margin-left: -1px;
-    margin-top: -2px;
-}
-.enter__input_pp {
-    margin-top: -6px;
-}
-
-.calendar {
-    width: 32rem;
-    background-color: #FFFFFF;
-    padding: 1.9rem;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    border-radius: 0.4rem;
-}
-.calendar__pp {
-    margin-top: 1px;
-}
-.calendar__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.calendar__header_text {
-    margin-top: 1px;
-}
-.calendar__arrow_l {
-    margin-left: 4px;
-    margin-top: 3px;
-}
-.calendar__arrow_r {
-    margin-right: 4px;
-    margin-top: 3px;
-} 
-.calendar__table {
-    border-collapse: collapse;
-}
-.calendar__td {
-    text-align: center;
-    vertical-align: center;
-    height: 40px;
-    width: 40px;
-}
-.calendar_green {
-    border-radius: 50%;
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
-.calendar_purple {
-    border-radius: 50%;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-}
-
-
 .room {
     width: 27rem;
     height: 25.7rem;
