@@ -142,43 +142,37 @@ html(lang='ru')
         +text('p', 'pagination', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         // страницы
         +pagination(['block', 'block_mb10px'])
-          
-          +pagination__href-arrow('#', 'pagination_d-none')
-            img(src='img/arrow_back.png' alt='')
-          +pagination__href('#')
-            +pagination__href_active('1')
-          +pagination__href('#')
-            +text('span', '2', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#')
-            +text('span', '3', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#')
-            +text('span', '...', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#', 'pagination_d-none')
-            +text('span', '4', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#', 'pagination_d-none')
-            +text('span', '5', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#', 'pagination_d-none')
-            +text('span', '6', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#', 'pagination_d-none')
-            +text('span', '7', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#', 'pagination_d-none')
-            +text('span', '8', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#', 'pagination_d-none')
-            +text('span', '9', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#', 'pagination_d-none')
-            +text('span', '10', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#', 'pagination_d-none')
-            +text('span', '11', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#', 'pagination_d-none')
-            +text('span', '12', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#', 'pagination_d-none')
-            +text('span', '13', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#', 'pagination_d-none')
-            +text('span', '14', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href('#', 'pagination_d-none')
-            +text('span', '15', ['text_ttu', 'text_1F2041-05'])
-          +pagination__href-arrow('#')
-            img(src='img/arrow_forward_white.png' alt='')
+          - let nPag = 18;
+          - for(let i=0; i<nRate; i++){
+            - if(i===0){
+              +pagination__href-arrow('#', 'pagination_d-none')
+                img(src='img/arrow_back.png' alt='')
+            - }
+            - else if(i===1){
+              +pagination__href('#')
+                +pagination__href_active('1')
+            - }
+            - else if(i<2 && i<4){
+              +pagination__href('#')
+                +text('span', i, ['text_ttu', 'text_1F2041-05'])
+            - }
+            - else if(i===4){
+              +pagination__href('#')
+                +text('span', '...', ['text_ttu', 'text_1F2041-05'])
+            - }
+            - else if(i<5 && i<15){
+              +pagination__href('#', 'pagination_d-none')
+                +text('span', i-1, ['text_ttu', 'text_1F2041-05'])
+            - }
+            - else if(i===16){
+              +pagination__href('#', 'pagination_d-none')
+                +text('span', '15', ['text_ttu', 'text_1F2041-05'])
+            - }
+            - else if(i===17){
+              +pagination__href-arrow('#')
+                img(src='img/arrow_forward_white.png' alt='')
+            - }
+          - }
         +text('p', '1 – 12 из 100+ вариантов аренды', ['text_b', 'text_lh22', 'text_1F2041-075', 'pagination_pixel'])
     .form-elements__row2
       .form-elements__row2_column1
