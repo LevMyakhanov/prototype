@@ -1,8 +1,8 @@
 mixin bullet-list(text, classes, array)
     .bullet-list(class=classes)
-        +text('p', text, ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
+        +text('p', text, ['text_bold', 'text_ttu', 'block', 'block_mb15px'])
         ul
         each name in array
             li.bullet-list__item
-                span(class=['text', 'text_b', 'bullet-list__text', 'text_1F2041-075', 'block', 'block_ml10px'])!= name
+                span(class=['text', 'text_b', 'text_lh24','bullet-list__text', 'text_1F2041-075', 'block', 'block_ml10px'])!= name
     

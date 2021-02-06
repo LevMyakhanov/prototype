@@ -25,3 +25,10 @@
 .button-like_pressed .button-like__text {
     color: #BC9CFF;
 }
+.button-like_PP {
+    margin-left: 3px;
+    margin-top: -4px;
+}
+.button-like-text_PP {
+    margin-top: -5px;
+}

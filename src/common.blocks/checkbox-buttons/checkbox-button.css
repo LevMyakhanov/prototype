@@ -1,6 +1,9 @@
 .checkbox-button {
     display: flex;
 }
+.checkbox-buttons__wrapper{
+    width: 22.2rem;
+}
 .checkbox-button__input {
     display: none;
 }

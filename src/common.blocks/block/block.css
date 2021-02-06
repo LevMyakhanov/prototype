@@ -13,6 +13,12 @@
 .block_mt4px {
     margin-top: 0.4rem;
 }
+.block_mt7px {
+    margin-top: 0.7rem;
+}
+.block_mt-1px {
+    margin-top: -0.1rem;
+}
 
 .block_mb20px {
     margin-bottom: 2rem;
@@ -95,6 +101,9 @@
 .block_mb18px {
     margin-bottom: 1.8rem;
 }
+.block_mb6px {
+    margin-bottom: 0.6rem;
+}
 
 .block_ml223px {
     margin-left: 22.3rem;
@@ -111,8 +120,8 @@
 .block_ml30px {
     margin-left: 3rem;
 }
-.block_ml181px {
-    margin-left: 18.1rem;
+.block_ml180px {
+    margin-left: 18rem;
 }
 .block_ml72px {
     margin-left: 7.2rem;
@@ -140,6 +149,18 @@
 }
 .block_ml22px {
     margin-left: 2.2rem;
+}
+.block_ml9px {
+    margin-left: 0.9rem;
+}
+.block_ml12px {
+    margin-left: 1.2rem;
+}
+.block_ml11px {
+    margin-left: 1.1rem;
+}
+.block_ml14px {
+    margin-left: 1.4rem;
 }
 
 .block_mr20px {

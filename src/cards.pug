@@ -32,7 +32,7 @@ html(lang='ru')
     .cards
         .cards__column1
             // форма для поиска номеров
-            +room-search(['block', 'block_mb40px', 'block_mt2px'])
+            +room-search(['block', 'block_mb40px'])
             // регистрация аккаунта
             +account-reg('block_mt4px')
         .cards__column1.block.block_ml40px
@@ -45,8 +45,6 @@ html(lang='ru')
             +calendar(['calendar__pp', 'block', 'block_mb40px'])
             // вид отдельного номера
             +room(['block', 'block_mb40px'])
-                // у картинки не скруглились углы
-                // фотография номера
                 +room__img-wr
                     img.room__img(src='img/image.jpg' alt='room1')
                     +button(['room__button', 'room__button_left'])
@@ -76,8 +74,6 @@ html(lang='ru')
                         +text('span', 'Отзывов', ['text_lh18', 'text_1F2041-05', 'block', 'block_mr9px'])
             // вид отдельного номера
             +room
-                // у картинки не скруглились углы
-                // фотография номера
                 +room__img-wr
                     img.room__img(src='img/image2.jpg' alt='room2')
                     +button(['room__button', 'room__button_left'])
