@@ -19,6 +19,9 @@
 .block_mt-1px {
     margin-top: -0.1rem;
 }
+.block_mt1px {
+    margin-top: 0.1rem;
+}
 
 .block_mb20px {
     margin-bottom: 2rem;

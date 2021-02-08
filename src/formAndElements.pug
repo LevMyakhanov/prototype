@@ -134,9 +134,9 @@ html(lang='ru')
           +button(['button', 'button_bordered', 'button_bordered-tran', 'block', 'block_ml19px'])
             +text('span', 'click me', ['text_bold', 'text_ttu', 'text_BC9CFF'])
         .form-elements__button-wr.block.block_mb30px
-          +button('button_naked')
+          +button
             +text('span', 'click me', ['text_bold', 'text_ttu', 'text_BC9CFF'])
-          +button(['button_naked', 'block', 'block_ml20px'])
+          +button(['block', 'block_ml20px'])
             +text('span', 'click me', ['text_bold', 'text_ttu', 'text_1F2041-05'])
         +button(['button', 'button_long', 'block', 'block_mb40px'])
           +text('span', 'перейти к оплате', ['text_bold', 'text_ttu', 'text_FFF'])
@@ -146,7 +146,7 @@ html(lang='ru')
           - let nPag = 18;
           - for(let i=0; i<nPag; i++){
             - if(i===0){
-              +pagination__href-arrow('#', 'pagination_d-none')
+              +pagination__href-arrow('#', 'pagination__href_d-none')
                 img(src='img/arrow_back.png' alt='')
             - }
             - else if(i===1){
@@ -162,7 +162,7 @@ html(lang='ru')
                 +text('span', '...', ['text_ttu', 'text_1F2041-05'])
             - }
             - else if(i>4 && i<15){
-              +pagination__href('#', 'pagination_d-none')
+              +pagination__href('#', 'pagination__href_d-none')
                 +text('span', i-1, ['text_ttu', 'text_1F2041-05'])
             - }
             - else if(i===16){
@@ -174,7 +174,7 @@ html(lang='ru')
                 img(src='img/arrow_forward_white.png' alt='')
             - }
           - }
-        +text('p', '1 – 12 из 100+ вариантов аренды', ['text_b', 'text_lh22', 'text_1F2041-075', 'pagination_pixel'])
+        +text('p', '1 – 12 из 100+ вариантов аренды', ['text_b', 'text_lh22', 'text_1F2041-075', 'pagination-pp'])
     .form-elements__row2
       .form-elements__row2_column1
         +dropdown(['block', 'block_mb19px'])
@@ -221,22 +221,22 @@ html(lang='ru')
           +expandable-list__summary(['check-mark', 'block', 'block_mb17px'])
             +text('span', 'expandable checkbox list', ['text_bold', 'text_ttu'])
           +checkbox-list
-            +checkbox-button('breakfast', 'Завтрак', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], 'block_mb11px')
-            +checkbox-button('desk', 'Письменный стол', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], 'block_mb10px', true)
-            +checkbox-button('feeding_chair', 'Стул для кормления', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], 'block_mb10px', true)
-            +checkbox-button('child_bed', 'Кроватка', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], 'block_mb10px', true)
-            +checkbox-button('tv', 'Телевизор', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], 'block_mb10px')
+            +checkbox-button('breakfast', 'Завтрак', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb11px'])
+            +checkbox-button('desk', 'Письменный стол', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'], true)
+            +checkbox-button('feeding_chair', 'Стул для кормления', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'], true)
+            +checkbox-button('child_bed', 'Кроватка', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'], true)
+            +checkbox-button('tv', 'Телевизор', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'])
             +checkbox-button('shampoo', 'Шампунь', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
         // дополнительные удобства
         +expandable-list(true)
           +expandable-list__summary(['check-mark', 'block', 'block_mb17px'])
             +text('span', 'expandable checkbox list', ['text_bold', 'text_ttu'])
           +checkbox-list
-            +checkbox-button('breakfast', 'Завтрак', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], 'block_mb11px')
-            +checkbox-button('desk', 'Письменный стол', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], 'block_mb10px',true)
-            +checkbox-button('feeding_chair', 'Стул для кормления', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], 'block_mb10px',true)
-            +checkbox-button('child_bed', 'Кроватка', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], 'block_mb10px',true)
-            +checkbox-button('tv', 'Телевизор', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], 'block_mb10px')
+            +checkbox-button('breakfast', 'Завтрак', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb11px'])
+            +checkbox-button('desk', 'Письменный стол', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'],true)
+            +checkbox-button('feeding_chair', 'Стул для кормления', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'],true)
+            +checkbox-button('child_bed', 'Кроватка', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'],true)
+            +checkbox-button('tv', 'Телевизор', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'])
             +checkbox-button('shampoo', 'Шампунь', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
       // доступность
       +rich-Checkbox-Buttons(['block', 'block_ml180px'])
@@ -253,13 +253,13 @@ html(lang='ru')
         +advantages
           +advantages__img('advantages__img_PP')
             img(src='img/insert_emoticon.png' alt='smile')
-          +advantades__text
+          +advantages__text
             +text('p', 'Комфорт', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_mb8px', 'block_ml10px'])
             +text('p', 'Шумопоглощающие стены', ['text_b', 'text_1F2041-075', 'text_b', 'text_1F2041-075', 'block', 'block_ml10px'])
         +advantages('advantages_padding-down')
           +advantages__img
             img(src='img/location_city.png' alt='biulding')
-          +advantades__text
+          +advantages__text
             +text('p', 'Удобство', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_mb8px', 'block_ml10px', 'block_mt4px'])
             +text('p', 'Окно в каждой из спален', ['text_b', 'text_1F2041-075', 'block', 'block_ml9px', 'block_mt-3px'])                
       // Отзывы посетителей номера

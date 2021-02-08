@@ -34,6 +34,7 @@
 @import 'common.blocks/calendar/calendar.css';
 @import 'common.blocks/room-info/room-info.css';
 @import 'common.blocks/room/room.css';
+@import 'common.blocks/form-field-button-hf/form-field-button-hf.css';
 
 
 .form-elements {

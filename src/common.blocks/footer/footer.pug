@@ -5,5 +5,27 @@ mixin footer(classes)
 
 mixin footer__column1
     .footer__column1
-        a.footer__img.logo-toxin.block.block_mb20px(href='/')
-          img(src='img/Logo.png' alt='logo-toxin')
+        block
+
+mixin footer__img(classes)
+    a.footer__img(class=classes)(href='/')
+        block
+
+mixin footer__column2(classes)
+    .footer__column2(class=classes)
+        block
+
+mixin footer-href(classes, href, text)
+    a.text.text_c.text_1F2041-05(class=classes, href=href)= text
+
+mixin footer__column3(classes)
+    .footer__column3(class=classes)
+        block
+
+mixin footer__column4(classes)
+    .footer__column4(class=classes)
+        block
+
+mixin footer__column5(classes)
+    .footer__column5(class=classes)
+        block

@@ -5,6 +5,9 @@ include ./common.blocks/header-list/header-list.pug
 include ./common.blocks/button/button.pug
 include ./common.blocks/text/text.pug
 include ./common.blocks/footer/footer.pug
+include ./common.blocks/input/input.pug
+include ./common.blocks/footer-copyright/footer-copyright.pug
+include ./common.blocks/footer-media/footer-media.pug
 
 
 doctype html
@@ -19,7 +22,7 @@ html(lang='en')
   body.headers-footers
     // хедер для незареганных пол-й
     +header-guest
-      +header-guest_logo-wr
+      +header-guest__logo-wr
         +logo-toxin
           img(src='img/Logo.png' alt='logo-toxin')
       +header-guest__l-wr
@@ -31,7 +34,7 @@ html(lang='en')
         +button(['header-guest__button', 'block', 'block_ml20px'])
           +text('span', 'зарегистрироваться', ['text_bold', 'text_ttu', 'text_FFF'])
     +header-guest
-      +header-guest_logo-wr
+      +header-guest__logo-wr
         +logo-toxin
           img(src='img/Logo.png' alt='logo-toxin')
       +header-guest__l-wr
@@ -44,38 +47,35 @@ html(lang='en')
 
     +footer(['block', 'block_mb1px'])
       +footer__column1
-        p.text.text_c.text_lh24.text_1F2041-075.block.block_mt-2px
-          | Бронирование номеров в лучшем 
-          br
-          | отеле 2019 года по версии 
-          br
-          | ассоциации «Отельные взгляды»
-      .footer__column2.block.block_mt5px
-        p.text.text_bold.text_ttu.block.block_mb21px навигация
-        a.text.text_c.text_1F2041-05.block.block_mb22px(href='#') О нас
-        a.text.text_c.text_1F2041-05.block.block_mb20px(href='#') Новости
-        a.text.text_c.text_1F2041-05.block.block_mb21px(href='#') Служба поддержки
-        a.text.text_c.text_1F2041-05(href='#') Услуги
-      .footer__column3.block.block_mt5px
-        p.text.text_bold.text_ttu.block.block_mb21px о нас
-        a.text.text_c.text_1F2041-05.block.block_mb22px(href='#') О сервисе
-        a.text.text_c.text_1F2041-05.block.block_mb20px(href='#') Наша команда
-        a.text.text_c.text_1F2041-05.block.block_mb21px(href='#') Вакансии
-        a.text.text_c.text_1F2041-05(href='#') Инвесторы
-      .footer__column4.block.block_mt5px
-        p.text.text_bold.text_ttu.block.block_mb21px Служба поддержки
-        a.text.text_c.text_1F2041-05.block.block_mb21px(href='#') Соглашения
-        a.text.text_c.text_1F2041-05.block.block_mb22px(href='#') Сообщества
-        a.text.text_c.text_1F2041-05(href='#') Связь с нами
-      .footer__column5.block.block_mt5px
-        p.text.text_bold.text_ttu.block.block_mb18px Подписка
-        a.text.text_c.text_lh24.text_1F2041-05.block.block_mb22px(href='#') Получайте специальные предложения и новости сервиса
-        input.input.text.text_b.text_1F2041-075(type='email' name='subscription text field' placeholder='Email')
-        button.form-field-button-hf.block_ml216px
+        +footer__img(['logo-toxin', 'block', 'block_mb20px'])
+          img(src='img/Logo.png' alt='logo-toxin')
+        +text('p', 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', ['text_c', 'text_lh24', 'text_1F2041-075', 'block', 'block_mt-2px'])
+      +footer__column2(['block', 'block_mt5px'])
+        +text('p', 'навигация', ['text_bold', 'text_ttu', 'block', 'block_mb21px'])
+        +footer-href(['block', 'block_mb22px'], '#', 'О нас')
+        +footer-href(['block', 'block_mb20px'], '#', 'Новости')
+        +footer-href(['block', 'block_mb21px'], '#', 'Служба поддержки')
+        +footer-href('', '#', 'Услуги')
+      +footer__column3(['block', 'block_mt5px'])
+        +text('p', 'о нас', ['text_bold', 'text_ttu', 'block', 'block_mb21px'])
+        +footer-href(['block', 'block_mb22px'], '#', 'О сервисе')
+        +footer-href(['block', 'block_mb20px'], '#', 'Наша команда')
+        +footer-href(['block', 'block_mb21px'], '#', 'Вакансии')
+        +footer-href('', '#', 'Инвесторы')
+      +footer__column4(['block', 'block_mt5px'])
+        +text('p', 'Служба поддержки', ['text_bold', 'text_ttu', 'block', 'block_mb21px'])
+        +footer-href(['block', 'block_mb21px'], '#', 'Соглашения')
+        +footer-href(['block', 'block_mb22px'], '#', 'Сообщества')
+        +footer-href('', '#', 'Связь с нами')
+      +footer__column5(['block', 'block_mt5px'])
+        +text('p', 'Подписка', ['text_bold', 'text_ttu', 'block', 'block_mb21px'])
+        +footer-href(['block', 'block_mb22px', 'text_lh24'], '#', 'Получайте специальные предложения и новости сервиса')
+        +input(type='email' name='subscription text field' placeholder='Email', class=['text', 'text_b', 'text_1F2041-075'])
+        +button(['form-field-button-hf', 'block_ml216px'])
     // футер защиты прав и медиа
-    .footer-copyright
-      p.text.text_c.text_1F2041-075 Copyright © 2018 Toxin отель. Все права зачищены.
-      .footer-media
+    +footer-copyright
+      +text('p', 'Copyright © 2018 Toxin отель. Все права зачищены.', ['text_c', 'text_1F2041-075'])
+      +footer-media
         a(href='#')
           img.footer-twi(src='img/twitter.png' alt='twitter')
         a.block.block_ml20px(href='#')

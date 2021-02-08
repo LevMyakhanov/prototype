@@ -11,6 +11,9 @@
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     color: #FFFFFF;
 }
+.pagination__href-arrow_d-none {
+    display: none;
+}
 .pagination__href {
     display: flex;
     justify-content: center;
@@ -29,9 +32,9 @@
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 /* если display_n поднять выше не работает */
-.pagination_d-none {
+.pagination__href_d-none {
     display: none;
 }
-.pagination_pixel {
+.pagination-pp {
     padding-left: 0.6rem
 }
