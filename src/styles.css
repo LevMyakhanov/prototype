@@ -21,7 +21,7 @@
 @import 'common.blocks/checkbox-list/checkbox-list.css';
 @import 'common.blocks/rich-Checkbox-Buttons/rich-Checkbox-Buttons.css';
 @import 'common.blocks/bullet-list/bullet-list.css';
-@import 'common.blocks/room-info/room-info.css';
+@import 'common.blocks/room-advantages/room-advantages.css';
 @import 'common.blocks/advantages/advantages.css';
 @import 'common.blocks/comments/comments.css';
 @import 'common.blocks/like-comments/like-comments.css';
@@ -32,6 +32,7 @@
 @import 'common.blocks/booking/booking.css';
 @import 'common.blocks/enter/enter.css';
 @import 'common.blocks/calendar/calendar.css';
+@import 'common.blocks/room-info/room-info.css';
 
 
 .form-elements {
@@ -97,6 +98,10 @@
 .cards__column1 {
     width: 38rem;
 }
+.cards__column1__PP {
+    margin-left: -1px;
+    margin-top: 2px;
+}
 .room {
     width: 27rem;
     height: 25.7rem;
@@ -106,21 +111,15 @@
 }
 .room__img-wr {
     width: 27rem;
-    height: 15rem;
+    height: 15.1rem;
     position: relative;
     display: flex;
     justify-content: space-between;
-    border-top-left-radius: 0.4rem;
-    border-top-right-radius: 0.4rem;
 }
 .room__img {
     border-top-left-radius: 0.4rem;
     border-top-right-radius: 0.4rem;
-}
-.room_md {
-    margin: 2rem 1.7rem 0.8rem 2rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    width: 100%;
 }
 .room__button {
     position: absolute;
@@ -129,28 +128,24 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
     outline: none;
-    margin-top: 1px;
-}
-.room__button_left {
-    margin-left: 2px;
+    border-top-left-radius: 0.4rem;
 }
 .room__button_right {
     right: 0;
     transform: matrix(-1, 0, 0, 1, 0, 0);
-    margin-right: 2px;
 }
 .room__button::after {
     content: "";
     position: absolute;
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 0.8rem;
+    height: 0.8rem;
     border: 0.2rem solid #FFF;
     border-left: 0;
     border-top: 0;
     pointer-events: none;
     transform: rotateZ(135deg);
+    left: 20px;
 }
 .room__rounds-wrapper {
     position: absolute;

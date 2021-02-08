@@ -17,6 +17,7 @@ include ./common.blocks/enter/enter.pug
 include ./common.blocks/calendar/calendar.pug
 include ./common.blocks/room/room.pug
 include ./common.blocks/button-star/button-star.pug
+include ./common.blocks/room-info/room-info.pug
 
 
 doctype html
@@ -30,19 +31,19 @@ html(lang='ru')
     title Document
   body
     .cards
-        .cards__column1
+        .cards__column1.cards__column1__PP
             // форма для поиска номеров
             +room-search(['block', 'block_mb40px'])
             // регистрация аккаунта
             +account-reg('block_mt4px')
         .cards__column1.block.block_ml40px
             // бронирование номера
-            +booking(['block', 'block_mb39px', 'block_mt4px'])
+            +booking(['block', 'block_mb41px', 'block_mt2px'])
             // вход в аккаунт
             +enter
         .cards__column3.block.block_ml40px
             // календарь
-            +calendar(['calendar__pp', 'block', 'block_mb40px'])
+            +calendar(['calendar__pp', 'block', 'block_mb41px'])
             // вид отдельного номера
             +room(['block', 'block_mb40px'])
                 +room__img-wr
@@ -54,14 +55,14 @@ html(lang='ru')
                         +button(['room__image-scroll', 'block', 'block_ml4px'])
                         +button(['room__image-scroll', 'block', 'block_ml4px'])
                         +button(['room__image-scroll', 'block', 'block_ml4px'])
-                +booking-wrapper(['room_md', 'block', 'block_mb20px'])
+                +room-info
                     p
                         +text('span', '№', ['text_bold', 'text_fs14', 'text_lh17'])
-                        +text('span', '888', ['text_bold', 'text_fs20', 'text_lh29'])
-                        +text('span', 'люкс', ['text_bold', 'text_ttu', 'text_fs14', 'text_BC9CFF', 'block_ml-3px'])
-                    p
-                        +text('span', '9 990₽', ['booking-text-r-pp', 'text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
-                        +text('span', 'в сутки', ['booking-text-r-pp', 'text_lh18', 'text_1F2041-05'])
+                        +text('span', '888', ['room-info__number-pp', 'text_bold', 'text_fs20', 'text_lh29'])
+                        +text('span', 'люкс', ['text_bold', 'text_ttu', 'text_BC9CFF'])
+                    p.room-info__price-pp
+                        +text('span', '9 990₽', ['text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
+                        +text('span', 'в сутки', ['text_lh18', 'text_1F2041-05', 'room-info__small-text-pp'])
                 +room__like-wrapper
                     +room__star-wrapper
                         - let nRate = 5;
@@ -70,27 +71,24 @@ html(lang='ru')
                                 img(src='img/star.png' alt='star')
                         - }
                     p
-                        +text('span', '145', ['text_lh18', 'text_1F2041-05', 'text_fs14', 'text_bold', 'block', 'block_mr9px'])
-                        +text('span', 'Отзывов', ['text_lh18', 'text_1F2041-05', 'block', 'block_mr9px'])
+                        +text('span', '145', ['text_lh18', 'text_1F2041-05', 'text_fs14', 'text_bold', 'block', 'block_mr4px'])
+                        +text('span', 'Отзывов', ['text_fs14', 'text_lh18', 'text_1F2041-05'])
             // вид отдельного номера
             +room
                 +room__img-wr
-                    img.room__img(src='img/image2.jpg' alt='room2')
-                    +button(['room__button', 'room__button_left'])
-                    +button(['room__button', 'room__button_right'])                   
+                    img.room__img(src='img/image2.jpg' alt='room2')             
                     +room__rounds-wrapper
                         +button(['room__image-scroll', 'room__image-scroll_active'])
                         +button(['room__image-scroll', 'block', 'block_ml4px'])
                         +button(['room__image-scroll', 'block', 'block_ml4px'])
                         +button(['room__image-scroll', 'block', 'block_ml4px'])
-                +booking-wrapper(['room_md', 'block', 'block_mb20px'])
+                +room-info(['block', 'block_mb20px'])
                     p
                         +text('span', '№', ['text_bold', 'text_fs14', 'text_lh17'])
-                        +text('span', '840', ['text_bold', 'text_fs20', 'text_lh29'])
-                        +text('span', 'люкс', ['text_bold', 'text_ttu', 'text_fs14', 'text_BC9CFF', 'block_ml-3px'])
-                    p
-                        +text('span', '9 990₽', ['booking-text-r-pp', 'text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
-                        +text('span', 'в сутки', ['booking-text-r-pp', 'text_lh18', 'text_1F2041-05'])
+                        +text('span', '840', ['room-info__number-pp', 'text_bold', 'text_fs20', 'text_lh29'])
+                    p.room-info__price-pp
+                        +text('span', '9 900₽', ['text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
+                        +text('span', 'в сутки', ['text_lh18', 'text_1F2041-05', 'room-info__small-text-pp'])
                 +room__like-wrapper
                     +room__star-wrapper
                         - let nRate = 5;
@@ -105,5 +103,5 @@ html(lang='ru')
                             - }            
                         - }
                     p
-                        +text('span', '65', ['text_lh18', 'text_1F2041-05', 'text_fs14', 'text_bold', 'block', 'block_mr9px'])
-                        +text('span', 'Отзывов', ['text_lh18', 'text_1F2041-05', 'block', 'block_mr9px'])
+                        +text('span', '65', ['text_lh18', 'text_1F2041-05', 'text_fs14', 'text_bold', 'block', 'block_mr4px'])
+                        +text('span', 'Отзывов', ['text_fs14', 'text_lh18', 'text_1F2041-05'])

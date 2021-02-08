@@ -1,3 +1,22 @@
 .room-info {
-    width: 29.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 0.8rem;
+    padding: 1.8rem 0 0.8rem 0;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+}
+.room-info__number-pp {
+    margin-left: 4px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+.room-info__price-pp {
+    padding-top: 1px;
+    margin-right: -3px;
+}
+.room-info__small-text-pp {
+    margin-left:3px;
 }

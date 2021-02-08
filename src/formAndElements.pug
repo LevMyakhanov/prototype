@@ -33,7 +33,7 @@ html(lang='ru')
         include ./common.blocks/checkbox-list/checkbox-list.pug
         include ./common.blocks/rich-Checkbox-Buttons/rich-Checkbox-Buttons.pug
         include ./common.blocks/bullet-list/bullet-list.pug
-        include ./common.blocks/room-info/room-info.pug
+        include ./common.blocks/room-advantages/room-advantages.pug
         include ./common.blocks/advantages/advantages.pug
         include ./common.blocks/comments/comments.pug
         include ./common.blocks/like-comments/like-comments.pug
@@ -249,7 +249,7 @@ html(lang='ru')
       +bullet-list('bullet list', ['block', 'block_ml126px'], ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'])
     .form-elements__row4
       // Сведения о номере
-      +room-info
+      +room-advantages
         +advantages
           +advantages__img('advantages__img_PP')
             img(src='img/insert_emoticon.png' alt='smile')

@@ -1,3 +1,4 @@
+include ../room-info/room-info.pug
 include ../booking-wrapper/booking-wrapper.pug
 include ../text/text.pug
 include ../input-wrapper/input-wrapper.pug
@@ -12,7 +13,7 @@ mixin booking(classes)
         +booking-wrapper(['block', 'block_mb23px'])
             +booking__room-name(['text', 'text_bold'])
                 +text('span', '№', ['text_fs14', 'text_lh17'])
-                +text('span', '888', ['booking__room-number', 'text_fs24', 'text_lh29'])
+                +text('span', '888', ['booking__room-number-pp', 'text_fs24', 'text_lh29'])
                 +text('span', 'люкс', ['text_ttu', 'text_BC9CFF'])                    
             +booking__room-price()
                 +text('span', '9 990₽ ', ['text', 'text_fs14', 'text_lh18', 'text_1F2041-05', 'text_bold'])
