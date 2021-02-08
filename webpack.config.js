@@ -70,7 +70,7 @@ module.exports = {
             }
         }),
         new HTMLWebpackPlugin({
-            template: './headersAndFooters.html',
+            template: './headersAndFooters.pug',
             filename: 'headersAndFooters.html',
             minify: {
                 collapseWhitespace: isProd

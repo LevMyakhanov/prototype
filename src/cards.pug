@@ -45,63 +45,18 @@ html(lang='ru')
             // календарь
             +calendar(['calendar__pp', 'block', 'block_mb41px'])
             // вид отдельного номера
-            +room(['block', 'block_mb40px'])
-                +room__img-wr
-                    img.room__img(src='img/image.jpg' alt='room1')
-                    +button(['room__button', 'room__button_left'])
-                    +button(['room__button', 'room__button_right'])                   
-                    +room__rounds-wrapper
-                        +button(['room__image-scroll', 'room__image-scroll_active'])
-                        +button(['room__image-scroll', 'block', 'block_ml4px'])
-                        +button(['room__image-scroll', 'block', 'block_ml4px'])
-                        +button(['room__image-scroll', 'block', 'block_ml4px'])
-                +room-info
-                    p
-                        +text('span', '№', ['text_bold', 'text_fs14', 'text_lh17'])
-                        +text('span', '888', ['room-info__number-pp', 'text_bold', 'text_fs20', 'text_lh29'])
-                        +text('span', 'люкс', ['text_bold', 'text_ttu', 'text_BC9CFF'])
-                    p.room-info__price-pp
-                        +text('span', '9 990₽', ['text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
-                        +text('span', 'в сутки', ['text_lh18', 'text_1F2041-05', 'room-info__small-text-pp'])
-                +room__like-wrapper
-                    +room__star-wrapper
-                        - let nRate = 5;
-                        - for(let i=1; i<=nRate; i++){
-                            +button-star
-                                img(src='img/star.png' alt='star')
-                        - }
-                    p
-                        +text('span', '145', ['text_lh18', 'text_1F2041-05', 'text_fs14', 'text_bold', 'block', 'block_mr4px'])
-                        +text('span', 'Отзывов', ['text_fs14', 'text_lh18', 'text_1F2041-05'])
-            // вид отдельного номера
-            +room
-                +room__img-wr
-                    img.room__img(src='img/image2.jpg' alt='room2')             
-                    +room__rounds-wrapper
-                        +button(['room__image-scroll', 'room__image-scroll_active'])
-                        +button(['room__image-scroll', 'block', 'block_ml4px'])
-                        +button(['room__image-scroll', 'block', 'block_ml4px'])
-                        +button(['room__image-scroll', 'block', 'block_ml4px'])
-                +room-info(['block', 'block_mb20px'])
-                    p
-                        +text('span', '№', ['text_bold', 'text_fs14', 'text_lh17'])
-                        +text('span', '840', ['room-info__number-pp', 'text_bold', 'text_fs20', 'text_lh29'])
-                    p.room-info__price-pp
-                        +text('span', '9 900₽', ['text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
-                        +text('span', 'в сутки', ['text_lh18', 'text_1F2041-05', 'room-info__small-text-pp'])
-                +room__like-wrapper
-                    +room__star-wrapper
-                        - let nRate = 5;
-                        - for(let i=1; i<=nRate; i++){
-                            - if(i===nRate) {
-                                +button-star
-                                    img(src='img/star_border.png' alt='star')
-                            - }
-                            - else {
-                                +button-star
-                                    img(src='img/star.png' alt='star')
-                            - }            
-                        - }
-                    p
-                        +text('span', '65', ['text_lh18', 'text_1F2041-05', 'text_fs14', 'text_bold', 'block', 'block_mr4px'])
-                        +text('span', 'Отзывов', ['text_fs14', 'text_lh18', 'text_1F2041-05'])
+            +room(['block', 'block_mb40px'], 'img/image.jpg', '888', 'люкс', '9 990₽', '145')
+            +room('', 'img/image2.jpg', '840', '', '9 900₽', '65')
+            // как включить условие в параметры?
+                //-     +room__star-wrapper
+                //-         - let nRate = 5;
+                //-         - for(let i=1; i<=nRate; i++){
+                //-             - if(i===nRate) {
+                //-                 +button-star
+                //-                     img(src='img/star_border.png' alt='star')
+                //-             - }
+                //-             - else {
+                //-                 +button-star
+                //-                     img(src='img/star.png' alt='star')
+                //-             - }            
+                //-         - }

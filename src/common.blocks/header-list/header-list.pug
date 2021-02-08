@@ -1,0 +1,24 @@
+include ../submenu/submenu.pug
+
+mixin header-list(array, classes0, classes1, classes2, classes3, classes4)
+    ul.header-list
+        each name, index in array
+            - if(index===0){
+                li(class=classes0)
+                    a(href='')= name
+            - } else if(index===1){
+                li(class=classes1)
+                    a(href='')= name
+                +submenu(['Обслуживание в номера', '2', '3', '4'])
+            - } else if(index===2){
+                li(class=classes2)
+                    a(href='')= name
+            - } else if(index===3){
+                li(class=classes3)
+                    a(href='')= name
+            - } else {
+                li(class=classes4)
+                    a(href='')= name
+                +submenu(['Обслуживание в номера', '2', '3', '4'])
+            - }
+

@@ -1,6 +1,35 @@
-mixin room(classes)
+include ../button/button.pug
+include ../text/text.pug
+
+mixin room(classes, image, roomNumber, luxOrNot, price, amountOfResponse)
     .room(class=classes)
-        block
+        +room__img-wr
+            img.room__img(src=image alt='room1')
+            +button(['room__button', 'room__button_left'])
+            +button(['room__button', 'room__button_right'])                   
+            +room__rounds-wrapper
+                +button(['room__image-scroll', 'room__image-scroll_active'])
+                +button(['room__image-scroll', 'block', 'block_ml4px'])
+                +button(['room__image-scroll', 'block', 'block_ml4px'])
+                +button(['room__image-scroll', 'block', 'block_ml4px'])
+        +room-info
+            p
+                +text('span', '№', ['text_bold', 'text_fs14', 'text_lh17'])
+                +text('span', roomNumber, ['room-info__number-pp', 'text_bold', 'text_fs20', 'text_lh29'])
+                +text('span', luxOrNot, ['text_bold', 'text_ttu', 'text_BC9CFF'])
+            p.room-info__price-pp
+                +text('span', price, ['text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
+                +text('span', 'в сутки', ['text_lh18', 'text_1F2041-05', 'room-info__small-text-pp'])
+        +room__like-wrapper
+            +room__star-wrapper
+                - let nRate = 5;
+                - for(let i=1; i<=nRate; i++){
+                    +button-star
+                        img(src='img/star.png' alt='star')
+                - }
+            p
+                +text('span', amountOfResponse, ['text_lh18', 'text_1F2041-05', 'text_fs14', 'text_bold', 'block', 'block_mr4px'])
+                +text('span', 'Отзывов', ['text_fs14', 'text_lh18', 'text_1F2041-05'])
 
 mixin room__img-wr
     .room__img-wr

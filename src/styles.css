@@ -33,6 +33,7 @@
 @import 'common.blocks/enter/enter.css';
 @import 'common.blocks/calendar/calendar.css';
 @import 'common.blocks/room-info/room-info.css';
+@import 'common.blocks/room/room.css';
 
 
 .form-elements {
@@ -102,101 +103,6 @@
     margin-left: -1px;
     margin-top: 2px;
 }
-.room {
-    width: 27rem;
-    height: 25.7rem;
-    background-color: #FFFFFF;
-    box-shadow: 0 1rem 2rem rgba(31, 32, 65, 0.05);
-    border-radius: 0.4rem;
-}
-.room__img-wr {
-    width: 27rem;
-    height: 15.1rem;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-}
-.room__img {
-    border-top-left-radius: 0.4rem;
-    border-top-right-radius: 0.4rem;
-    width: 100%;
-}
-.room__button {
-    position: absolute;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);;
-    width: 4.2rem;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    outline: none;
-    border-top-left-radius: 0.4rem;
-}
-.room__button_right {
-    right: 0;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-}
-.room__button::after {
-    content: "";
-    position: absolute;
-    width: 0.8rem;
-    height: 0.8rem;
-    border: 0.2rem solid #FFF;
-    border-left: 0;
-    border-top: 0;
-    pointer-events: none;
-    transform: rotateZ(135deg);
-    left: 20px;
-}
-.room__rounds-wrapper {
-    position: absolute;
-    right: 1.5rem;
-    bottom: 1.5rem;
-    height: 0.7rem;
-    display: flex;
-    justify-content: space-between;
-}
-.room__image-scroll {
-    height: 0.7rem;
-    width: 0.7rem;
-    border-radius: 50%;
-    border: 1px solid #FFF;
-}
-.room__image-scroll_active {
-    background-color: #FFF;
-}
-.room__text-wr {
-    width: 23rem;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-    margin-left: 2rem;
-    margin-right: 1.7rem;
-}
-.room__like-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-}
-.room__star-wrapper {
-    display: flex;
-}
-.room__button-star {
-    width: 2.4rem;
-    height: 2.4rem;
-    background-color: #FFFFFF;
-    padding: 0;
-    border: none;
-}
-.room__text-wrapper {
-    height: 2.4rem;
-    display: flex;
-    align-items: center;
-}
-
-
-
 
 
 .headers-footers {
@@ -227,7 +133,6 @@
 .header-list {
     display: flex;
 }
-
 .header-guest__list {
     position: relative;
     width: 7.4rem;
@@ -286,7 +191,7 @@
     display: flex;
 }
 .footer__column1 {
-    min-width: 26rem;
+    width: 26rem;
 }
 .footer__img {
     display: block;
