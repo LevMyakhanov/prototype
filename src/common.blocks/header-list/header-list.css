@@ -1,0 +1,12 @@
+.header-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -1rem;
+    justify-content: flex-end;
+}
+.header-list__item {
+    margin-bottom: 1rem;
+}
+.header-list__item:not(:last-child) {
+    margin-right: 2rem;
+}

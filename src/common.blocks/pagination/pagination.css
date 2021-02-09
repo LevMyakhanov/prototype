@@ -22,12 +22,7 @@
     height: 4rem;
     background: #FFFFFF;
 }
-.pagination__href-arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
+.pagination__href_arrow {
     border-radius: 50%;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }

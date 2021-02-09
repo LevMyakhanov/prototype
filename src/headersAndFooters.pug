@@ -22,73 +22,12 @@ html(lang='en')
     title Document
   body.headers-footers
     // хедер для незареганных пол-й
-    +header-guest
-      +logo-toxin
-        img(src='img/Logo.png' alt='logo-toxin')
-      +header-guest__l-wr
-        +header-list(['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'], ['text', 'text_c', 'text_bold', 'text_1F2041-075', 'header-list__item'],
-        ['header-guest__list', 'text', 'text_c', 'block', 'block_ml20px', 'header-list__item'], ['text', 'text_c', 'block', 'block_ml20px', 'header-list__item'], ['text', 'text_c', 'block', 'block_ml20px', 'header-list__item'],
-        ['header-guest__list', 'text', 'text_c', 'block', 'block_ml20px', 'block_mr20px', 'header-list__item'])
-        +button(['button_sm', 'button_bordered'])
-          +text('sapn', 'войти', ['text_bold', 'text_ttu', 'text_BC9CFF'])
-        +button(['header-guest__button', 'block', 'block_ml20px'])
-          +text('span', 'зарегистрироваться', ['text_bold', 'text_ttu', 'text_FFF'])
-    +header-guest
-      +logo-toxin
-        img(src='img/Logo.png' alt='logo-toxin')
-      +header-guest__l-wr
-        +header-list(['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'], ['text', 'text_c', 'text_bold', 'text_1F2041-075', 'block', 'block_mr1px', 'header-list__item'],
-        ['header-guest__list', 'text', 'text_c', 'block', 'block_ml20px', 'header-list__item'], ['text', 'text_c', 'block', 'block_ml20px', 'header-list__item'], ['text', 'text_c', 'block', 'block_ml20px', 'header-list__item'],
-        ['header-guest__list', 'text', 'text_c', 'block', 'block_ml20px', 'header-list__item'])
-        +header-guest__border
-        +text('p', 'Юлий Цезарь', ['text_c', 'block', 'block_ml20px'])
+    +header-guest(false)
+    // хедер для зареганных пол-й
+    +header-guest(true)
     // большой футер
-
     +footer(['block', 'block_mb1px'])
-      +footer__column1
-        +footer__img(['logo-toxin', 'block', 'block_mb20px'])
-          img(src='img/Logo.png' alt='logo-toxin')
-        +text('p', 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', ['text_c', 'text_lh24', 'text_1F2041-075', 'block', 'block_mt-2px'])
-      +footer__column2(['block', 'block_mt5px'])
-        +text('p', 'навигация', ['text_bold', 'text_ttu', 'block', 'block_mb21px'])
-        +footer-href(['block', 'block_mb22px'], '#', 'О нас')
-        +footer-href(['block', 'block_mb20px'], '#', 'Новости')
-        +footer-href(['block', 'block_mb21px'], '#', 'Служба поддержки')
-        +footer-href('', '#', 'Услуги')
-      +footer__column3(['block', 'block_mt5px'])
-        +text('p', 'о нас', ['text_bold', 'text_ttu', 'block', 'block_mb21px'])
-        +footer-href(['block', 'block_mb22px'], '#', 'О сервисе')
-        +footer-href(['block', 'block_mb20px'], '#', 'Наша команда')
-        +footer-href(['block', 'block_mb21px'], '#', 'Вакансии')
-        +footer-href('', '#', 'Инвесторы')
-      +footer__column4(['block', 'block_mt5px'])
-        +text('p', 'Служба поддержки', ['text_bold', 'text_ttu', 'block', 'block_mb21px'])
-        +footer-href(['block', 'block_mb21px'], '#', 'Соглашения')
-        +footer-href(['block', 'block_mb22px'], '#', 'Сообщества')
-        +footer-href('', '#', 'Связь с нами')
-      +footer__column5(['block', 'block_mt5px'])
-        +text('p', 'Подписка', ['text_bold', 'text_ttu', 'block', 'block_mb21px'])
-        +footer-href(['block', 'block_mb22px', 'text_lh24'], '#', 'Получайте специальные предложения и новости сервиса')
-        +input(type='email' name='subscription text field' placeholder='Email', class=['text', 'text_b', 'text_1F2041-075'])
-        +button(['form-field-button-hf', 'block_ml216px'])
     // футер защиты прав и медиа
     +footer-copyright
-      +text('p', 'Copyright © 2018 Toxin отель. Все права зачищены.', ['text_c', 'text_1F2041-075'])
-      +footer-media
-        +href(href='#')
-          img.footer-media__twi(src='img/twitter.png' alt='twitter')
-        +href(href='#', class=['block', 'block_ml20px'])
-          img.footer-media__fa(src='img/facebook.png' alt='face')
-        +href(href='#', class=['block', 'block_ml22px'])
-          img.footer-media__insta(src='img/insta.png' alt='insta')
+    // футер для экрана 768px
     +footer-wrapper-768
-      +logo-toxin(['block', 'block_mb20px'])
-        img(src='img/Logo.png' alt='logo-toxin')
-      +text('p', 'Copyright © 2018 Toxin отель. Все права зачищены.', ['text_c', 'text_1F2041-075', 'block', 'block_mb25px'])
-      +footer-media
-        +href(href='#')
-          img(src='img/twitter.png' alt='twitter')
-        +href(href='#', class=['block', 'block_ml20px'])
-          img(src='img/facebook.png' alt='face')
-        +href(href='#', class=['block', 'block_ml20px'])
-          img(src='img/insta.png' alt='insta')

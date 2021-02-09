@@ -38,11 +38,11 @@ html(lang='ru')
         include ./common.blocks/like-comments/like-comments.pug
 
         +field('label', ['block', 'block_mb20px'])
-          +text('span', 'text field text field text field text field', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
-          +text('span', 'Default Default Default Default Default', ['text_ttu','text_1F2041-05','text_right','block', 'block_mb5px', 'block_mt-3px', 'field__text'])
+          +text('span', 'text field', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
+          +text('span', 'Default', ['text_ttu','text_1F2041-05','text_right','block', 'block_mb5px', 'block_mt-3px', 'field__text'])
           +input(type='email', name='email', placeholder='Email', class=['text', 'text_b', 'text_1F2041-075'])
         +field('label', ['block', 'block_mb20px'])
-          +text('span', 'text field text field text field text field', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
+          +text('span', 'text field', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
           +text('span', 'Hover / Focus', ['text_ttu','text_1F2041-05','text_right','block', 'block_mb5px', 'field__text'])
           +input(type='text', name='text', value='This is pretty awesome', class=['text', 'text_b', 'text_1F2041-075'])
         +field('div', ['block', 'block_mb22px'])
@@ -145,7 +145,7 @@ html(lang='ru')
           - let nPag = 18;
           - for(let i=0; i<nPag; i++){
             - if(i===0){
-              +pagination__href-arrow('#', 'pagination__href_d-none')
+              +pagination__href('#', ['pagination__href_arrow', 'pagination__href_d-none'])
                 img(src='img/arrow_back.png' alt='')
             - }
             - else if(i===1){
@@ -169,7 +169,7 @@ html(lang='ru')
                 +text('span', i-1, ['text_ttu', 'text_1F2041-05'])
             - }
             - else if(i===17){
-              +pagination__href-arrow('#')
+              +pagination__href('#', 'pagination__href_arrow')
                 img(src='img/arrow_forward_white.png' alt='')
             - }
           - }
