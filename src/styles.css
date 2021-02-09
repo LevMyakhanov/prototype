@@ -235,13 +235,13 @@
     display: flex;
     justify-content: space-between;
 }
-.footer-twi {
+.footer-media__twi {
     margin-top: 2px;
 }
-.footer-insta {
+.footer-media__insta {
     margin-right: 1px;
 }
-.footer3-wrapper {
+.footer-wrapper-768 {
     width: 76.8rem;
     height: 36.7rem;
     background: #FFF;

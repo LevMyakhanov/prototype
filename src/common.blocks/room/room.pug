@@ -1,7 +1,9 @@
 include ../button/button.pug
 include ../text/text.pug
+include ../button-star/button-star.pug
+include ../room-info/room-info.pug
 
-mixin room(classes, image, roomNumber, luxOrNot, price, amountOfResponse)
+mixin room(classes, image, roomNumber, luxOrNot, price, amountOfResponse, rate)
     .room(class=classes)
         +room__img-wr
             img.room__img(src=image alt='room1')
@@ -24,8 +26,14 @@ mixin room(classes, image, roomNumber, luxOrNot, price, amountOfResponse)
             +room__star-wrapper
                 - let nRate = 5;
                 - for(let i=1; i<=nRate; i++){
-                    +button-star
-                        img(src='img/star.png' alt='star')
+                    - if(i<=rate) {
+                        +button-star
+                            img(src='img/star.png' alt='star')
+                    - }
+                    - else {
+                        +button-star
+                            img(src='img/star_border.png' alt='star')
+                    - }            
                 - }
             p
                 +text('span', amountOfResponse, ['text_lh18', 'text_1F2041-05', 'text_fs14', 'text_bold', 'block', 'block_mr4px'])

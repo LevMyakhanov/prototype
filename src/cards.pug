@@ -1,23 +1,28 @@
 include ./common.blocks/room-search/room-search.pug
-include ./common.blocks/text/text.pug
-include ./common.blocks/input-wrapper/input-wrapper.pug
-include ./common.blocks/field/field.pug
-include ./common.blocks/field-name/field-name.pug
-include ./common.blocks/check-mark/check-mark.pug
-include ./common.blocks/input/input.pug
-include ./common.blocks/button/button.pug
 include ./common.blocks/account-reg/account-reg.pug
-include ./common.blocks/radio-button-wrapper/radio-button-wrapper.pug
-include ./common.blocks/radio-button/radio-button.pug
-include ./common.blocks/toggle/toggle.pug
-include ./common.blocks/href-button/href-button.pug
 include ./common.blocks/booking/booking.pug
-include ./common.blocks/booking-wrapper/booking-wrapper.pug
 include ./common.blocks/enter/enter.pug
 include ./common.blocks/calendar/calendar.pug
 include ./common.blocks/room/room.pug
-include ./common.blocks/button-star/button-star.pug
-include ./common.blocks/room-info/room-info.pug
+
+//- include ./common.blocks/text/text.pug
+//- include ./common.blocks/input-wrapper/input-wrapper.pug
+//- include ./common.blocks/field/field.pug
+//- include ./common.blocks/field-name/field-name.pug
+//- include ./common.blocks/check-mark/check-mark.pug
+//- include ./common.blocks/input/input.pug
+//- include ./common.blocks/button/button.pug
+
+//- include ./common.blocks/radio-button-wrapper/radio-button-wrapper.pug
+//- include ./common.blocks/radio-button/radio-button.pug
+//- include ./common.blocks/toggle/toggle.pug
+//- include ./common.blocks/href-button/href-button.pug
+
+//- include ./common.blocks/booking-wrapper/booking-wrapper.pug
+
+
+//- include ./common.blocks/button-star/button-star.pug
+//- include ./common.blocks/room-info/room-info.pug
 
 
 doctype html
@@ -45,18 +50,5 @@ html(lang='ru')
             // календарь
             +calendar(['block', 'block_mb41px', 'block_mt1px'])
             // вид отдельного номера
-            +room(['block', 'block_mb40px'], 'img/image.jpg', '888', 'люкс', '9 990₽', '145')
-            +room('', 'img/image2.jpg', '840', '', '9 900₽', '65')
-            // как включить условие в параметры?
-                //-     +room__star-wrapper
-                //-         - let nRate = 5;
-                //-         - for(let i=1; i<=nRate; i++){
-                //-             - if(i===nRate) {
-                //-                 +button-star
-                //-                     img(src='img/star_border.png' alt='star')
-                //-             - }
-                //-             - else {
-                //-                 +button-star
-                //-                     img(src='img/star.png' alt='star')
-                //-             - }            
-                //-         - }
+            +room(['block', 'block_mb40px'], 'img/image.jpg', '888', 'люкс', '9 990₽', '145', 5)
+            +room('', 'img/image2.jpg', '840', '', '9 900₽', '65', 4)                  

@@ -8,6 +8,7 @@ include ./common.blocks/footer/footer.pug
 include ./common.blocks/input/input.pug
 include ./common.blocks/footer-copyright/footer-copyright.pug
 include ./common.blocks/footer-media/footer-media.pug
+include ./common.blocks/footer-wrapper-768/footer-wrapper-768.pug
 
 
 doctype html
@@ -76,20 +77,20 @@ html(lang='en')
     +footer-copyright
       +text('p', 'Copyright © 2018 Toxin отель. Все права зачищены.', ['text_c', 'text_1F2041-075'])
       +footer-media
-        a(href='#')
-          img.footer-twi(src='img/twitter.png' alt='twitter')
-        a.block.block_ml20px(href='#')
-          img.footer-fa(src='img/facebook.png' alt='face')
-        a.block.block_ml22px(href='#')
-          img.footer-insta(src='img/insta.png' alt='insta')
-    .footer3-wrapper
-      a.logo-toxin.block.block_mb20px(href='/')
+        +href(href='#')
+          img.footer-media__twi(src='img/twitter.png' alt='twitter')
+        +href(href='#', class=['block', 'block_ml20px'])
+          img.footer-media__fa(src='img/facebook.png' alt='face')
+        +href(href='#', class=['block', 'block_ml22px'])
+          img.footer-media__insta(src='img/insta.png' alt='insta')
+    +footer-wrapper-768
+      +logo-toxin(['block', 'block_mb20px'])
         img(src='img/Logo.png' alt='logo-toxin')
-      p.text.text_c.text_1F2041-075.block.block_mb25px Copyright © 2018 Toxin отель. Все права зачищены.
-      .footer-media
-        a(href='#')
+      +text('p', 'Copyright © 2018 Toxin отель. Все права зачищены.', ['text_c', 'text_1F2041-075', 'block', 'block_mb25px'])
+      +footer-media
+        +href(href='#')
           img(src='img/twitter.png' alt='twitter')
-        a.block.block_ml20px(href='#')
+        +href(href='#', class=['block', 'block_ml20px'])
           img(src='img/facebook.png' alt='face')
-        a.block.block_ml20px(href='#')
+        +href(href='#', class=['block', 'block_ml20px'])
           img(src='img/insta.png' alt='insta')
