@@ -6,10 +6,10 @@ mixin calendar(classes)
     .calendar(class=classes)
         +calendar__header(['block', 'block_mb30px'])
             a(href='#')
-                img.calendar__arrow_l(src='img/arrow_back.png' alt='arrow_back')
-            +text('p', 'Август 2019', ['calendar__header_text', 'text_m'])
+                img.calendar__header_arrow-l(src='img/arrow_back.png' alt='arrow_back')
+            +text('p', 'Август 2019', ['text__header-pp', 'text_m'])
             a(href='#')
-                img.calendar__arrow_r(src='img/arrow_forward_violet.png' alt='arrow_forward')
+                img.calendar__header_arrow-r(src='img/arrow_forward_violet.png' alt='arrow_forward')
         +calendar__table(['block', 'block_mb20px'])
             +week(['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'])
             +calendarDates(['29', '30', '31', '1', '2', '3', '4'])
@@ -38,7 +38,7 @@ mixin calendarDates(array)
     tr
         each name in array
             - if(name==='8'){
-                td.calendar__td.calendar_green.text.text_bold.text_FFF= name
+                td.calendar__td.calendar__green.text.text_bold.text_FFF= name
             - } else if(name==='19'){
                 td.calendar__td.calendar_purple.text.text_bold.text_FFF= name
             - } else if(name==='23'){

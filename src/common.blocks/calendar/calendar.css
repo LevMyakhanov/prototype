@@ -11,14 +11,14 @@
     justify-content: space-between;
     align-items: center;
 }
-.calendar__header_text {
+.text__header-pp {
     margin-top: 1px;
 }
-.calendar__arrow-left {
+.calendar__header_arrow-l {
     margin-left: 4px;
     margin-top: 3px;
 }
-.calendar__arrow_r {
+.calendar__header_arrow-r {
     margin-right: 4px;
     margin-top: 3px;
 } 
@@ -31,7 +31,7 @@
     height: 40px;
     width: 40px;
 }
-.calendar_green {
+.calendar__green {
     border-radius: 50%;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }

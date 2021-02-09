@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: center;
 }
-.booking-wrapper_top {
+.booking-wrapper-top {
     display: flex;
     justify-content: space-between;
 }
@@ -31,7 +31,7 @@
 .booking__wr {
     display: flex;
 }
-.booking_min-w {
+.booking__min-w {
     min-width: 21.4rem;
 }
 .booking__logo {

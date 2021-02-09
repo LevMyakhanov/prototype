@@ -1,12 +1,9 @@
 .room-search {
     width: 38rem;
+    height: 37.4rem;
     background: #FFFFFF;
     border: 0.1rem solid rgba(0, 0, 0, 0.12);
     box-shadow: 0px 0px 2.5rem rgba(0, 0, 0, 0.2);
     border-radius: 0.4rem;
     padding: 4rem 3rem 3rem 3rem;
 }
-/* .room-search_pp {
-    margin-left: 0.1rem;
-    margin-top: 0.1rem;
-} */

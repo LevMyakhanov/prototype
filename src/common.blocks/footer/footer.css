@@ -5,7 +5,7 @@
     padding: 10rem 14rem;
     box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
 }
-.footer_sm {
+.footer__sm {
     display: flex;
 }
 .footer__column1 {

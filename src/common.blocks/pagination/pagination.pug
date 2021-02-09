@@ -2,10 +2,6 @@ mixin pagination(classes)
     .pagination(class=classes)
         block
 
-mixin pagination__href(hrefs, classes)
-    a.pagination__href(href=hrefs, class=classes)
-        block
-
-mixin pagination__href_active(text)
-    span.pagination__href_active= text
+mixin pagination__href(hrefs, classes, text)
+    a.pagination__href(href=hrefs, class=classes)= text 
         block

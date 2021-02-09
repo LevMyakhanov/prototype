@@ -150,8 +150,7 @@ html(lang='ru')
                 img(src='img/arrow_back.png' alt='')
             - }
             - else if(i===1){
-              +pagination__href('#')
-                +pagination__href_active(i)
+              +pagination__href('#', 'pagination__href_active', i)
             - }
             - else if(i>1 && i<4){
               +pagination__href('#')

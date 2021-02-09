@@ -1,4 +1,8 @@
 include ./common.blocks/header-guest/header-guest.pug
+include ./common.blocks/room-search/room-search.pug
+include ./common.blocks/text/text.pug
+include ./common.blocks/footer/footer.pug
+include ./common.blocks/footer-copyright/footer-copyright.pug
 
 doctype html
 html(lang='ru')
@@ -11,4 +15,8 @@ html(lang='ru')
         // link(rel='stylesheet' href='styles.css')
     body.landingPage
         +header-guest(false)
-
+        .page-background-image
+            +room-search
+            +text('p', 'Лучшие номера для вашей работы, отдыха и просто вдохновения', ['text_b', 'text_lh24', 'text_1F2041-075', 'landingPage-text'])
+        +footer(['block', 'block_mb1px'])
+        +footer-copyright

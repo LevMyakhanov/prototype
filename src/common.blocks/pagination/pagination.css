@@ -1,16 +1,6 @@
 .pagination {
     display: flex;
 }
-.pagination__href_active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    color: #FFFFFF;
-}
 .pagination__href-arrow_d-none {
     display: none;
 }
@@ -32,4 +22,9 @@
 }
 .pagination-pp {
     padding-left: 0.6rem
+}
+.pagination__href_active {
+    border-radius: 50%;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: #FFFFFF;
 }

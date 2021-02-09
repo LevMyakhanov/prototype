@@ -3,8 +3,8 @@ include ../header-list/header-list.pug
 include ../button/button.pug
 include ../text/text.pug
 
-mixin header-guest(isReg)
-    .header-guest(class=classes)       
+mixin header-guest(isReg, classes)
+    .header-guest(class=classes)
         +logo-toxin('block_mr20px')
             img(src='img/Logo.png' alt='logo-toxin')
         +header-guest__l-wr
@@ -16,7 +16,7 @@ mixin header-guest(isReg)
                 +text('p', 'Юлий Цезарь', ['text_c', 'block', 'block_ml20px'])
             - } else {
                 +button(['button_sm', 'button_bordered'])
-                    +text('sapn', 'войти', ['text_bold', 'text_ttu', 'text_BC9CFF'])
+                    +text('span', 'войти', ['text_bold', 'text_ttu', 'text_BC9CFF'])
                 +button(['header-guest__button', 'block', 'block_ml20px'])
                     +text('span', 'зарегистрироваться', ['text_bold', 'text_ttu', 'text_FFF'])
             - }
