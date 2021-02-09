@@ -1,3 +1,31 @@
+include ./common.blocks/field/field.pug
+include ./common.blocks/input/input.pug
+include ./common.blocks/input-wrapper/input-wrapper.pug
+include ./common.blocks/filter-date/filter-date.pug
+include ./common.blocks/form-field/form-field.pug
+include ./common.blocks/check-mark/check-mark.pug
+include ./common.blocks/checkbox-buttons/checkbox-button.pug
+include ./common.blocks/text/text.pug
+include ./common.blocks/radio-button-wrapper/radio-button-wrapper.pug
+include ./common.blocks/radio-button/radio-button.pug
+include ./common.blocks/toggle/toggle.pug
+include ./common.blocks/button-like/button-like.pug
+include ./common.blocks/rate-button/rate-button.pug
+include ./common.blocks/button-star/button-star.pug
+include ./common.blocks/slider/slider.pug
+include ./common.blocks/button/button.pug
+include ./common.blocks/pagination/pagination.pug
+include ./common.blocks/dropdown/dropdown.pug
+include ./common.blocks/expandable-list/expandable-list.pug
+include ./common.blocks/checkbox-list/checkbox-list.pug
+include ./common.blocks/rich-Checkbox-Buttons/rich-Checkbox-Buttons.pug
+include ./common.blocks/bullet-list/bullet-list.pug
+include ./common.blocks/room-advantages/room-advantages.pug
+include ./common.blocks/advantages/advantages.pug
+include ./common.blocks/comments/comments.pug
+include ./common.blocks/like-comments/like-comments.pug
+
+
 doctype html
 html(lang='ru')
   head
@@ -10,33 +38,6 @@ html(lang='ru')
   body.form-elements
     .form-elements__row
       .form-elements__row1_column1 
-        include ./common.blocks/field/field.pug
-        include ./common.blocks/input/input.pug
-        include ./common.blocks/input-wrapper/input-wrapper.pug
-        include ./common.blocks/filter-date/filter-date.pug
-        include ./common.blocks/form-field/form-field.pug
-        include ./common.blocks/check-mark/check-mark.pug
-        include ./common.blocks/checkbox-buttons/checkbox-button.pug
-        include ./common.blocks/text/text.pug
-        include ./common.blocks/radio-button-wrapper/radio-button-wrapper.pug
-        include ./common.blocks/radio-button/radio-button.pug
-        include ./common.blocks/toggle/toggle.pug
-        include ./common.blocks/button-like/button-like.pug
-        include ./common.blocks/rate-button/rate-button.pug
-        include ./common.blocks/button-star/button-star.pug
-        include ./common.blocks/slider/slider.pug
-        include ./common.blocks/button/button.pug
-        include ./common.blocks/pagination/pagination.pug
-        include ./common.blocks/dropdown/dropdown.pug
-        include ./common.blocks/expandable-list/expandable-list.pug
-        include ./common.blocks/checkbox-list/checkbox-list.pug
-        include ./common.blocks/rich-Checkbox-Buttons/rich-Checkbox-Buttons.pug
-        include ./common.blocks/bullet-list/bullet-list.pug
-        include ./common.blocks/room-advantages/room-advantages.pug
-        include ./common.blocks/advantages/advantages.pug
-        include ./common.blocks/comments/comments.pug
-        include ./common.blocks/like-comments/like-comments.pug
-
         +field('label', ['block', 'block_mb20px'])
           +text('span', 'text field', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
           +text('span', 'Default', ['text_ttu','text_1F2041-05','text_right','block', 'block_mb5px', 'block_mt-3px', 'field__text'])

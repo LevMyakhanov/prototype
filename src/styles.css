@@ -117,3 +117,14 @@
     padding: 14rem 0;
     background: #F4F4F6;
 }
+
+
+.landingPage {
+    width: 144rem;
+    height: 134.3rem;
+}
+.page-background-image {
+    width: 144rem;
+    height: 83rem;
+    background-image: url(img/image3.png);
+}
