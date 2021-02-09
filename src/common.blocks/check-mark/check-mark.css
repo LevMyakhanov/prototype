@@ -1,6 +1,7 @@
 .check-mark {
     position: relative;
     display: block;
+    width: 100%;
 }
 .check-mark::after {
     content: "";

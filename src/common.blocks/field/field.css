@@ -1,5 +1,7 @@
 .field {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .field_small {
     width: 15rem;
@@ -9,4 +11,7 @@
 }
 .field_small-pp {
     margin-right: -2px;
+}
+.field__text {
+    width: 50%;
 }

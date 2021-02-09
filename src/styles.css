@@ -2,7 +2,6 @@
 @import 'common.blocks/block/block.css';
 @import 'common.blocks/text/text.css';
 @import 'common.blocks/field/field.css';
-@import 'common.blocks/field-name/field-name.css';
 @import 'common.blocks/input/input.css';
 @import 'common.blocks/check-mark/check-mark.css';
 @import 'common.blocks/input-wrapper/input-wrapper.css';
@@ -112,7 +111,7 @@
     background: #F4F4F6;
 }
 .header-guest {
-    height: 7rem;
+    min-height: 7rem;
     padding: 0 14rem;
     display: flex;
     align-items: center;
@@ -122,8 +121,8 @@
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 .logo-toxin {
-    width: 10.5rem;
-    height: 4rem;
+    min-width: 10.5rem;
+    margin-right: 2rem;
 }
 
 .header-guest__l-wr {
@@ -133,16 +132,21 @@
 }
 .header-list {
     display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -1rem;
+    justify-content: flex-end;
+}
+.header-list__item {
+    margin-bottom: 1rem;
+}
+.header-list__item:not(:last-child) {
+    margin-right: 2rem;
 }
 .header-guest__list {
     position: relative;
-    width: 7.4rem;
+    padding-right: 2.2rem;
 }
-.header-guest__list2 {
-    position: relative;
-    width: 11.6rem;
-}
-.header-guest__list::after, .header-guest__list2::after {
+.header-guest__list::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -165,11 +169,8 @@
 .header-guest__list:hover > .submenu {
     display: block;
 }
-.header-guest__list2:hover > .submenu {
-    display: block;
-}
 .header-guest__button {
-    width: 19.6rem;
+    min-width: 19.6rem;
     height: 3.4rem;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 2.2rem;

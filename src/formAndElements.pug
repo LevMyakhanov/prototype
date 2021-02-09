@@ -11,7 +11,6 @@ html(lang='ru')
     .form-elements__row
       .form-elements__row1_column1 
         include ./common.blocks/field/field.pug
-        include ./common.blocks/field-name/field-name.pug
         include ./common.blocks/input/input.pug
         include ./common.blocks/input-wrapper/input-wrapper.pug
         include ./common.blocks/filter-date/filter-date.pug
@@ -39,37 +38,37 @@ html(lang='ru')
         include ./common.blocks/like-comments/like-comments.pug
 
         +field('label', ['block', 'block_mb20px'])
-          +field-name()
-          +field-name('Default', ['text_ttu','text_1F2041-05','text_right','block','block_mt-3px'])
+          +text('span', 'text field text field text field text field', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
+          +text('span', 'Default Default Default Default Default', ['text_ttu','text_1F2041-05','text_right','block', 'block_mb5px', 'block_mt-3px', 'field__text'])
           +input(type='email', name='email', placeholder='Email', class=['text', 'text_b', 'text_1F2041-075'])
         +field('label', ['block', 'block_mb20px'])
-          +field-name()
-          +field-name('Hover / Focus', ['text_ttu','text_1F2041-05','text_right','block','block_mb5px'])
+          +text('span', 'text field text field text field text field', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
+          +text('span', 'Hover / Focus', ['text_ttu','text_1F2041-05','text_right','block', 'block_mb5px', 'field__text'])
           +input(type='text', name='text', value='This is pretty awesome', class=['text', 'text_b', 'text_1F2041-075'])
         +field('div', ['block', 'block_mb22px'])
-          +field-name('Dropdown')
+          +text('span', 'Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
           +check-mark
             +input(type='text', name='amount of guests', value='Сколько гостей', class=['text', 'text_b', 'text_1F2041-075'])
         +field('label', ['block', 'block_mb41px'])
-          +field-name('masked text field')
+          +text('span', 'masked text field', ['text_bold','text_ttu','block','block_mb5px'])
           +input(type='text', name='masked text field', placeholder='ДД.ММ.ГГГГ', pattern='\d{1,2}\/d{1,2}\/d{4}', class=['text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
         +input-wrapper(['block', 'block_mb40px'])
           +field('label','field_small')
-            +field-name('date Dropdown')
+            +text('span', 'date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
             +check-mark
               +input(type='date', name='arrival', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
           +field('label', 'field_small')
-            +field-name('date Dropdown')
+            +text('span', 'date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
             +check-mark
               +input(type='date', name='departure', value='2019-08-19', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
         // даты пребывания в отеле
         +filter-date(['filter-date', 'block', 'block_mb41px'])
-          +field-name('filter date Dropdown')
+          +text('span', 'filter date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
           +check-mark
             +input(type='text', name='dates', value='19 авг - 23 авг', class=['text', 'text_b', 'text_1F2041-075'])
         +form-field('https://echo.htmlacademy.ru', 'post')
           +field('label', 'field_middle')
-            +field-name('subscription text field')
+            +text('span', 'subscription text field', ['text_bold','text_ttu','block','block_mb5px'])
             +input(type='email', name='subscription text field', placeholder='Email', class=['text', 'text_b', 'text_1F2041-075'])
           +form-field__button('block_ml223px')
       .form-elements__row1_column2
@@ -179,15 +178,15 @@ html(lang='ru')
       .form-elements__row2_column1
         +dropdown(['block', 'block_mb19px'])
           +field('label')
-            +field-name('dropdown')
-            +text('span', 'default', ['text_ttu', 'text_1F2041-05', 'text_right', 'block', 'block_mb5px'])
+            +text('span', 'dropdown', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
+            +text('span', 'default', ['text_ttu', 'text_1F2041-05', 'text_right', 'block', 'block_mb5px', 'field__text'])
             +check-mark
               +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...' class=['input_square-angles', 'text', 'text_b', 'text_1F2041-075'])
         // удобства номера
         +dropdown(['dropdown_pp'])
           +field('label')
-            +field-name('dropdown')
-            +text('span', 'expanded', ['text_ttu', 'text_1F2041-05', 'text_right', 'block', 'block_mb5px'])
+            +text('span', 'dropdown', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
+            +text('span', 'expanded', ['text_ttu', 'text_1F2041-05', 'text_right', 'block', 'block_mb5px', 'field__text'])
             +check-mark
               +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
           +dropdown__wrapper('dropdown__wrapper_off-buttons')
@@ -242,9 +241,9 @@ html(lang='ru')
       +rich-Checkbox-Buttons(['block', 'block_ml180px'])
         +text('p', 'rich Checkbox Buttons', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         +checkbox-button('corridor', 'Широкий коридор', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_ml10px', 'block_mb6px'])
-        +text('p', 'Ширина коридоров в номере не менее 91 см.', ['rich-Checkbox-Buttons_t1', 'text_lh14', 'text_1F2041-05', 'block', 'block_ml30px', 'block_mb10px'])
+        +text('p', 'Ширина коридоров в номере не&nbsp;менее 91 см.', ['rich-Checkbox-Buttons_t1', 'text_lh14', 'text_1F2041-05', 'block', 'block_ml30px', 'block_mb10px'])
         +checkbox-button('helper', 'Помощник для инвалидов', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_ml10px', 'block_mb6px'])
-        +text('p', 'На 1 этаже вас встретит специалист и проводит до номера.', ['rich-Checkbox-Buttons_t2', 'text_lh14', 'text_1F2041-05', 'block', 'block_ml30px'])
+        +text('p', 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.', ['rich-Checkbox-Buttons_t2', 'text_lh14', 'text_1F2041-05', 'block', 'block_ml30px'])
       // Правила гостиницы
       +bullet-list('bullet list', ['block', 'block_ml126px'], ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'])
     .form-elements__row4

@@ -9,7 +9,7 @@ mixin header-list(array, classes0, classes1, classes2, classes3, classes4)
             - } else if(index===1){
                 li(class=classes1)
                     a(href='')= name
-                +submenu(['Обслуживание в номера', '2', '3', '4'])
+                    +submenu(['Обслуживание в номера', '2', '3', '4'])
             - } else if(index===2){
                 li(class=classes2)
                     a(href='')= name
@@ -19,6 +19,6 @@ mixin header-list(array, classes0, classes1, classes2, classes3, classes4)
             - } else {
                 li(class=classes4)
                     a(href='')= name
-                +submenu(['Обслуживание в номера', '2', '3', '4'])
+                    +submenu(['Обслуживание в номера', '2', '3', '4'])
             - }
 

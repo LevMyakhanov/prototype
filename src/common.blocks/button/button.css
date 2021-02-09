@@ -11,7 +11,7 @@
     opacity: 0.5;
 }
 .button_sm {
-    width: 8.7rem;
+    min-width: 8.7rem;
     height: 3.4rem;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 2.2rem;

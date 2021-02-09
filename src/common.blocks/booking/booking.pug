@@ -3,7 +3,6 @@ include ../booking-wrapper/booking-wrapper.pug
 include ../text/text.pug
 include ../input-wrapper/input-wrapper.pug
 include ../field/field.pug
-include ../field-name/field-name.pug
 include ../check-mark/check-mark.pug
 include ../input/input.pug
 include ../button/button.pug
@@ -20,15 +19,15 @@ mixin booking(classes)
                 +text('span', 'в сутки', ['text', 'text_lh14', 'text_1F2041-05'])               
         +input-wrapper(['block', 'block_mb20px'])
             +field('label','field_small')
-                +field-name('прибытие')
+                +text('span', 'прибытие', ['text_bold','text_ttu','block','block_mb5px'])
                 +check-mark
                     +input(type='date', name='arrival', value='2019-08-19', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
             +field('label','field_small')
-                +field-name('выезд')
+                +text('span', 'выезд', ['text_bold','text_ttu','block','block_mb5px'])
                 +check-mark
                     +input(type='date', name='departure', value='2019-08-23', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
         +field('div', ['block', 'block_mb20px'])
-            +field-name('гости')
+            +text('span', 'гости', ['text_bold','text_ttu','block','block_mb5px'])
             +check-mark
                 +input(type='text', name='amount of guests', value='3 гостя', class=['text', 'text_b', 'text_1F2041-075'])
         +booking-wrapper(['block', 'block_mb13px'])
