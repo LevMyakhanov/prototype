@@ -11,7 +11,7 @@
 .button_opacity {
     opacity: 0.5;
 }
-.button_sm {
+.button-header {
     height: 3.4rem;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 2.2rem;
@@ -20,6 +20,21 @@
     align-items: center;
     padding-left: 2rem;
     padding-right: 2rem;
+}
+.button-header_bordered {
+    position: relative;
+    z-index: 0;
+}
+.button-header_bordered::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #fff;
+    border-radius: 2.2rem;
+    left: 0.2rem;
+    top: 0.2rem;
+    right: 0.2rem;
+    bottom: 0.2rem;
 }
 .button_bordered {
     position: relative;

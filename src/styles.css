@@ -42,6 +42,7 @@
 @import 'common.blocks/footer-copyright/footer-copyright.css';
 @import 'common.blocks/footer-media/footer-media.css';
 @import 'common.blocks/footer-wrapper-768/footer-wrapper-768.css';
+@import 'common.blocks/burger-wrap/burger-wrap.css';
 
 
 .form-elements {
@@ -111,21 +112,21 @@
 
 
 .headers-footers {
-    width: 144rem;
     padding: 14rem 0;
     background: #F4F4F6;
 }
-
-
-.landingPage {
-    width: 144rem;
-    height: 134.3rem;
+.container {
+    padding-left: 14rem;
+    padding-right: 14rem;
 }
+
 .page-background-image {
-    width: 144rem;
     height: 83rem;
     background-image: url("img/image3.png");
-    padding: 7rem 13.4rem 1.8rem 14rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 7rem;
+    padding-bottom: 1.8rem;
     display: flex;
     justify-content: space-between;
 }
@@ -134,4 +135,31 @@
     height: 4.8rem;
     text-align: right;
     align-self: flex-end;
+}
+
+@media (max-width:991px) {
+    .container {
+        padding-left: 7rem;
+        padding-right: 7rem;
+    }
+    .page-background-image {
+        padding-bottom: 7rem;
+    }
+}
+@media (max-width:767px) {
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .page-background-image {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .landingPage-text {
+        width: 29.7rem;
+        height: 4.8rem;
+        text-align: center;
+        align-self: flex-end;
+    }
 }

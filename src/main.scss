@@ -1,0 +1,28 @@
+// 27. Media queries
+$breakpoints: (
+  "phone": 576px,
+  "tablet": 768px,
+  "tablet-wide": 992px,
+  "desktop": 1200px,
+  "desktop-wide": 1440px,
+);
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+.site-header {
+  padding: 2rem;
+  font-size: 1.8rem;
+  @include mq("tablet-wide") {
+    padding-top: 4rem;
+    font-size: 2.4rem;
+  }
+}
+

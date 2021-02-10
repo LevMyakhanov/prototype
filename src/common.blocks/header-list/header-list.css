@@ -10,3 +10,10 @@
 .header-list__item:not(:last-child) {
     margin-right: 2rem;
 }
+
+
+@media (max-width:1200px) {
+    .header-list__li-breaker {
+        min-width: 100%;
+    }
+}

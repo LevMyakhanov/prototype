@@ -1,0 +1,24 @@
+.burger-wrap {
+    width: 3.4rem;
+    height: 3.4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.burger {
+    width: 25px;
+    height: 5px;
+    background-color: #BC9CFF;
+    border-radius: 5px;
+}
+.burger-wrap-wrap__d{
+    display: none;
+}
+
+
+@media (max-width:991px) {
+    .burger-wrap-wrap__d{
+        display: flex;
+    }
+}

@@ -7,3 +7,9 @@
     border-radius: 0.4rem;
     padding: 4rem 3rem 3rem 3rem;
 }
+
+@media (max-width:767px) {
+    .room-search {
+        margin-bottom: 15rem;
+    }
+}

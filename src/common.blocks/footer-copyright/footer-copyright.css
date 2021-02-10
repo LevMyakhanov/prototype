@@ -1,7 +1,5 @@
 .footer-copyright {
-    width: 144rem;
-    height: 7rem;
-    padding: 0 14rem;
+    min-height: 7rem;
     display: flex;
     justify-content: space-between;
     align-items: center;

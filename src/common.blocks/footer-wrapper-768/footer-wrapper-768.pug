@@ -2,8 +2,8 @@ include ../logo-toxin/logo-toxin.pug
 include ../text/text.pug
 include ../footer-media/footer-media.pug
 
-mixin footer-wrapper-768
-    .footer-wrapper-768
+mixin footer-wrapper-768(classes)
+    .footer-wrapper-768(class=classes)
         +logo-toxin(['block', 'block_mb20px'])
             img(src='img/Logo.png' alt='logo-toxin')
         +text('p', 'Copyright © 2018 Toxin отель. Все права зачищены.', ['text_c', 'text_1F2041-075', 'block', 'block_mb25px'])
