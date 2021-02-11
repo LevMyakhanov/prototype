@@ -74,3 +74,9 @@
 .buttonPP {
     margin-left: -2px;
 }
+
+@media (max-width: 360px) {
+    .button_long {
+        min-width: 100%;
+    }
+}

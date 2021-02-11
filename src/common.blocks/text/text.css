@@ -97,3 +97,15 @@
 .text_right {
     text-align: right;
 }
+
+
+@media (min-width: 576px) {
+    .text__br {
+        display: none;
+    }
+}
+@media (max-width: 575px) {
+    .text {
+        text-align: center;
+    }
+}

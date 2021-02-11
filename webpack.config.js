@@ -83,6 +83,13 @@ module.exports = {
                 collapseWhitespace: isProd
             }
         }),
+        new HTMLWebpackPlugin({
+            template: './searchRoom.pug',
+            filename: 'searchRoom.html',
+            minify: {
+                collapseWhitespace: isProd
+            }
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'styles.css'

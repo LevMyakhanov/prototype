@@ -15,3 +15,9 @@
 .field__text {
     width: 50%;
 }
+
+@media (max-width:360px) {
+    .field_small {
+        width: calc(50% - 4px);
+    }
+}

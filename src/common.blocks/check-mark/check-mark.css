@@ -18,3 +18,9 @@
     transform: rotateZ(45deg);
     pointer-events: none;
 }
+
+@media (max-width:360px) {
+    .check-mark::after {
+        right: 1.7rem;
+    }
+}

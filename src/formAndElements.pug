@@ -1,7 +1,6 @@
 include ./common.blocks/field/field.pug
 include ./common.blocks/input/input.pug
 include ./common.blocks/input-wrapper/input-wrapper.pug
-include ./common.blocks/filter-date/filter-date.pug
 include ./common.blocks/form-field/form-field.pug
 include ./common.blocks/check-mark/check-mark.pug
 include ./common.blocks/checkbox-buttons/checkbox-button.pug
@@ -63,8 +62,8 @@ html(lang='ru')
             +check-mark
               +input(type='date', name='departure', value='2019-08-19', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
         // даты пребывания в отеле
-        +filter-date(['filter-date', 'block', 'block_mb41px'])
-          +text('span', 'filter date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
+        +field('label', ['field_middle', 'block', 'block_mb41px'])
+          +text('span', 'filter date Dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
           +check-mark
             +input(type='text', name='dates', value='19 авг - 23 авг', class=['text', 'text_b', 'text_1F2041-075'])
         +form-field('https://echo.htmlacademy.ru', 'post')
@@ -143,37 +142,7 @@ html(lang='ru')
         +text('p', 'pagination', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         // страницы
         +pagination(['block', 'block_mb10px'])
-          - let nPag = 18;
-          - for(let i=0; i<nPag; i++){
-            - if(i===0){
-              +pagination__href('#', ['pagination__href_arrow', 'pagination__href_d-none'])
-                img(src='img/arrow_back.png' alt='')
-            - }
-            - else if(i===1){
-              +pagination__href('#', 'pagination__href_active', i)
-            - }
-            - else if(i>1 && i<4){
-              +pagination__href('#')
-                +text('span', i, ['text_ttu', 'text_1F2041-05'])
-            - }
-            - else if(i===4){
-              +pagination__href('#')
-                +text('span', '...', ['text_ttu', 'text_1F2041-05'])
-            - }
-            - else if(i>4 && i<15){
-              +pagination__href('#', 'pagination__href_d-none')
-                +text('span', i-1, ['text_ttu', 'text_1F2041-05'])
-            - }
-            - else if(i===16){
-              +pagination__href('#')
-                +text('span', i-1, ['text_ttu', 'text_1F2041-05'])
-            - }
-            - else if(i===17){
-              +pagination__href('#', 'pagination__href_arrow')
-                img(src='img/arrow_forward_white.png' alt='')
-            - }
-          - }
-        +text('p', '1 – 12 из 100+ вариантов аренды', ['text_b', 'text_lh22', 'text_1F2041-075', 'pagination-pp'])
+        //- +text('p', '1 – 12 из 100+ вариантов аренды', ['text_b', 'text_lh22', 'text_1F2041-075', 'pagination-pp'])
     .form-elements__row2
       .form-elements__row2_column1
         +dropdown(['block', 'block_mb19px'])

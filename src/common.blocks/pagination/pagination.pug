@@ -1,6 +1,38 @@
-mixin pagination(classes)
-    .pagination(class=classes)
-        block
+include ../text/text.pug
+
+mixin pagination(center)
+    .pagination(class=center)
+        - let nPag = 18;
+          - for(let i=0; i<nPag; i++){
+            - if(i===0){
+              +pagination__href('#', ['pagination__href_arrow', 'pagination__href_d-none'])
+                img(src='img/arrow_back.png' alt='')
+            - }
+            - else if(i===1){
+              +pagination__href('#', 'pagination__href_active', i)
+            - }
+            - else if(i>1 && i<4){
+              +pagination__href('#')
+                +text('span', i, ['text_ttu', 'text_1F2041-05'])
+            - }
+            - else if(i===4){
+              +pagination__href('#')
+                +text('span', '...', ['text_ttu', 'text_1F2041-05'])
+            - }
+            - else if(i>4 && i<15){
+              +pagination__href('#', 'pagination__href_d-none')
+                +text('span', i-1, ['text_ttu', 'text_1F2041-05'])
+            - }
+            - else if(i===16){
+              +pagination__href('#')
+                +text('span', i-1, ['text_ttu', 'text_1F2041-05'])
+            - }
+            - else if(i===17){
+              +pagination__href('#', 'pagination__href_arrow')
+                img(src='img/arrow_forward_white.png' alt='')
+            - }
+        - }
+    +text('p', '1 – 12 из 100+ вариантов аренды', ['text_b', 'text_lh22', 'text_1F2041-075', 'pagination-pp', center])
 
 mixin pagination__href(hrefs, classes, text)
     a.pagination__href(href=hrefs, class=classes)= text 

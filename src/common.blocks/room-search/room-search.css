@@ -13,3 +13,14 @@
         margin-bottom: 15rem;
     }
 }
+@media (max-width:575px) {
+    .room-search {
+        width: 36rem;
+        padding: 3rem 2rem 2rem 2rem;
+    }
+}
+@media (max-width:360px) {
+    .room-search {
+        width: calc(100% + 4rem);
+    }
+}

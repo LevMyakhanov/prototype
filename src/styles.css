@@ -5,7 +5,6 @@
 @import 'common.blocks/input/input.css';
 @import 'common.blocks/check-mark/check-mark.css';
 @import 'common.blocks/input-wrapper/input-wrapper.css';
-@import 'common.blocks/filter-date/filter-date.css';
 @import 'common.blocks/form-field/form-field.css';
 @import 'common.blocks/checkbox-buttons/checkbox-button.css';
 @import 'common.blocks/radio-button/radio-button.css';
@@ -122,7 +121,7 @@
 
 .page-background-image {
     height: 83rem;
-    background-image: url("img/image3.png");
+    background-image: url("img/image-lp.png");
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 7rem;
@@ -136,30 +135,51 @@
     text-align: right;
     align-self: flex-end;
 }
+.search-room {
+    /* height: 135.7rem; */
+    padding-top: 3rem;
+    display: flex;
+}
+.search-room__column1 {
+    width: 26.6rem;
+    min-width: 26.6rem;
+}
+.search-room__rooms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
+
+@media (min-width: 1920px) {
+    .search-room__break {
+        width: 100%;
+    }
+}
+@media (max-width: 1919px) {
+    .search-room__break {
+        display: none;
+    }
+}
 @media (max-width:991px) {
     .container {
         padding-left: 7rem;
         padding-right: 7rem;
     }
-    .page-background-image {
+    /* .page-background-image {
         padding-bottom: 7rem;
-    }
+    } */
 }
 @media (max-width:767px) {
-    .container {
-        padding-left: 0;
-        padding-right: 0;
-    }
     .page-background-image {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .landingPage-text {
-        width: 29.7rem;
-        height: 4.8rem;
-        text-align: center;
-        align-self: flex-end;
+}
+@media (max-width:575px) {
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
