@@ -90,6 +90,13 @@ module.exports = {
                 collapseWhitespace: isProd
             }
         }),
+        new HTMLWebpackPlugin({
+            template: './roomDetails.pug',
+            filename: 'roomDetails.html',
+            minify: {
+                collapseWhitespace: isProd
+            }
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'styles.css'

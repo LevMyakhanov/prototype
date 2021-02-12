@@ -1,0 +1,78 @@
+include ./common.blocks/header-guest/header-guest.pug
+include ./common.blocks/advantages/advantages.pug
+include ./common.blocks/text/text.pug
+include ./common.blocks/comments/comments.pug
+include ./common.blocks/footer/footer.pug
+include ./common.blocks/footer-copyright/footer-copyright.pug
+include ./common.blocks/footer-wrapper-768/footer-wrapper-768.pug
+
+
+doctype html
+html(lang='ru')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title Document
+        link(rel='preconnect' href='https://fonts.gstatic.com')
+        link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap' rel='stylesheet')
+        // link(rel='stylesheet' href='styles.css')
+    body
+        .room-details
+            +header-guest(false)
+            .three-pictures.container
+            .room-details__two-columns.container
+                .room-details__inner
+                    .room-details__string1
+                        .room-details__info
+                            +text('p', 'Сведения о номере', ['text_m', 'text_bold'])
+                            +advantages
+                                +advantages__img('advantages__img_PP')
+                                    img(src='img/insert_emoticon.png' alt='smile')
+                                +advantages__text
+                                    +text('p', 'Комфорт', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_mb8px', 'block_ml10px'])
+                                    +text('p', 'Шумопоглощающие стены', ['text_b', 'text_1F2041-075', 'text_b', 'text_1F2041-075', 'block', 'block_ml10px'])
+                            +advantages('advantages_padding-down')
+                                +advantages__img
+                                    img(src='img/location_city.png' alt='biulding')
+                                +advantages__text
+                                    +text('p', 'Удобство', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_mb8px', 'block_ml10px', 'block_mt4px'])
+                                    +text('p', 'Окно в каждой из спален', ['text_b', 'text_1F2041-075', 'block', 'block_ml9px', 'block_mt-3px'])
+                            +advantages('advantages_padding-down')
+                                +advantages__img
+                                    img(src='img/location_city.png' alt='biulding')
+                                +advantages__text
+                                    +text('p', 'Уют', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_mb8px', 'block_ml10px', 'block_mt4px'])
+                                    +text('p', 'Номер оснащён камином', ['text_b', 'text_1F2041-075', 'block', 'block_ml9px', 'block_mt-3px'])
+                        .room-details__impression
+                            +text('p', 'Впечатления от номера', ['text_m', 'text_bold'])
+                    .room-details__comments
+                        +text('p', 'Отзывы посетителей номера', ['text_m', 'text_bold'])
+                        +comments(['block', 'block_mb15px'])
+                            img(src='img/image.png' alt='avatarka')
+                            +comments__text
+                                +text('p', 'Мурад Сарафанов', ['text_b', 'text_1F2041-075','text_bold', 'block', 'block_mb8px', 'block_ml12px'])
+                                +text('p', '5 дней назад', ['text_b', 'text_1F2041-075', 'block', 'block_ml11px'])
+                        +like-comments
+                            +button-like(['button-like_pressed', 'button-like_PP'])
+                                img.button-like__heart(src='img/favorite.png' alt='heart_pressed')
+                                +text('span', '12', ['text_s', 'text_BC9CFF'])
+                            +text('p', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                            ['text_b', 'text_lh24', 'text_1F2041-075', 'block', 'block_ml14px', 'button-like-text_PP'])
+                        +comments(['block', 'block_mb15px'])
+                            img(src='img/image.png' alt='avatarka')
+                            +comments__text
+                                +text('p', 'Мурад Сарафанов', ['text_b', 'text_1F2041-075','text_bold', 'block', 'block_mb8px', 'block_ml12px'])
+                                +text('p', '5 дней назад', ['text_b', 'text_1F2041-075', 'block', 'block_ml11px'])
+                        +like-comments
+                            +button-like(['button-like_PP'])
+                                img.button-like__heart(src='img/favorite.png' alt='heart_pressed')
+                                +text('span', '12', ['text_s', 'text_BC9CFF'])
+                            +text('p', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                            ['text_b', 'text_lh24', 'text_1F2041-075', 'block', 'block_ml14px', 'button-like-text_PP'])
+                    .room-details__string2
+                        .room-details__rule
+                        .room-details__cansel
+                +booking
+            +footer(['block', 'block_mb1px'])
+            +footer-copyright
+

@@ -11,6 +11,9 @@ include ./common.blocks/rich-Checkbox-Buttons/rich-Checkbox-Buttons.pug
 include ./common.blocks/dropdown/dropdown.pug
 include ./common.blocks/expandable-list/expandable-list.pug
 include ./common.blocks/checkbox-list/checkbox-list.pug
+include ./common.blocks/footer/footer.pug
+include ./common.blocks/footer-copyright/footer-copyright.pug
+include ./common.blocks/footer-wrapper-768/footer-wrapper-768.pug
 
 
 doctype html
@@ -24,62 +27,66 @@ html(lang='ru')
         // link(rel='stylesheet' href='styles.css')
     body.search-room-wrap
         +header-guest(false)
-        .search-room.container
-            .search-room__column1
-                +field('label', ['field_middle', 'block', 'block_mb20px'])
-                    +text('span', 'даты пребывания в отеле', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
-                    +check-mark
-                        +input(type='text', name='dates', value='19 авг - 23 авг', class=['text', 'text_b', 'text_1F2041-075'])
-                +field('div', ['block', 'block_mb30px'])
-                    +text('span', 'гости', ['text_bold','text_ttu','block','block_mb5px'])
-                    +check-mark
-                        +input(type='text', name='amount of guests', value='3 гостя, 1 младенец', class=['text', 'text_b', 'text_1F2041-075'])
-                +slider(['block', 'block_mb40px'])
-                    +text('span', 'диапазон цены', ['slider__name', 'text_bold', 'text_ttu'])
-                    +text('span', '5 000₽ - 10 000₽', ['slider__name', 'text_1F2041-05', 'text_right'])
-                    input(type='range' name='Range Slider')
-                    +text('span', 'Стоимость за сутки пребывания в номере', ['slider__name', 'text_1F2041-05'])
-                .checkbox-buttons.block.block_mb31px
-                    +text('p', 'правила дома', ['text_bold', 'text_ttu', 'block','block_mb16px'])
-                    .checkbox-buttons__wrapper
-                        +checkbox-button('smoking', 'Можно курить', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'], ['block', 'block_mb11px'])
-                        +checkbox-button('smoking', 'Можно с питомцами', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'], ['block', 'block_mb11px'], true)
-                        +checkbox-button('smoking', 'Можно пригласить гостей (до 10 человек)', ['text_b', 'text_lh18', 'text_1F2041-05', 'block','block_ml10px'], ['block', 'block_mb41px'], true)
-                +rich-Checkbox-Buttons('block_mb30px')
-                    +text('p', 'доступность', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
-                    +checkbox-button('corridor', 'Широкий коридор', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_ml10px', 'block_mb6px'])
-                    +text('p', 'Ширина коридоров в номере не&nbsp;менее 91 см.', ['rich-Checkbox-Buttons_t1', 'text_lh14', 'text_1F2041-05', 'block', 'block_ml30px', 'block_mb10px'])
-                    +checkbox-button('helper', 'Помощник для инвалидов', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_ml10px', 'block_mb6px'])
-                    +text('p', 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.', ['rich-Checkbox-Buttons_t2', 'text_lh14', 'text_1F2041-05', 'block', 'block_ml30px'])
-                +dropdown('block_mb30px')
-                    +field('label')
-                        +text('span', 'удобства номера', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
+        .search-room-wr.container
+            .search-room.block.block_mb1px
+                .search-room__column1
+                    +field('label', ['field_middle', 'block', 'block_mb20px'])
+                        +text('span', 'даты пребывания в отеле', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
                         +check-mark
-                            +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
-                +expandable-list
-                    +expandable-list__summary(['check-mark', 'block', 'block_mb17px'])
-                        +text('span', 'дополнительные удобства', ['text_bold', 'text_ttu'])
-                    +checkbox-list
-                        +checkbox-button('breakfast', 'Завтрак', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb11px'])
-                        +checkbox-button('desk', 'Письменный стол', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'], true)
-                        +checkbox-button('feeding_chair', 'Стул для кормления', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'], true)
-                        +checkbox-button('child_bed', 'Кроватка', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'], true)
-                        +checkbox-button('tv', 'Телевизор', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'])
-                        +checkbox-button('shampoo', 'Шампунь', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+                            +input(type='text', name='dates', value='19 авг - 23 авг', class=['text', 'text_b', 'text_1F2041-075'])
+                    +field('div', ['block', 'block_mb30px'])
+                        +text('span', 'гости', ['text_bold','text_ttu','block','block_mb5px'])
+                        +check-mark
+                            +input(type='text', name='amount of guests', value='3 гостя, 1 младенец', class=['text', 'text_b', 'text_1F2041-075'])
+                    +slider(['block', 'block_mb40px'])
+                        +text('span', 'диапазон цены', ['slider__name', 'text_bold', 'text_ttu'])
+                        +text('span', '5 000₽ - 10 000₽', ['slider__name', 'text_1F2041-05', 'text_right'])
+                        input(type='range' name='Range Slider')
+                        +text('span', 'Стоимость за сутки пребывания в номере', ['slider__name', 'text_1F2041-05'])
+                    .checkbox-buttons.block.block_mb31px
+                        +text('p', 'правила дома', ['text_bold', 'text_ttu', 'block','block_mb16px'])
+                        .checkbox-buttons__wrapper
+                            +checkbox-button('smoking', 'Можно курить', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'], ['block', 'block_mb11px'])
+                            +checkbox-button('smoking', 'Можно с питомцами', ['text_b', 'text_lh20', 'text_1F2041-05', 'block','block_ml10px'], ['block', 'block_mb11px'], true)
+                            +checkbox-button('smoking', 'Можно пригласить гостей (до 10 человек)', ['text_b', 'text_lh18', 'text_1F2041-05', 'block','block_ml10px'], ['block', 'block_mb41px'], true)
+                    +rich-Checkbox-Buttons('block_mb30px')
+                        +text('p', 'доступность', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
+                        +checkbox-button('corridor', 'Широкий коридор', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_ml10px', 'block_mb6px'])
+                        +text('p', 'Ширина коридоров в номере не&nbsp;менее 91 см.', ['rich-Checkbox-Buttons_t1', 'text_lh14', 'text_1F2041-05', 'block', 'block_ml30px', 'block_mb10px'])
+                        +checkbox-button('helper', 'Помощник для инвалидов', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_ml10px', 'block_mb6px'])
+                        +text('p', 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.', ['rich-Checkbox-Buttons_t2', 'text_lh14', 'text_1F2041-05', 'block', 'block_ml30px'])
+                    +dropdown('block_mb30px')
+                        +field('label')
+                            +text('span', 'удобства номера', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
+                            +check-mark
+                                +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
+                    +expandable-list
+                        +expandable-list__summary(['check-mark', 'block', 'block_mb17px'])
+                            +text('span', 'дополнительные удобства', ['text_bold', 'text_ttu'])
+                        +checkbox-list
+                            +checkbox-button('breakfast', 'Завтрак', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb11px'])
+                            +checkbox-button('desk', 'Письменный стол', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'], true)
+                            +checkbox-button('feeding_chair', 'Стул для кормления', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'], true)
+                            +checkbox-button('child_bed', 'Кроватка', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'], true)
+                            +checkbox-button('tv', 'Телевизор', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'], ['block', 'block_mb10px'])
+                            +checkbox-button('shampoo', 'Шампунь', ['text_b', 'text_1F2041-05', 'block', 'block_ml10px'])
+                .search-room__column2
+                    +text('p', 'Номера, которые мы для вас подобрали', ['text_l', 'text_position-search','block', 'block_mb21px'])
+                    .search-room__rooms
+                        +room(['search-room__room'], 'img/image.jpg', '888', 'люкс', '9 990₽', '145', 5)
+                        +room(['search-room__room'], 'img/image2.jpg', '840', '', '9 900₽', '65', 4)
+                        +room(['search-room__room'], 'img/image3.png', '980', 'люкс', '8 500₽', '35', 3)
+                        +room(['search-room__room'], 'img/image4.png', '856', '', '7 300₽', '19', 5)
+                        +room(['search-room__room'], 'img/image5.png', '740', '', '6 000₽', '44', 4)
+                        +room(['search-room__room'], 'img/image6.png', '982', '', '5 800₽', '56', 3)
+                        +room(['search-room__room'], 'img/image7.png', '678', '', '5 500₽', '45', 5)
+                        +room(['search-room__room'], 'img/image8.png', '450', '', '5 300₽', '39', 4)
+                        +room(['search-room__room'], 'img/image9.png', '350', '', '5 000₽', '77', 3)
+                        +room(['search-room__room'], 'img/image10.png', '666', '', '5 000₽', '25', 5)
+                        +room(['search-room__room'], 'img/image11.png', '444', '', '5 000₽', '15', 3)
+                        +room(['search-room__room'], 'img/image12.png', '352', '', '5 000₽', '55', 3)
+                    +pagination('pagination-text-center', ['pagination-text-center', 'block', 'block_mb10px'])
+            +footer(['block', 'block_mb1px'])
+            +footer-wrapper-768
+            +footer-copyright
             
-            .search-room__column2
-                +text('p', 'Номера, которые мы для вас подобрали', ['text_l', 'text_position-search','block', 'block_mb21px'])
-                .search-room__rooms
-                    +room(['search-room__room'], 'img/image.jpg', '888', 'люкс', '9 990₽', '145', 5)
-                    +room(['search-room__room'], 'img/image2.jpg', '840', '', '9 900₽', '65', 4)
-                    +room(['search-room__room'], 'img/image3.png', '980', 'люкс', '8 500₽', '35', 3)
-                    +room(['search-room__room'], 'img/image4.png', '856', '', '7 300₽', '19', 5)
-                    +room(['search-room__room'], 'img/image5.png', '740', '', '6 000₽', '44', 4)
-                    +room(['search-room__room'], 'img/image6.png', '982', '', '5 800₽', '56', 3)
-                    +room(['search-room__room'], 'img/image7.png', '678', '', '5 500₽', '45', 5)
-                    +room(['search-room__room'], 'img/image8.png', '450', '', '5 300₽', '39', 4)
-                    +room(['search-room__room'], 'img/image9.png', '350', '', '5 000₽', '77', 3)
-                    +room(['search-room__room'], 'img/image10.png', '666', '', '5 000₽', '25', 5)
-                    +room(['search-room__room'], 'img/image11.png', '444', '', '5 000₽', '15', 3)
-                    +room(['search-room__room'], 'img/image12.png', '352', '', '5 000₽', '55', 3)
-                +pagination('pagination-text-center', ['pagination-text-center', 'block', 'block_mb10px'])
