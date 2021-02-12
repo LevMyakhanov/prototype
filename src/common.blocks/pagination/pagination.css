@@ -32,3 +32,11 @@
     display: flex;
     justify-content: center;
 }
+
+
+@media (min-width:576px) and (max-width: 729px) {
+    .pagination__href {
+        width: 3rem;
+        height: 3rem;
+    }
+}

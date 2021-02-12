@@ -3,7 +3,7 @@ include ../text/text.pug
 include ../button-star/button-star.pug
 include ../room-info/room-info.pug
 
-mixin room(classes, image, roomNumber, luxOrNot, price, amountOfResponse, rate)
+mixin room(classes, image, roomNumber, isLux, price, amountOfResponse, rate)
     .room(class=classes)
         +room__img-wr
             img.room__img(src=image alt='room1')
@@ -18,7 +18,8 @@ mixin room(classes, image, roomNumber, luxOrNot, price, amountOfResponse, rate)
             p
                 +text('span', '№', ['text_bold', 'text_fs14', 'text_lh17'])
                 +text('span', roomNumber, ['room-info__number-pp', 'text_bold', 'text_fs20', 'text_lh29'])
-                +text('span', luxOrNot, ['text_bold', 'text_ttu', 'text_BC9CFF'])
+                if (isLux)
+                    +text('span', isLux, ['text_bold', 'text_ttu', 'text_BC9CFF'])
             p.room-info__price-pp
                 +text('span', price, ['text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
                 +text('span', 'в сутки', ['text_lh18', 'text_1F2041-05', 'room-info__small-text-pp'])
@@ -35,7 +36,7 @@ mixin room(classes, image, roomNumber, luxOrNot, price, amountOfResponse, rate)
                             img(src='img/star_border.png' alt='star')
                     - }            
                 - }
-            p
+            p.room__star-text
                 +text('span', amountOfResponse, ['text_lh18', 'text_1F2041-05', 'text_fs14', 'text_bold', 'block', 'block_mr4px'])
                 +text('span', 'Отзывов', ['text_fs14', 'text_lh18', 'text_1F2041-05'])
 

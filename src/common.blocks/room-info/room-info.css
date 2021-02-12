@@ -20,3 +20,26 @@
 .room-info__small-text-pp {
     margin-left:3px;
 }
+
+
+@media (min-width: 861px) and (max-width: 1439px) {
+    .room-info {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .room-info__price-pp {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width:576px) and (max-width: 729px) {
+    .room-info {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .room-info__price-pp {
+        width: 100%;
+        text-align: center;
+    }
+}

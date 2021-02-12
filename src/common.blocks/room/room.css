@@ -1,13 +1,12 @@
 .room {
     width: 27rem;
-    height: 25.7rem;
     background-color: #FFFFFF;
     box-shadow: 0 1rem 2rem rgba(31, 32, 65, 0.05);
     border-radius: 0.4rem;
+    padding-bottom: 1.9rem;
 }
 .room__img-wr {
-    width: 27rem;
-    height: 15.1rem;
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -17,21 +16,24 @@
     border-top-right-radius: 0.4rem;
     width: 100%;
 }
-.room__button:hover, .room__button:focus{
+.room__button {
     position: absolute;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);;
     width: 4.2rem;
     height: 100%;
-    display: flex;
     align-items: center;
+    display: none;
     outline: none;
     border-top-left-radius: 0.4rem;
 }
-.room__button_right:hover, .room__button_right:focus {
+.room__button_right {
     right: 0;
     transform: matrix(-1, 0, 0, 1, 0, 0);
 }
-.room__button:hover::after, .room__button:focus::after {
+.room__img-wr:hover .room__button {
+    display: flex;
+}
+.room__button::after {
     content: "";
     position: absolute;
     width: 0.8rem;
@@ -89,4 +91,29 @@
     height: 2.4rem;
     display: flex;
     align-items: center;
+}
+
+
+@media (min-width:861px) and (max-width:1439px) {
+    .room__like-wrapper {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .room__star-text {
+        width: 100%;
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (min-width:576px) and (max-width: 729px) {
+    .room__like-wrapper {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .room__star-text {
+        width: 100%;
+        margin-top: 0.5rem;
+        text-align: center;
+    }
 }

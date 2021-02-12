@@ -98,14 +98,29 @@
     text-align: right;
 }
 
+.text_block {
+    display: block;
+}
+.text_position {
+    text-align: left;
+}
+.text_position-search {
+    text-align: left;
+}
 
+@media (max-width: 1200px) {
+    .text_position-search {
+        text-align: center;
+    }
+}
 @media (min-width: 576px) {
     .text__br {
         display: none;
     }
+    
 }
-@media (max-width: 575px) {
-    .text {
+@media (max-width: 576px) {
+    .text_position {
         text-align: center;
     }
 }
