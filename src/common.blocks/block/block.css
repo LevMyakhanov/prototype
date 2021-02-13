@@ -107,6 +107,9 @@
 .block_mb6px {
     margin-bottom: 0.6rem;
 }
+.block_mb70px {
+    margin-bottom: 7rem;
+}
 
 .block_ml223px {
     margin-left: 22.3rem;
@@ -167,6 +170,9 @@
 }
 .block_ml60px {
     margin-left: 6rem;
+}
+.block_ml70px {
+    margin-left: 7rem;
 }
 
 .block_mr20px {

@@ -1,6 +1,6 @@
-mixin bullet-list(text, classes, array)
+mixin bullet-list(text, classes, array, classestext)
     .bullet-list(class=classes)
-        +text('p', text, ['text_bold', 'text_ttu', 'block', 'block_mb15px'])
+        +text('p', text, classestext)
         ul
         each name in array
             li.bullet-list__item
