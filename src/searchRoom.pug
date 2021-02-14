@@ -73,9 +73,9 @@ html(lang='ru')
                 .search-room__column2
                     +text('p', 'Номера, которые мы для вас подобрали', ['text_l', 'text_position-search','block', 'block_mb21px'])
                     .search-room__rooms
-                        +room(['search-room__room'], 'img/image1.jpg', '888', 'люкс', '9 990₽', '145', 5)
+                        +room(['search-room__room'], 'img/image1.jpg', '888', 'люкс', '9 990₽', '145', 5, 'search-room__lux')
                         +room(['search-room__room'], 'img/image2.jpg', '840', '', '9 900₽', '65', 4)
-                        +room(['search-room__room'], 'img/image3.png', '980', 'люкс', '8 500₽', '35', 3)
+                        +room(['search-room__room'], 'img/image3.png', '980', 'люкс', '8 500₽', '35', 3, 'search-room__lux')
                         +room(['search-room__room'], 'img/image4.png', '856', '', '7 300₽', '19', 5)
                         +room(['search-room__room'], 'img/image5.png', '740', '', '6 000₽', '44', 4)
                         +room(['search-room__room'], 'img/image6.png', '982', '', '5 800₽', '56', 3)
@@ -85,7 +85,7 @@ html(lang='ru')
                         +room(['search-room__room'], 'img/image10.png', '666', '', '5 000₽', '25', 5)
                         +room(['search-room__room'], 'img/image11.png', '444', '', '5 000₽', '15', 3)
                         +room(['search-room__room'], 'img/image12.png', '352', '', '5 000₽', '55', 3)
-                    +pagination('pagination-text-center', ['pagination-text-center', 'block', 'block_mb10px'])
+                    +pagination('pagination-text-center', ['pagination-text-center', 'block', 'block_mb9px', 'block_mr15px'], ['block', 'block_mr20px'])
             +footer(['block', 'block_mb1px'])
             +footer-wrapper-768
             +footer-copyright

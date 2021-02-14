@@ -71,6 +71,9 @@
 .block_mb8px {
     margin-bottom: 0.8rem;
 }
+.block_mb9px {
+    margin-bottom: 0.9rem;
+}
 .block_mb15px {
     margin-bottom: 1.5rem;
 }
@@ -85,6 +88,9 @@
 }
 .block_mb26px {
     margin-bottom: 2.6rem;
+}
+.block_mb38px {
+    margin-bottom: 3.8rem;
 }
 .block_mb39px {
     margin-bottom: 3.9rem;
@@ -189,4 +195,7 @@
 }
 .block_mr4px {
     margin-right: 0.4rem;
+}
+.block_mr15px {
+    margin-right: 1.5rem;
 }

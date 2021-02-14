@@ -1,6 +1,6 @@
 include ../text/text.pug
 
-mixin pagination(center, classes)
+mixin pagination(center, classes, textClasses)
     .pagination(class=classes)
         - let nPag = 18;
           - for(let i=0; i<nPag; i++){
@@ -32,7 +32,7 @@ mixin pagination(center, classes)
                 img(src='img/arrow_forward_white.png' alt='')
             - }
         - }
-    +text('p', '1 – 12 из 100+ вариантов аренды', ['text_b', 'text_lh22', 'text_position-search', 'text_1F2041-075', 'pagination-pp', center])
+    +text('p', '1 – 12 из 100+ вариантов аренды', ['text_b', 'text_lh22', 'text_position-search', 'text_1F2041-075', 'pagination-pp', center, textClasses])
 
 mixin pagination__href(hrefs, classes, text)
     a.pagination__href(href=hrefs, class=classes)= text 

@@ -101,6 +101,9 @@
     background: #F4F4F6;
     padding: 14.8rem 14rem 14rem 14rem ;
 }
+.cards__lux {
+    margin-bottom: 0.2rem;
+}
 .cards__column1 {
     width: 38rem;
 }
@@ -127,16 +130,20 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding-top: 14rem;
-    padding-bottom: 1.8rem;
+    padding-bottom: 2.1rem;
     display: flex;
     justify-content: space-between;
     margin-top: -7rem;
 }
 .landingPage-text {
     width: 29.7rem;
-    height: 4.8rem;
     text-align: right;
     align-self: flex-end;
+    margin-right: -0.6rem;
+}
+.landingPage__room-search {
+    padding-top: 3.9rem;
+    padding-left: 2.8rem;
 }
 .search-room {
     /* height: 135.7rem; */
@@ -145,7 +152,10 @@
 }
 .search-room__room {
     width: 32.374%;
-    margin-bottom: 2.1rem;
+    margin-bottom: 1.9rem;
+}
+.search-room__room-info {
+    padding-top: 1.8rem;
 }
 .search-room__column1 {
     width: 26.6rem;
@@ -155,11 +165,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
 }
 .search-room__column2 {
     margin-left: 6rem;
 }
+.search-room__lux {
+    margin-left: 0.6rem;
+    margin-bottom: 0.4rem;
+}
+
 
 .three-pictures {
     display: flex;
@@ -168,10 +183,10 @@
 .three-pictures__1pic {
     height: 100%;
     background-image: url("img/1imageFrom3.png");
-    flex-grow: 2;
+    width: 68.125%;
 }
 .three-pictures__2pics {
-    flex-grow: 1;
+    width: 31.875%;
     display: flex;
     flex-direction: column;
 }

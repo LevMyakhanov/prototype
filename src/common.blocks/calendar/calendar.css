@@ -5,6 +5,7 @@
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     border-radius: 0.4rem;
+    padding-left: 2.1rem;
 }
 .calendar__header {
     display: flex;

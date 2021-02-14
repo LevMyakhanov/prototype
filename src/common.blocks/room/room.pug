@@ -3,7 +3,7 @@ include ../text/text.pug
 include ../button-star/button-star.pug
 include ../room-info/room-info.pug
 
-mixin room(classes, image, roomNumber, isLux, price, amountOfResponse, rate)
+mixin room(classes, image, roomNumber, isLux, price, amountOfResponse, rate, searchRoomLux, isCards)
     .room(class=classes)
         +room__img-wr
             img.room__img(src=image alt='room1')
@@ -14,15 +14,28 @@ mixin room(classes, image, roomNumber, isLux, price, amountOfResponse, rate)
                 +button(['room__image-scroll', 'block', 'block_ml4px'])
                 +button(['room__image-scroll', 'block', 'block_ml4px'])
                 +button(['room__image-scroll', 'block', 'block_ml4px'])
-        +room-info
-            p
-                +text('span', '№', ['text_bold', 'text_fs14', 'text_lh17'])
-                +text('span', roomNumber, ['room-info__number-pp', 'text_bold', 'text_fs20', 'text_lh29'])
+        - let classP=''
+        - if (!isCards) classP='search-room__room-info'
+        +room-info(classP)
+            p.room-info__text-flex
+                +text('span', '№', ['room-info__number-pp', 'text_bold', 'text_fs14', 'text_lh17'])
+                +text('span', roomNumber, ['text_bold', 'text_fs20', 'text_lh29'])
                 if (isLux)
-                    +text('span', isLux, ['text_bold', 'text_ttu', 'text_BC9CFF'])
-            p.room-info__price-pp
-                +text('span', price, ['text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
-                +text('span', 'в сутки', ['text_lh18', 'text_1F2041-05', 'room-info__small-text-pp'])
+                    +text('span', isLux, ['text_bold', 'text_ttu', 'text_BC9CFF', searchRoomLux])
+            - if (isCards) {
+                p.room-info__price-pp-cards
+                    +text('span', price, ['text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
+                    +text('span', 'в сутки', ['text_lh18', 'text_1F2041-05', 'room-info__small-text-pp'])
+            - } else {
+                p.room-info__price-pp
+                    +text('span', price, ['text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
+                    +text('span', 'в сутки', ['text_lh18', 'text_1F2041-05', 'room-info__small-text-pp'])
+            - }
+            //- - let classP='room-info__price-pp'
+            //- - if (isCards) classP='room-info__price-pp-cards'
+            //- p(class=classP)
+            //-     +text('span', price, ['text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
+            //-     +text('span', 'в сутки', ['text_lh18', 'text_1F2041-05', 'room-info__small-text-pp'])
         +room__like-wrapper
             +room__star-wrapper
                 - let nRate = 5;
