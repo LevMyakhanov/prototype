@@ -16,7 +16,7 @@
     width: 50%;
 }
 
-@media (max-width:360px) {
+@media (max-width:575px) {
     .field_small {
         width: calc(50% - 4px);
     }

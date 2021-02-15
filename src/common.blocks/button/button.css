@@ -82,7 +82,7 @@
     margin-left: -2px;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 575px) {
     .button_long {
         min-width: 100%;
     }

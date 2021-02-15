@@ -97,6 +97,20 @@ module.exports = {
                 collapseWhitespace: isProd
             }
         }),
+        new HTMLWebpackPlugin({
+            template: './registration.pug',
+            filename: 'registration.html',
+            minify: {
+                collapseWhitespace: isProd
+            }
+        }),
+        new HTMLWebpackPlugin({
+            template: './signIn.pug',
+            filename: 'signIn.html',
+            minify: {
+                collapseWhitespace: isProd
+            }
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'styles.css'

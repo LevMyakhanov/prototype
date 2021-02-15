@@ -1,0 +1,23 @@
+include ./common.blocks/header-guest/header-guest.pug
+include ./common.blocks/enter/enter.pug
+include ./common.blocks/text/text.pug
+include ./common.blocks/footer/footer.pug
+include ./common.blocks/footer-copyright/footer-copyright.pug
+include ./common.blocks/footer-wrapper-768/footer-wrapper-768.pug
+
+doctype html
+html(lang='ru')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title Document
+        link(rel='preconnect' href='https://fonts.gstatic.com')
+        link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap' rel='stylesheet')
+        // link(rel='stylesheet' href='styles.css')
+    body.signIn
+        +header-guest(false)
+        .sign-background-image.container
+            +enter
+        +footer(['block', 'block_mb1px'])
+        +footer-wrapper-768
+        +footer-copyright

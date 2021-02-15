@@ -8,7 +8,7 @@ include ../toggle/toggle.pug
 include ../button/button.pug
 include ../href-button/href-button.pug
 
-mixin account-reg(classes)
+mixin account-reg(classes, buttontText)
     .account-reg(class=classes)
         +text('p', 'Регистрация аккаунта', ['text_l', 'account-reg__pp', 'block', 'block_mb22px'])
         +input(type='text' name='first name' placeholder='Имя', class=['text', 'text_b', 'text_1F2041-075', 'block', 'block_mb10px'])
@@ -24,7 +24,7 @@ mixin account-reg(classes)
         +input(type='password' name='password' placeholder='Пароль', class=['text', 'text_b', 'text_1F2041-075', 'block', 'block_mb10px'])
         +toggle(['block', 'block_mb24px'], 'Получать спецпредложения')
         +button(['button', 'button_long', 'block', 'block_mb30px'])
-            +text('span', 'перейти к оплате', ['text_bold', 'text_ttu', 'text_FFF'])
+            +text('span', buttontText, ['text_bold', 'text_ttu', 'text_FFF'])
         +href-button
             a(href='#')
                 +text('p', 'Уже есть аккаунт на Toxin', ['text_b', 'text_000'])

@@ -214,3 +214,15 @@
 .block_mr15px {
     margin-right: 1.5rem;
 }
+
+
+@media (max-width: 1439px) {
+    .block_ml70px {
+        margin-left: 20px;
+    }
+}
+@media (max-width: 1300px) {
+    .block_ml70px {
+        margin: auto;
+    }
+}
