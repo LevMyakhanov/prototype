@@ -1,3 +1,9 @@
 .comments {
     display: flex;
 }
+.comments__img {
+    margin-top: 3px;
+}
+.comments__img2 {
+    margin-top: 2px;
+}

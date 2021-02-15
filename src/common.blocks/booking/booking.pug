@@ -9,13 +9,13 @@ include ../input/input.pug
 include ../button/button.pug
 
 
-mixin booking(classes)
+mixin booking(classes, fee, roomDetails, roomDetailsLux, bookingWrapperIndent, right38081)
     .booking(class=classes)
         +booking-wrapper(['block', 'block_mb23px'])
             +booking__room-name(['text', 'text_bold'])
                 +text('span', '№', ['text_fs14', 'text_lh17'])
                 +text('span', '888', ['booking__room-number-pp', 'text_fs24', 'text_lh29'])
-                +text('span', 'люкс', ['text_ttu', 'text_BC9CFF'])                    
+                +text('span', 'люкс', ['text_ttu', 'text_BC9CFF', roomDetailsLux])                    
             +booking__room-price()
                 +text('span', '9 990₽ ', ['text', 'text_fs14', 'text_lh18', 'text_1F2041-05', 'text_bold'])
                 +text('span', 'в сутки', ['text', 'text_lh14', 'text_1F2041-05'])               
@@ -32,20 +32,37 @@ mixin booking(classes)
             +text('span', 'гости', ['text_bold','text_ttu','block','block_mb5px'])
             +check-mark
                 +input(type='text', name='amount of guests', value='3 гостя', class=['text', 'text_b', 'text_1F2041-075'])
-        +booking-wrapper(['block', 'block_mb13px'])
-            +text('p', '9 990₽ х 4 суток', ['text_b', 'text_lh22', 'text_1F2041-075'])
-            +text('p', '39 960₽', ['text_b', 'text_lh22', 'text_1F2041-075'])                
+        if roomDetails
+            +booking-wrapper(['block', 'block_mb13px', 'room-details__9990x4-pp'])
+                +text('p', '9 990₽ х 4 суток', ['text_b', 'text_lh22', 'text_1F2041-075'])
+                +text('p', '39 960₽', ['text_b', 'text_lh22', 'text_1F2041-075'])
+        else
+            +booking-wrapper(['block', 'block_mb13px'])
+                +text('p', '9 990₽ х 4 суток', ['text_b', 'text_lh22', 'text_1F2041-075'])
+                +text('p', '39 960₽', ['text_b', 'text_lh22', 'text_1F2041-075'])                
         +booking-wrapper-top(['check', 'block', 'block_mb15px'])
-            +booking__wr
-                +text('p', 'Сбор за услуги: скидка 2 179₽', ['text_b', 'text_lh18', 'text_1F2041-075'])                       
-                +booking__logo
-            +text('p', '0₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
-        +booking-wrapper-top(['check', 'block', 'block_mb30px'])                   
-            +booking__wr
-                +text('p', 'Сбор за дополнительные <br> услуги', ['text_b', 'text_lh18', 'text_1F2041-075', 'booking__min-w'])
-                +booking__logo
-            +text('p', '300₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
-        +booking-wrapper(['block', 'block_mb20px', 'block_mr-9px'])
+            if roomDetails
+                +booking__wr
+                    +text('p', 'Сбор за услуги: скидка 2 179₽', ['text_b', 'text_lh18', 'text_1F2041-075'])                       
+                    +booking__logo-details
+                +text('p', '0₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
+            else
+                +booking__wr
+                    +text('p', 'Сбор за услуги: скидка 2 179₽', ['text_b', 'text_lh18', 'text_1F2041-075'])                       
+                    +booking__logo
+                +text('p', '0₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
+        +booking-wrapper-top(['check', 'block', bookingWrapperIndent]) 
+            if roomDetails
+                +booking__wr
+                    +text('p', fee, ['text_b', 'text_lh18', 'text_1F2041-075'])                       
+                    +booking__logo-details
+                +text('p', '300₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
+            else
+                +booking__wr
+                    +text('p', fee, ['text_b', 'text_lh18', 'text_1F2041-075', 'booking__min-w'])
+                    +booking__logo
+                +text('p', '300₽', ['text_b', 'text_lh18', 'text_1F2041-075'])                  
+        +booking-wrapper(['block', 'block_mb20px', right38081])
             +text('p', 'Итого', 'text_m')
             +text('p', '38 081₽', 'text_m')
         +button(['button', 'button_long'])

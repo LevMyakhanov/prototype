@@ -52,3 +52,13 @@
     line-height: 14px;
     color: rgba(31, 32, 65, 0.25);
 }
+.booking__logo-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    margin-left: 0.8rem;
+}

@@ -30,9 +30,9 @@ html(lang='ru')
                     .three-pictures__2pics_2
             .room-details__two-columns.container
                 .room-details__inner
-                    .room-details__string1.block.block_mb30px
+                    .room-details__string1.block.block_mb12px
                         .room-details__info
-                            +text('p', 'Сведения о номере', ['text_m', 'text_bold', 'block', 'block_mb20px'])
+                            +text('p', 'Сведения о номере', ['text_m', 'text_bold', 'block', 'block_mb23px'])
                             +advantages
                                 +advantages__img('advantages__img_PP')
                                     img(src='img/insert_emoticon.png' alt='smile')
@@ -55,15 +55,15 @@ html(lang='ru')
                             +text('p', 'Впечатления от номера', ['text_m', 'text_bold', 'block', 'block_mb20px'])
                             .room-details__two-columns
                                 img(src="img/Pie.svg", alt="pie")
-                                +bullet-list('', ['block', 'block_ml30px'], ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'])
-                    .room-details__comments.block.block_mb30px
+                                +bullet-list('', ['block', 'block_ml30px'], ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'], '', true)
+                    .room-details__comments.block.block_mb33px
                         .room-details__text-flex.block.block_mb20px
                             +text('p', 'Отзывы посетителей номера', ['text_m', 'text_bold'])
-                            +text('p', '2 отзыва', ['text_b', 'text_lh14', 'text_1F2041-05'])
+                            +text('p', '2 отзыва', ['text_b', 'text_lh14', 'text_1F2041-05', 'room-details__text-pp'])
                         +comments(['block', 'block_mb15px'])
-                            img(src='img/murad.png' alt='avatarka')
+                            img(src='img/murad.png' alt='avatarka', class='comments__img')
                             +comments__text
-                                +text('p', 'Мурад Сарафанов', ['text_b', 'text_1F2041-075','text_bold', 'block', 'block_mb8px', 'block_ml12px'])
+                                +text('p', 'Мурад Сарафанов', ['text_b', 'text_1F2041-075','text_bold', 'block', 'block_mb6px', 'block_ml11px', 'block_mt4px'])
                                 +text('p', '5 дней назад', ['text_b', 'text_1F2041-075', 'block', 'block_ml11px'])
                         +like-comments(['block', 'block_mb22px'])
                             +button-like(['button-like_pressed', 'button-like_PP'])
@@ -71,24 +71,24 @@ html(lang='ru')
                                 +text('span', '12', ['text_s', 'text_BC9CFF'])
                             +text('p', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
                             ['text_b', 'text_lh24', 'text_1F2041-075', 'block', 'block_ml14px', 'button-like-text_PP'])
-                        +comments(['block', 'block_mb15px'])
-                            img(src='img/patrice.png' alt='avatarka2')
+                        +comments(['block', 'block_mb14px'])
+                            img(src='img/patrice.png' alt='avatarka2', class='comments__img2')
                             +comments__text
-                                +text('p', 'Патрисия Стёклышкова', ['text_b', 'text_1F2041-075','text_bold', 'block', 'block_mb8px', 'block_ml12px'])
+                                +text('p', 'Патрисия Стёклышкова', ['text_b', 'text_1F2041-075','text_bold', 'block', 'block_mb5px', 'block_ml8px', 'block_mt4px'])
                                 +text('p', 'неделю назад', ['text_b', 'text_1F2041-075', 'block', 'block_ml11px'])
                         +like-comments
-                            +button-like
+                            +button-like('button-like__rd-pp')
                                 img.button-like__heart(src='img/favorite_border.png' alt='heart_unpressed')
                                 +text('span', '2', ['text_s', 'text_1F2041-025'])
                             +text('p', 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
                             ['text_b', 'text_lh24', 'text_1F2041-075', 'block', 'block_ml14px', 'button-like-text_PP'])
                     .room-details__string2
                         .room-details__rule
-                            +bullet-list('Правила', '', ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'], ['text_m', 'text_bold', 'block', 'block_mb20px'])
-                        .room-details__cansel
+                            +bullet-list('Правила', '', ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'], ['text_m', 'text_bold', 'block', 'block_mb20px', 'block_ml20px'])
+                        .room-details__cansel.block.block_ml6px
                             +text('p', 'Отмена', ['text_m', 'text_bold', 'block', 'block_mb20px'])
-                            +text('p', 'Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.', ['text_b', 'text_lh24', 'text_1F2041-075'])
-                +booking('block_ml70px')
+                            +text('p', 'Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.', ['text_b', 'text_lh24', 'text_1F2041-075', 'block', 'block_mt-2px'])
+                +booking('block_ml70px',  'Сбор за доп. услуги', true, 'room-details__lux', 'block_mb45px')
             +footer(['block', 'block_mb1px'])
             +footer-copyright
 

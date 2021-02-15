@@ -116,6 +116,15 @@
 .block_mb70px {
     margin-bottom: 7rem;
 }
+.block_mb4px {
+    margin-bottom: 0.4rem;
+}
+.block_mb33px {
+    margin-bottom: 3.3rem;
+}
+.block_mb45px {
+    margin-bottom: 4.5rem;
+}
 
 .block_ml223px {
     margin-left: 22.3rem;
@@ -179,6 +188,12 @@
 }
 .block_ml70px {
     margin-left: 7rem;
+}
+.block_ml8px {
+    margin-left: 0.8rem;
+}
+.block_ml6px {
+    margin-left: 0.6rem;
 }
 
 .block_mr20px {
