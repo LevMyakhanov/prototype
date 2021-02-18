@@ -43,12 +43,12 @@ mixin booking(classes, fee, roomDetails, roomDetailsLux, bookingWrapperIndent, r
         +booking-wrapper-top(['check', 'block', 'block_mb15px'])
             if roomDetails
                 +booking__wr
-                    +text('p', 'Сбор за услуги: скидка 2 179₽', ['text_b', 'text_lh18', 'text_1F2041-075'])                       
-                    +booking__logo-details
+                    +text('p', 'Сбор за услуги: скидка 2&nbsp;179₽', ['text_b', 'text_lh18', 'text_1F2041-075'])                       
+                    +booking__logo-details('booking__logo-details_m')
                 +text('p', '0₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
             else
                 +booking__wr
-                    +text('p', 'Сбор за услуги: скидка 2 179₽', ['text_b', 'text_lh18', 'text_1F2041-075'])                       
+                    +text('p', 'Сбор за услуги: скидка 2&nbsp;179₽', ['text_b', 'text_lh18', 'text_1F2041-075'])                       
                     +booking__logo
                 +text('p', '0₽', ['text_b', 'text_lh18', 'text_1F2041-075'])
         +booking-wrapper-top(['check', 'block', bookingWrapperIndent]) 
@@ -62,8 +62,8 @@ mixin booking(classes, fee, roomDetails, roomDetailsLux, bookingWrapperIndent, r
                     +text('p', fee, ['text_b', 'text_lh18', 'text_1F2041-075', 'booking__min-w'])
                     +booking__logo
                 +text('p', '300₽', ['text_b', 'text_lh18', 'text_1F2041-075'])                  
-        +booking-wrapper(['block', 'block_mb20px', right38081])
-            +text('p', 'Итого', 'text_m')
-            +text('p', '38 081₽', 'text_m')
+        +booking-wrapper(['block', 'block_mb20px', right38081, 'booking-wrapper_dots'])
+            +text('p', 'Итого', ['text_m', 'booking-wrapper__total'])
+            +text('p', '38 081₽', ['text_m', 'booking-wrapper__price'])
         +button(['button', 'button_long'])
             +text('span', 'забронировать', ['text_bold', 'text_ttu', 'text_FFF'])

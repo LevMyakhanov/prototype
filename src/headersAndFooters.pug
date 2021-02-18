@@ -14,8 +14,10 @@ html(lang='en')
     // link(rel='stylesheet' href='styles.css')
     title Document
   body.headers-footers
+    .logo
+      img(src='img/LogoUIKit.png' alt='LogoUIKit')
     // хедер для незареганных пол-й
-    +header-guest(false, 'block_mb40px')
+    +header-guest(false, 'block block_mt62px block_mb40px')
     // хедер для зареганных пол-й
     +header-guest(true, 'block_mb40px')
     // большой футер

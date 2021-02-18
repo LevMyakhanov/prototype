@@ -22,6 +22,9 @@
 .block_mt1px {
     margin-top: 0.1rem;
 }
+.block_mt62px {
+    margin-top: 6.2rem;
+}
 
 .block_mb20px {
     margin-bottom: 2rem;
@@ -195,6 +198,9 @@
 .block_ml6px {
     margin-left: 0.6rem;
 }
+.block_ml62px {
+    margin-left: 6.2rem;
+}
 
 .block_mr20px {
     margin-right: 2rem;
@@ -218,7 +224,7 @@
 
 @media (max-width: 1439px) {
     .block_ml70px {
-        margin-left: 20px;
+        margin-left: 30px;
     }
 }
 @media (max-width: 1300px) {

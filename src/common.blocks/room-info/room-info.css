@@ -30,7 +30,6 @@
 
 @media (min-width: 861px) and (max-width: 1439px) {
     .room-info {
-        justify-content: center;
         flex-wrap: wrap;
     }
     .room-info__price-pp {

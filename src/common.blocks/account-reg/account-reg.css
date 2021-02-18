@@ -13,6 +13,12 @@
 
 @media (max-width:575px) {
     .account-reg {
-        width: 32rem;
+        width: 36rem;
+        padding: 3rem 2rem 2rem 2rem;
+    }
+}
+@media (max-width:360px) {
+    .account-reg {
+        width: 100%;
     }
 }

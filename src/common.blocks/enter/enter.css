@@ -16,3 +16,16 @@
 .enter__input-pp {
     margin-top: -6px;
 }
+
+
+@media (max-width:575px) {
+    .enter {
+        width: 36rem;
+        padding: 3rem 2rem 2rem 2rem;
+    }
+}
+@media (max-width:360px) {
+    .enter {
+        width: 100%;
+    }
+}

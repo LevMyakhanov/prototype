@@ -56,6 +56,13 @@ module.exports = {
             }
         }),
         new HTMLWebpackPlugin({
+            template: './colorsAndTypes.pug',
+            filename: 'colorsAndTypes.html',
+            minify: {
+                collapseWhitespace: isProd
+            }
+        }),
+        new HTMLWebpackPlugin({
             template: './formAndElements.pug',
             filename: 'formAndElements.html',
             minify: {

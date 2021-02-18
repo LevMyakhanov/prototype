@@ -45,12 +45,18 @@
 
 
 .form-elements {
-    padding-top: 14.3rem;
-    padding-left: 14.1rem;
     padding-bottom: 13.1rem;
+    display: flex;
+    flex-direction: column;
+}
+.logo {
+    margin-top: 3rem;
+    margin-left: 3rem;
 }
 .form-elements__row {
     display: flex;
+    margin-top: 6.5rem;
+    margin-left: 14.1rem;
 }
 .form-elements__row1_column1 {
     width: 32rem;
@@ -74,6 +80,7 @@
 .form-elements__row2 {
     display: flex;
     margin-top: 10.1rem;
+    margin-left: 14.1rem;
     margin-bottom: 5.5rem;
 }
 .form-elements__row2_column1 {
@@ -81,6 +88,7 @@
 }
 .form-elements__row3 {
     display: flex;
+    margin-left: 14.1rem;
     margin-bottom: 10.2rem;
 }
 .form-elements__row3_column1 {
@@ -88,6 +96,7 @@
 }
 .form-elements__row4 {
     display: flex;
+    margin-left: 14.1rem;
 }
 .form-elements__row4_column2 {
     width: 71.1rem;
@@ -99,22 +108,27 @@
 .cards {
     display: flex;
     background: #F4F4F6;
-    padding: 14.8rem 14rem 14rem 14rem ;
+    padding-right: 14rem;
+    padding-bottom: 14rem;
 }
 .cards__lux {
     margin-bottom: 0.2rem;
 }
 .cards__column1 {
     width: 38rem;
+    margin-top: 14.8rem;
 }
 .cards__column1__PP {
-    margin-left: -1px;
-    margin-top: 2px;
+    margin-left: 6.1rem;
+    margin-top: 15rem;
+}
+.cards__column3 {
+    margin-top: 14.8rem;
 }
 
 
 .headers-footers {
-    padding: 14rem 0;
+    padding-bottom: 14rem;
     background: #F4F4F6;
 }
 /* .landing-page {
@@ -184,6 +198,9 @@
     height: 100%;
     background-image: url("img/1imageFrom3.png");
     width: 68.125%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .three-pictures__2pics {
     width: 31.875%;
@@ -193,10 +210,16 @@
 .three-pictures__2pics_1 {
     height: 100%;
     background-image: url("img/2imageFrom3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .three-pictures__2pics_2 {
     height: 100%;
     background-image: url("img/3imageFrom3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .room-details__two-columns {
     display: flex;
@@ -205,11 +228,15 @@
 .room-details__string1 {
     display: flex;
 }
+.room-details__info {
+    margin-bottom: 3rem;
+}
 .room-details__impression {
-    margin-left: 106px;
+    margin-left: 10.6rem;
 }
 .room-details__impression__two-columns {
     display: flex;
+    margin-bottom: 3rem;
 }
 .room-details__string2 {
     display: flex;
@@ -241,7 +268,11 @@
     background-size: cover;
     display: flex;
     justify-content: center;
-    padding-top: 1.9rem;
+    padding-top: 8.9rem;
+    margin-top: -7rem;
+}
+.account-reg_m {
+    margin-left: 5px;
 }
 .reg-background-image_h {
     height: 64.6rem;
@@ -254,6 +285,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 7rem;
+    margin-top: -7rem;
+}
+.sign-in_m {
+
 }
 
 
@@ -270,6 +306,9 @@
     }
     .room-details__string2 {
         margin-bottom: 2rem;
+    }
+    .account-reg_m {
+        margin-left: 0;
     }
 }
 @media (max-width: 1300px) {
@@ -301,10 +340,35 @@
     .room-details__string1 {
         justify-content: space-around;
     }
+    .three-pictures {
+        display: block;
+        height: auto;
+    }
+    .three-pictures__1pic {
+        height: 48.5rem;
+        width: 100%;
+    }
+    .three-pictures__2pics {
+        width: 100%;
+        flex-direction: row;
+        height: 24.2rem;
+    }
+    .three-pictures__2pics_1 {
+        width: 50%;
+    }
+    .three-pictures__2pics_2 {
+        width: 50%;
+    }
 }
 @media (max-width:860px) {
     .search-room__room {
         width: 100%;
+    }
+}
+@media (max-width:767px) {
+    .room-details__inner {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
     }
 }
 @media (min-width:575px) and (max-width:767px) {
@@ -317,22 +381,21 @@
         padding-left: 3.5rem;
         padding-right: 3.5rem;
     }
-    .room-details__inner {
-        padding-left: 3.5rem;
-        padding-right: 3.5rem;
-    }
     .room-details__string1 {
         justify-content: space-between;
     }
     .room-details__impression__two-columns {
-        display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 }
 @media (max-width:575px) {
     .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .room-details__inner {
         padding-left: 2rem;
         padding-right: 2rem;
     }
@@ -368,10 +431,19 @@
     .room-details__cansel {
         width: 100%;
     }
-    .room-details__impression__two-columns {
-        display: flex;
+    .three-pictures__2pics {
         flex-direction: column;
+        height: 48.5rem;
+    }
+    .three-pictures__2pics_1 {
+        width: 100%;
+    }
+    .three-pictures__2pics_2 {
+        width: 100%;
+    }
+    .room-details__impression__two-columns {
+        flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
     }
 }
