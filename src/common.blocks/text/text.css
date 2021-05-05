@@ -99,6 +99,7 @@
 
 .text_right {
     text-align: right;
+    float: right;
 }
 
 .text_block {

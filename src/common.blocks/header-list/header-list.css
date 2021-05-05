@@ -17,3 +17,10 @@
         min-width: 100%;
     }
 }
+@media (max-width:991px) {
+    .header-list {
+        display: block;
+        text-align: right;
+        margin-bottom: 0;
+    }
+}

@@ -40,3 +40,21 @@
     border-radius: 50%;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
+
+
+
+
+
+.datepicker--nav-title, .datepicker--nav-title i{
+    margin-top: 1px;
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif, Helvetica;
+    color: #1f2041;
+}
+.datepicker--nav-action {
+    /* background-image: url(); */
+    /* position: center;
+  no-repeat */
+}

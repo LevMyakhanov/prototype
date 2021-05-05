@@ -1,3 +1,8 @@
-mixin rate-button(classes)
-    .rate-button(class=classes)
-        block
+mixin rate-button(classes, nRate)
+    .rate-button(class=classes, data-rating = nRate)
+        - for(let i=1; i<=nRate; i++){
+            +button-star('button-star_pressed')
+        - }
+        - for(let m=nRate+1; m<=5; m++){
+            +button-star
+        - }

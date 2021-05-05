@@ -14,6 +14,9 @@ include ./common.blocks/checkbox-list/checkbox-list.pug
 include ./common.blocks/footer/footer.pug
 include ./common.blocks/footer-copyright/footer-copyright.pug
 include ./common.blocks/footer-wrapper-768/footer-wrapper-768.pug
+include ./common.blocks/dropdown-calendar/dropdown-calendar.pug
+include ./common.blocks/calendar/calendar.pug
+include ./common.blocks/dropdown/dropdown.pug
 
 
 doctype html
@@ -30,14 +33,25 @@ html(lang='ru')
         .search-room-wr.container
             .search-room.block.block_mb1px
                 .search-room__column1
-                    +field('label', ['field_middle', 'block', 'block_mb20px'])
-                        +text('span', 'даты пребывания в отеле', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
-                        +check-mark
-                            +input(type='text', name='dates', value='19 авг - 23 авг', class=['text', 'text_b', 'text_1F2041-075'])
-                    +field('div', ['block', 'block_mb30px'])
-                        +text('span', 'гости', ['text_bold','text_ttu','block','block_mb5px'])
-                        +check-mark
-                            +input(type='text', name='amount of guests', value='3 гостя, 1 младенец', class=['text', 'text_b', 'text_1F2041-075'])
+                    //- +field('label', ['field_middle', 'block', 'block_mb20px'])
+                    //-     +text('span', 'даты пребывания в отеле', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
+                    //-     +check-mark
+                    //-         +input(type='text', name='dates', value='19 авг - 23 авг', class=['text', 'text_b', 'text_1F2041-075'])
+                    +dropdown-calendar(['block', 'block_mb20px'])
+                        +field('label', ['field_middle', 'field_js-calendar'])
+                            +text('span', 'Даты пребывания в отеле', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
+                            +check-mark
+                                +input(type='text', name='dates', value='19 авг - 23 авг', class=['text', 'text_b', 'text_1F2041-075'])
+                        +calendar('field_calendar')
+                    +dropdown(['dropdown_pp', 'block', 'block_mb30px'])
+                        +field('label', 'dropdown__field')
+                            +text('span', 'гости', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
+                            +check-mark
+                                +input(type='text' name='rooms&beds' value='3 гостя, 1 младенец', class=['input_square-angles', 'input_js-rooms', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
+                        +dropdown__wrapper(['dropdown__wrapper_off-buttons'])
+                            +dropdown__flex(['block', 'block_mb7px'], 'взрослые', '2', 'dropdown__button_js-minus')
+                            +dropdown__flex(['block', 'block_mb7px'], 'дети', '0', 'dropdown__button_js-minus')
+                            +dropdown__flex('', 'младенцы', '1', ['dropdown__button_js-minus'])
                     +slider(['block', 'block_mb40px'])
                         +text('span', 'диапазон цены', ['slider__name', 'text_bold', 'text_ttu'])
                         +text('span', '5 000₽ - 10 000₽', ['slider__name', 'text_1F2041-05', 'text_right'])
@@ -55,11 +69,20 @@ html(lang='ru')
                         +text('p', 'Ширина коридоров в номере не&nbsp;менее 91 см.', ['rich-Checkbox-Buttons_t1', 'text_lh14', 'text_1F2041-05', 'block', 'block_ml30px', 'block_mb10px'])
                         +checkbox-button('helper', 'Помощник для инвалидов', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_ml10px', 'block_mb6px'])
                         +text('p', 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.', ['rich-Checkbox-Buttons_t2', 'text_lh14', 'text_1F2041-05', 'block', 'block_ml30px'])
-                    +dropdown('block_mb30px')
-                        +field('label')
+                    +dropdown(['block', 'block_mb30px'])
+                        +field('label', 'dropdown__field')
                             +text('span', 'удобства номера', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
                             +check-mark
-                                +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
+                                +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...' class=['input_square-angles', 'input_js-rooms', 'text', 'text_b', 'text_1F2041-075'])
+                        +dropdown__wrapper(['dropdown__wrapper_off-buttons'])
+                            +dropdown__flex(['block', 'block_mb7px'], 'спальни', '2', 'dropdown__button_js-minus')
+                            +dropdown__flex(['block', 'block_mb7px'], 'кровати', '2', 'dropdown__button_js-minus')
+                            +dropdown__flex('', 'ванные комнаты', '0', ['dropdown__button_js-minus'])
+                    //- +dropdown('block_mb30px')
+                    //-     +field('label')
+                    //-         +text('span', 'удобства номера', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
+                    //-         +check-mark
+                    //-             +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
                     +expandable-list
                         +expandable-list__summary(['check-mark', 'block', 'block_mb17px'])
                             +text('span', 'дополнительные удобства', ['text_bold', 'text_ttu'])

@@ -40,6 +40,7 @@
     border-radius: 2.2rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    margin-left: 2rem;
 }
 .header-guest__border {
     width: 0.1rem;
@@ -51,5 +52,18 @@
 @media (max-width:991px) {
     .header-guest__l-wr {
         display: none;
+        position: absolute;
+        top: 7rem;
+        right: 0;
+        padding: 1rem;
+        background-color: #FFF;
+        z-index: 1;
+    }
+    .header-guest__l-wr_active {
+        display: block;
+    }
+    .header-guest__button {
+        margin-left: auto;
+        display: block;
     }
 }

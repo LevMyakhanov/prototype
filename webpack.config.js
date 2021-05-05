@@ -6,7 +6,7 @@ const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugi
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 
 
-
+const webpack = require('webpack')
 
 const optimization = () => {
         const config = {
@@ -44,7 +44,7 @@ module.exports = {
         // потом добавил publicPath, всё заработало, прописывал просто path не помогло.
         publicPath: ''
     },
-    optimization: optimization(),
+    // optimization: optimization(),
     devServer: {
         port: 4200
     },
@@ -121,6 +121,16 @@ module.exports = {
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'styles.css'
+        }),
+        // new ProvidePlugin({
+        //     $: "jquery",
+        //     jQuery: "jquery",
+        //     'window.jQuery': 'jquery'
+        // })
+        new webpack.ProvidePlugin({
+            '$': 'jquery',
+            'jQuery': 'jquery',
+            'window.jQuery': 'jquery'
         })
     ],
     module: {

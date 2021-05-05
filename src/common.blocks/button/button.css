@@ -81,7 +81,17 @@
 .buttonPP {
     margin-left: -2px;
 }
+.button_js-clear-hidden {
+    display: none;
+}
 
+@media (max-width:991px) {
+    .button-header {
+        margin-left: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
 @media (max-width: 575px) {
     .button_long {
         min-width: 100%;

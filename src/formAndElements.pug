@@ -23,6 +23,8 @@ include ./common.blocks/room-advantages/room-advantages.pug
 include ./common.blocks/advantages/advantages.pug
 include ./common.blocks/comments/comments.pug
 include ./common.blocks/like-comments/like-comments.pug
+include ./common.blocks/calendar/calendar.pug
+include ./common.blocks/dropdown-calendar/dropdown-calendar.pug
 
 
 doctype html
@@ -47,27 +49,40 @@ html(lang='ru')
           +text('span', 'text field', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
           +text('span', 'Hover / Focus', ['text_ttu','text_1F2041-05','text_right','block', 'block_mb5px', 'field__text'])
           +input(type='text', name='text', value='This is pretty awesome', class=['text', 'text_b', 'text_1F2041-075'])
-        +field('div', ['block', 'block_mb22px'])
-          +text('span', 'Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
-          +check-mark
-            +input(type='text', name='amount of guests', value='Сколько гостей', class=['text', 'text_b', 'text_1F2041-075'])
+        +dropdown(['block', 'block_mb22px', 'dropdown_w32'])
+          +field('label', 'dropdown__field')
+            +text('span', 'Dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
+            +check-mark
+              +input(type='text', name='amount of guests', value='Сколько гостей', class=['text', 'text_b', 'text_1F2041-075', 'input_js-guests'])
+          +dropdown__wrapper(['dropdown_w32-add'])
+            +dropdown__flex(['block', 'block_mb7px'], 'взрослые', '0', ['dropdown__button_js-minus'], 'dropdown__flex_text-pp')
+            +dropdown__flex(['block', 'block_mb7px'], 'дети', '0', ['dropdown__button_js-minus'], 'dropdown__flex_text-pp')
+            +dropdown__flex(['block', 'block_mb19px'], 'младенцы', '0', ['dropdown__button_js-minus'], 'dropdown__flex_text-pp2')
+            +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'buttonPP', 'button_js-clear'], 'очистить')
+            +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'text_right', 'button_js-apply'], 'применить')
         +field('label', ['block', 'block_mb41px'])
           +text('span', 'masked text field', ['text_bold','text_ttu','block','block_mb5px'])
           +input(type='text', name='masked text field', placeholder='ДД.ММ.ГГГГ', pattern='\d{1,2}\/d{1,2}\/d{4}', class=['text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
         +input-wrapper(['block', 'block_mb40px'])
-          +field('label','field_small')
-            +text('span', 'date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
-            +check-mark
-              +input(type='date', name='arrival', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
-          +field('label', 'field_small')
-            +text('span', 'date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
-            +check-mark
-              +input(type='date', name='departure', value='2019-08-19', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
+          +dropdown-calendar
+            +field('label', ['field_small', 'field_js-calendar'])
+              +text('span', 'date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
+              +check-mark
+                +input(type='text', name='arrival', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
+            +calendar('field_calendar')
+          +dropdown-calendar
+            +field('label', ['field_small', 'field_js-calendar'])
+              +text('span', 'date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
+              +check-mark
+                +input(type='text', name='departure', value='2019-08-19', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
+            +calendar('field_calendar')
         // даты пребывания в отеле
-        +field('label', ['field_middle', 'block', 'block_mb41px'])
-          +text('span', 'filter date Dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
-          +check-mark
-            +input(type='text', name='dates', value='19 авг - 23 авг', class=['text', 'text_b', 'text_1F2041-075'])
+        +dropdown-calendar(['block', 'block_mb41px'])
+          +field('label', ['field_middle', 'field_js-calendar'])
+            +text('span', 'filter date Dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
+            +check-mark
+              +input(type='text', name='dates', value='19 авг - 23 авг', class=['text', 'text_b', 'text_1F2041-075'])
+          +calendar('field_calendar')
         +form-field('https://echo.htmlacademy.ru', 'post')
           +field('label', 'field_middle')
             +text('span', 'subscription text field', ['text_bold','text_ttu','block','block_mb5px'])
@@ -92,31 +107,13 @@ html(lang='ru')
         +text('p', 'like button', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         .form-elements__button-like-wr.block.block_mb40px
           +button-like
-            img.button-like__heart(src='img/favorite_border.png' alt='heart_unpressed')
-            +text('span', '2', ['text_s', 'text_1F2041-025'])
+            +text('span', '2', ['text_s', 'button-like__text'])
           +button-like(['button-like_pressed', 'block', 'block_ml10px'])
-            img.button-like__heart(src='img/favorite.png' alt='heart_pressed')
-            +text('span', '12', ['text_s', 'text_BC9CFF'])
+            +text('span', '12', ['text_s', 'button-like__text'])
         +text('p', 'rate button', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         .form-elements__rate-button-wr
-          +rate-button
-            - let nRate = 5;
-            - for(let i=1; i<=nRate; i++){
-              - if(i===nRate) {
-                +button-star
-                  img(src='img/star_border.png' alt='star')
-              - }
-              - else {
-                +button-star
-                  img(src='img/star.png' alt='star')
-              - }            
-            - }           
-          +rate-button(['block', 'block_ml20px'])
-            - let nRate = 5;
-            - for(let i=1; i<=nRate; i++){
-                +button-star
-                  img(src='img/star.png' alt='star')
-            - }
+          +rate-button('', 4)
+          +rate-button(['block', 'block_ml20px'], 5)
       .form-elements__row1_column3
         // диапазон цены
         +slider(['block', 'block_mb40px'])
@@ -143,47 +140,54 @@ html(lang='ru')
           +text('span', 'перейти к оплате', ['text_bold', 'text_ttu', 'text_FFF'])
         +text('p', 'pagination', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         // страницы
-        +pagination(['block', 'block_mb10px'])
+        +pagination(' ', ['block', 'block_mb10px'])
         //- +text('p', '1 – 12 из 100+ вариантов аренды', ['text_b', 'text_lh22', 'text_1F2041-075', 'pagination-pp'])
     .form-elements__row2
       .form-elements__row2_column1
         +dropdown(['block', 'block_mb19px'])
-          +field('label')
+          +field('label', 'dropdown__field')
             +text('span', 'dropdown', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
             +text('span', 'default', ['text_ttu', 'text_1F2041-05', 'text_right', 'block', 'block_mb5px', 'field__text'])
             +check-mark
-              +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...' class=['input_square-angles', 'text', 'text_b', 'text_1F2041-075'])
+              +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...' class=['input_square-angles', 'input_js-rooms', 'text', 'text_b', 'text_1F2041-075'])
+          +dropdown__wrapper(['dropdown__wrapper_off-buttons'])
+            +dropdown__flex(['block', 'block_mb7px'], 'спальни', '2', 'dropdown__button_js-minus')
+            +dropdown__flex(['block', 'block_mb7px'], 'кровати', '2', 'dropdown__button_js-minus')
+            +dropdown__flex('', 'ванные комнаты', '0', ['dropdown__button_js-minus'])
         // удобства номера
         +dropdown(['dropdown_pp'])
-          +field('label')
+          +field('label', 'dropdown__field')
             +text('span', 'dropdown', ['text_bold','text_ttu','block','block_mb5px', 'field__text'])
             +text('span', 'expanded', ['text_ttu', 'text_1F2041-05', 'text_right', 'block', 'block_mb5px', 'field__text'])
             +check-mark
-              +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
-          +dropdown__wrapper('dropdown__wrapper_off-buttons')
-            +dropdown__flex(['block', 'block_mb7px'], 'спальни', '2')
-            +dropdown__flex(['block', 'block_mb7px'], 'кровати', '2')
-            +dropdown__flex('', 'ванные комнаты', '0', 'dropdown__button_tran')
+              +input(type='text' name='rooms&beds' value='2 спальни, 2 кровати...', class=['input_square-angles', 'input_js-rooms', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
+          +dropdown__wrapper(['dropdown__wrapper_off-buttons', 'dropdown__wrapper_active'])
+            +dropdown__flex(['block', 'block_mb7px'], 'спальни', '2', 'dropdown__button_js-minus')
+            +dropdown__flex(['block', 'block_mb7px'], 'кровати', '2', 'dropdown__button_js-minus')
+            +dropdown__flex('', 'ванные комнаты', '0', ['dropdown__button_js-minus'])
       +dropdown(['dropdown_w32', 'block', 'block_ml180px'])
-        +text('p', 'dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
-        +check-mark
-          +input(type='text' name='guests' value='Сколько гостей', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
-        +dropdown__wrapper
-          +dropdown__flex(['block', 'block_mb7px'], 'взрослые', '0', 'dropdown__button_tran', 'dropdown__flex_text-pp')
-          +dropdown__flex(['block', 'block_mb7px'], 'дети', '0', 'dropdown__button_tran', 'dropdown__flex_text-pp')
-          +dropdown__flex(['block', 'block_mb19px'], 'младенцы', '0', 'dropdown__button_tran', 'dropdown__flex_text-pp2')
-          +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'text_right'], 'применить')
+        +field('label', 'dropdown__field')
+          +text('span', 'dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
+          +check-mark
+            +input(type='text' name='guests' value='Сколько гостей', class=['input_square-angles', 'input_border-color', 'input_js-guests', 'text', 'text_b', 'text_1F2041-075'])
+        +dropdown__wrapper('dropdown__wrapper_active')
+          +dropdown__flex(['block', 'block_mb7px'], 'взрослые', '0', ['dropdown__button_js-minus'], 'dropdown__flex_text-pp')
+          +dropdown__flex(['block', 'block_mb7px'], 'дети', '0', ['dropdown__button_js-minus'], 'dropdown__flex_text-pp')
+          +dropdown__flex(['block', 'block_mb19px'], 'младенцы', '0', ['dropdown__button_js-minus'], 'dropdown__flex_text-pp2')
+          +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'buttonPP', 'button_js-clear'], 'очистить')
+          +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'text_right', 'button_js-apply'], 'применить')
       // гости
       +dropdown(['dropdown_w32', 'block', 'block_ml72px'])
-        +text('p', 'dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
-        +check-mark
-          +input(type='text' name='guests' value='3 гостя', class=['input_square-angles', 'input_border-color', 'text', 'text_b', 'text_1F2041-075'])
-        +dropdown__wrapper
-          +dropdown__flex(['block', 'block_mb7px'], 'взрослые', '2', '', 'dropdown__flex_text-pp')            
-          +dropdown__flex(['block', 'block_mb7px'], 'дети', '1', '', 'dropdown__flex_text-pp')            
-          +dropdown__flex(['block', 'block_mb19px'], 'младенцы', '0', 'dropdown__button_tran', 'dropdown__flex_text-pp2')
-          +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'buttonPP'], 'очистить')
-          +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'text_right'], 'применить')
+        +field('label', 'dropdown__field')
+          +text('span', 'dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
+          +check-mark
+            +input(type='text' name='guests' value='3 гостя', class=['input_square-angles', 'input_border-color', 'input_js-guests', 'text', 'text_b', 'text_1F2041-075'])
+        +dropdown__wrapper('dropdown__wrapper_active')
+          +dropdown__flex(['block', 'block_mb7px'], 'взрослые', '2', 'dropdown__button_js-minus', 'dropdown__flex_text-pp')            
+          +dropdown__flex(['block', 'block_mb7px'], 'дети', '1', 'dropdown__button_js-minus', 'dropdown__flex_text-pp')            
+          +dropdown__flex(['block', 'block_mb19px'], 'младенцы', '0', ['dropdown__button_js-minus'], 'dropdown__flex_text-pp2')
+          +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'buttonPP', 'button_js-clear'], 'очистить')
+          +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'text_right', 'button_js-apply'], 'применить')
     .form-elements__row3
       .form-elements__row3_column1
         // дополнительные удобства
@@ -242,7 +246,9 @@ html(lang='ru')
             +text('p', '5 дней назад', ['text_b', 'text_1F2041-075', 'block', 'block_ml11px'])  
         +like-comments
           +button-like(['button-like_pressed', 'button-like_PP'])
-            img.button-like__heart(src='img/favorite.png' alt='heart_pressed')
-            +text('span', '12', ['text_s', 'text_BC9CFF'])
+            +text('span', '12', ['text_s', 'button-like__text'])
+          //- +button-like(['button-like_pressed', 'button-like_PP'])
+          //-   img.button-like__heart(src='img/favorite.png' alt='heart_pressed')
+          //-   +text('span', '12', ['text_s', 'text_BC9CFF'])
           +text('p', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
           ['text_b', 'text_lh24', 'text_1F2041-075', 'block', 'block_ml14px', 'button-like-text_PP'])

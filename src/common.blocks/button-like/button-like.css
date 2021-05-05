@@ -10,6 +10,18 @@
     line-height: 1.2rem;
     padding-left: 0.5rem;
     padding-right: 0.6rem;
+    outline: none;
+}
+.button-like::before {
+    content: "";
+    display: block;
+    width: 0.9rem;
+    height: 0.8rem;
+    margin-right: 0.6rem;
+    background-image: url("../../img/favorite_border.png");
+}
+.button-like__text {
+    color: rgba(31, 32, 65, 0.25);
 }
 .button-like__heart {
     width: 0.9rem;
@@ -25,6 +37,9 @@
 .button-like_pressed .button-like__text {
     color: #BC9CFF;
 }
+.button-like_pressed::before {
+    background-image: url("../../img/favorite.png");
+}
 .button-like_PP {
     margin-left: 3px;
     margin-top: -4px;
@@ -34,4 +49,7 @@
 }
 .button-like__rd-pp {
     margin-left: 3px;
+}
+.button-like_js {
+    
 }

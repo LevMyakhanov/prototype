@@ -4,22 +4,36 @@ include ../field/field.pug
 include ../check-mark/check-mark.pug
 include ../input/input.pug
 include ../button/button.pug
+include ../dropdown-calendar/dropdown-calendar.pug
+include ../calendar/calendar.pug
+include ../dropdown/dropdown.pug
 
 mixin room-search(classes)
     .room-search(class=classes)
         +text('p', 'Найдём номера под ваши пожелания', ['text_l', 'block', 'block_mb22px'])
         +input-wrapper(['block', 'block_mb20px'])
-            +field('label', 'field_small')
-                +text('span', 'прибытие', ['text_bold','text_ttu','block','block_mb5px'])
-                +check-mark
-                    +input(type='date' name='arrival', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
-            +field('label', ['field_small', 'field_small-pp'])
-                +text('span', 'выезд', ['text_bold','text_ttu','block','block_mb5px'])
-                +check-mark
-                    +input(type='date' name='departure', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'])
-        +field('div', ['block', 'block_mb31px'])
-            +text('span', 'гости', ['text_bold','text_ttu','block','block_mb5px'])
+          +dropdown-calendar
+            +field('label', ['field_small', 'field_js-calendar'])
+              +text('span', 'date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
+              +check-mark
+                +input(type='text', name='arrival', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
+            +calendar('field_calendar')
+          +dropdown-calendar
+            +field('label', ['field_small', 'field_js-calendar'])
+              +text('span', 'date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
+              +check-mark
+                +input(type='text', name='departure', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
+            +calendar('field_calendar')
+        +dropdown(['block', 'block_mb22px', 'dropdown_w32'])
+          +field('label', 'dropdown__field')
+            +text('span', 'Dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
             +check-mark
-                +input(type='text', name='amount of guests',  value='Сколько гостей', class=['text', 'text_b', 'text_1F2041-075'])
+              +input(type='text', name='amount of guests', value='Сколько гостей', class=['text', 'text_b', 'text_1F2041-075', 'input_js-guests'])
+          +dropdown__wrapper(['dropdown_w32-add'])
+            +dropdown__flex(['block', 'block_mb7px'], 'взрослые', '0', ['dropdown__button_js-minus'], 'dropdown__flex_text-pp')
+            +dropdown__flex(['block', 'block_mb7px'], 'дети', '0', ['dropdown__button_js-minus'], 'dropdown__flex_text-pp')
+            +dropdown__flex(['block', 'block_mb19px'], 'младенцы', '0', ['dropdown__button_js-minus'], 'dropdown__flex_text-pp2')
+            +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'buttonPP', 'button_js-clear'], 'очистить')
+            +button(['text', 'text_bold', 'text_ttu', 'text_BC9CFF', 'text_right', 'button_js-apply'], 'применить')
         +button(['button', 'button_long'])
             +text('span', 'подобрать номер', ['text_bold', 'text_ttu', 'text_FFF'])

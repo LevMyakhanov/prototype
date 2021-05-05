@@ -2,13 +2,13 @@ mixin bullet-list(text, classes, array, classestext, roomDetails)
     .bullet-list(class=classes)
         +text('p', text, classestext)
         ul
-        each name in array
-            if roomDetails
-                li.bullet-list__item-det
-                    span(class=['text', 'text_b', 'text_lh24','bullet-list__text', 'text_1F2041-075', 'block', 'block_ml10px'])!= name
-            else
-                li.bullet-list__item
-                    span(class=['text', 'text_b', 'text_lh24','bullet-list__text', 'text_1F2041-075', 'block', 'block_ml10px'])!= name
+            each name in array
+                if roomDetails
+                    li.bullet-list__item-det
+                        span(class=['text', 'text_b', 'text_lh24','bullet-list__text', 'text_1F2041-075', 'block', 'block_ml10px'])!= name
+                else
+                    li.bullet-list__item
+                        span(class=['text', 'text_b', 'text_lh24','bullet-list__text', 'text_1F2041-075', 'block', 'block_ml10px'])!= name
             
             
     

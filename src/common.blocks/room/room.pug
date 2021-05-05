@@ -2,18 +2,23 @@ include ../button/button.pug
 include ../text/text.pug
 include ../button-star/button-star.pug
 include ../room-info/room-info.pug
+include ../rate-button/rate-button.pug
 
 mixin room(classes, image, roomNumber, isLux, price, amountOfResponse, rate, searchRoomLux, isCards)
     .room(class=classes)
         +room__img-wr
-            img.room__img(src=image alt='room1')
-            +button(['room__button', 'room__button_left'])
-            +button(['room__button', 'room__button_right'])                   
-            +room__rounds-wrapper
-                +button(['room__image-scroll', 'room__image-scroll_active'])
-                +button(['room__image-scroll', 'block', 'block_ml4px'])
-                +button(['room__image-scroll', 'block', 'block_ml4px'])
-                +button(['room__image-scroll', 'block', 'block_ml4px'])
+            .room__carousel
+                img.room__img(src=image alt='room1')
+                img.room__img(src=image alt='room1')
+                img.room__img(src=image alt='room1')
+                img.room__img(src=image alt='room1')              
+            //- +room__rounds-wrapper('slick-dots')
+            //-     +button(['room__image-scroll', 'room__image-scroll_active'])
+                //- +button(['room__image-scroll', 'block', 'block_ml4px'])
+                //- +button(['room__image-scroll', 'block', 'block_ml4px'])
+                //- +button(['room__image-scroll', 'block', 'block_ml4px'])
+            +button(['room__button', 'room__button_left', 'slick-prev'])
+            +button(['room__button', 'room__button_right', 'slick-next'])
         - let classP=''
         - if (!isCards) classP='search-room__room-info'
         +room-info(classP)
@@ -31,24 +36,9 @@ mixin room(classes, image, roomNumber, isLux, price, amountOfResponse, rate, sea
                     +text('span', price, ['text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
                     +text('span', 'в сутки', ['text_lh18', 'text_1F2041-05', 'room-info__small-text-pp'])
             - }
-            //- - let classP='room-info__price-pp'
-            //- - if (isCards) classP='room-info__price-pp-cards'
-            //- p(class=classP)
-            //-     +text('span', price, ['text_bold', 'text_fs14', 'text_lh18', 'text_1F2041-05'])
-            //-     +text('span', 'в сутки', ['text_lh18', 'text_1F2041-05', 'room-info__small-text-pp'])
         +room__like-wrapper
             +room__star-wrapper
-                - let nRate = 5;
-                - for(let i=1; i<=nRate; i++){
-                    - if(i<=rate) {
-                        +button-star
-                            img(src='img/star.png' alt='star')
-                    - }
-                    - else {
-                        +button-star
-                            img(src='img/star_border.png' alt='star')
-                    - }            
-                - }
+                +rate-button('', rate)
             p.room__star-text
                 +text('span', amountOfResponse, ['text_lh18', 'text_1F2041-05', 'text_fs14', 'text_bold', 'block', 'block_mr4px'])
                 +text('span', 'Отзывов', ['text_fs14', 'text_lh18', 'text_1F2041-05'])
@@ -57,8 +47,8 @@ mixin room__img-wr
     .room__img-wr
         block
 
-mixin room__rounds-wrapper
-    .room__rounds-wrapper
+mixin room__rounds-wrapper(classes)
+    .room__rounds-wrapper(class=classes)
         block
 
 mixin room__like-wrapper

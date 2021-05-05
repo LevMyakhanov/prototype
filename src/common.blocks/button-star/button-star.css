@@ -1,0 +1,14 @@
+.button-star {
+    outline: none;
+    cursor: pointer;
+}
+.button-star::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 1.9rem;
+    background-image: url("../../img/star_border.png");
+}
+.button-star_pressed::before {
+    background-image: url("../../img/star.png");
+}
