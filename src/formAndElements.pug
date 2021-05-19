@@ -68,7 +68,7 @@ html(lang='ru')
             +field('label', ['field_small', 'field_js-calendar'])
               +text('span', 'date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
               +check-mark
-                +input(type='text', name='arrival', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
+                +input(type='text', name='arrival', value='ДД.ММ.ГГГГ' class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
             +calendar('field_calendar')
           +dropdown-calendar
             +field('label', ['field_small', 'field_js-calendar'])
@@ -78,7 +78,7 @@ html(lang='ru')
             +calendar('field_calendar')
         // даты пребывания в отеле
         +dropdown-calendar(['block', 'block_mb41px'])
-          +field('label', ['field_middle', 'field_js-calendar'])
+          +field('label', ['field_middle', 'field_js-calendar-range'])
             +text('span', 'filter date Dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
             +check-mark
               +input(type='text', name='dates', value='19 авг - 23 авг', class=['text', 'text_b', 'text_1F2041-075'])
@@ -118,8 +118,8 @@ html(lang='ru')
         // диапазон цены
         +slider(['block', 'block_mb40px'])
           +text('span', 'Range Slider', ['slider__name', 'text_bold', 'text_ttu'])
-          +text('span', '5 000₽ - 10 000₽', ['slider__name', 'text_1F2041-05', 'text_right'])
-          input(type='range' name='Range Slider')
+          +slider__text(['slider__name', 'text_1F2041-05', 'text_right'])
+          +slider__range(id="rangePrice")
         +text('p', 'buttons', ['text_bold', 'text_ttu', 'block', 'block_mb16px'])
         .form-elements__button-wr.block.block_mb30px
           +button(['button', 'button_linear-gradient'])

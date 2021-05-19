@@ -1,7 +1,29 @@
-.slider {
-    width: 26.6rem;
-    height: 4.7rem;
-}
+
 .slider__name {
     display: inline-block;
+}
+
+.noUi-target {
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 3px;
+    margin-top: 2.3rem;
+}
+.noUi-horizontal {
+    height: 0.6rem;
+}
+.noUi-horizontal .noUi-handle {
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border: 2px solid #FFFFFF;
+    border-radius: 1rem;
+    right: -7px;
+    top: -5px;
+}
+.noUi-handle:before, .noUi-handle:after {
+    content: none;
+}
+.noUi-connect {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }

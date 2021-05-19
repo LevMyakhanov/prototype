@@ -30,7 +30,7 @@ html(lang='ru')
                     .three-pictures__2pics_2
             .room-details__two-columns.container
                 .room-details__inner
-                    .room-details__string1.block.block_mb12px
+                    .room-details__string1.block.block_mb4px
                         .room-details__info
                             +text('p', 'Сведения о номере', ['text_m', 'text_bold', 'block', 'block_mb23px'])
                             +advantages
@@ -47,7 +47,7 @@ html(lang='ru')
                                     +text('p', 'Окно в каждой из спален', ['text_b', 'text_1F2041-075', 'block', 'block_ml9px', 'block_mt-3px'])
                             +advantages('advantages_padding-down')
                                 +advantages__img
-                                    img(src='img/whatshot.png' alt='biulding')
+                                    img(src='img/whatshot.png' alt='building')
                                 +advantages__text
                                     +text('p', 'Уют', ['text_b', 'text_1F2041-075', 'text_bold', 'block', 'block_mb8px', 'block_ml10px', 'block_mt4px'])
                                     +text('p', 'Номер оснащён камином', ['text_b', 'text_1F2041-075', 'block', 'block_ml9px', 'block_mt-3px'])
@@ -55,7 +55,10 @@ html(lang='ru')
                             +text('p', 'Впечатления от номера', ['text_m', 'text_bold', 'block', 'block_mb20px'])
                             .room-details__impression__two-columns
                                 //- img(src="img/Pie.svg", alt="pie")
-                                <canvas id="myChart" width="310" height="120"></canvas>
+                                <canvas id="myChart" width="330" height="120"></canvas>
+                                .diagramm-text
+                                    +text('p', '260 ', ['text_l', 'text_BC9CFF'])
+                                    +text('p', 'голосов', ['text_BC9CFF'])
                                 //- +bullet-list('', ['block', 'block_ml30px'], ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'], '', true)
                     .room-details__comments.block.block_mb33px
                         .room-details__text-flex.block.block_mb20px
@@ -93,7 +96,7 @@ html(lang='ru')
                         .room-details__cansel.block.block_ml6px
                             +text('p', 'Отмена', ['text_m', 'text_bold', 'block', 'block_mb20px'])
                             +text('p', 'Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.', ['text_b', 'text_lh24', 'text_1F2041-075', 'block', 'block_mt-2px'])
-                +booking('block_ml70px',  'Сбор за доп. услуги', true, 'room-details__lux', 'block_mb45px')
+                +booking('block_ml70px',  'Сбор за доп. услуги', true, 'room-details__lux', 'block_mb45px', '','прибытие', 'выезд', 'гости')
             +footer(['block', 'block_mb1px'])
             +footer-wrapper-768
             +footer-copyright

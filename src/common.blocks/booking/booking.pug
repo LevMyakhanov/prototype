@@ -12,7 +12,7 @@ include ../calendar/calendar.pug
 include ../dropdown/dropdown.pug
 
 
-mixin booking(classes, fee, roomDetails, roomDetailsLux, bookingWrapperIndent, right38081)
+mixin booking(classes, fee, roomDetails, roomDetailsLux, bookingWrapperIndent, right38081, arrival, departure, guests)
     .booking(class=classes)
         +booking-wrapper(['block', 'block_mb23px'])
             +booking__room-name(['text', 'text_bold'])
@@ -25,19 +25,19 @@ mixin booking(classes, fee, roomDetails, roomDetailsLux, bookingWrapperIndent, r
         +input-wrapper(['block', 'block_mb20px'])
           +dropdown-calendar
             +field('label', ['field_small', 'field_js-calendar'])
-              +text('span', 'date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
+              +text('span', arrival, ['text_bold','text_ttu','block','block_mb5px'])
               +check-mark
                 +input(type='text', name='arrival', value='2019-08-19', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
             +calendar('field_calendar')
           +dropdown-calendar
             +field('label', ['field_small', 'field_js-calendar'])
-              +text('span', 'date Dropdown', ['text_bold','text_ttu','block','block_mb5px'])
+              +text('span', departure, ['text_bold','text_ttu','block','block_mb5px'])
               +check-mark
                 +input(type='text', name='departure', value='2019-08-23', class=['input_hidden', 'text', 'text_b', 'text_ttu', 'text_1F2041-075'], readonly)
             +calendar('field_calendar')
         +dropdown(['block', 'block_mb20px', 'dropdown_w32'])
           +field('label', 'dropdown__field')
-            +text('span', 'Dropdown', ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
+            +text('span', guests, ['text_bold', 'text_ttu', 'block', 'block_mb5px'])
             +check-mark
               +input(type='text', name='amount of guests', value='3 гостя', class=['text', 'text_b', 'text_1F2041-075', 'input_js-guests'])
           +dropdown__wrapper(['dropdown_w32-add'])

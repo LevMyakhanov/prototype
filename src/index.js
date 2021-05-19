@@ -1,11 +1,36 @@
 import './styles.css'
-import './common.blocks/check-mark/check-mark.css'
-import './common.blocks/dropdown/dropdown.css'
-
 
 // import jQuery from 'jquery';
 import $ from 'jquery';
-// console.log($(document));
+
+
+import * as noUiSlider from 'nouislider';
+
+let rangeSlider = document.getElementById('rangePrice');
+if (rangeSlider) {
+    noUiSlider.create(rangeSlider, {
+        start: [5000, 10000],
+        connect: true,
+        step: 100,
+        range: {
+            'min': 0,
+            'max': 15000
+        }
+    });
+
+    let rangeMin = document.querySelector('.slider__min');
+    let rangeMax = document.querySelector('.slider__max');
+    rangeSlider.noUiSlider.on('update', function (values, handle) {
+        
+        let value = Math.round(values[handle]).toLocaleString();
+    
+        if (handle) {
+            rangeMax.textContent = value;
+        } else {
+            rangeMin.textContent = value;
+        }
+    });
+}
 
 import "slick-carousel";
 
@@ -27,90 +52,119 @@ for (let index = 0; index < roomCarousels.length; index++) {
     }
     roomCarousels.eq(index).slick(slickOptions);
 }
-// $('.room__carousel').each(function( index ) {
-//     console.log($( this ));
-//     $( this ).slick({ // this - это аналог: $('.room__carousel')[index].
-//         'prevArrow':$('.room__button_left').eq(index),
-//         'nextArrow':$('.room__button_right').eq(index),
-//         'dots': true,
-//         'dotsClass': 'room__rounds-wrapper',
-//         customPaging: function(slider, i) {
-//             return '<button class="room__image-scroll block block_ml4px"></button>';
-//         }
-//     });
-// });
 
 
 
 import "air-datepicker";
 let datepickerOptions = {
-    classes: "calendar ", //field_calendar
+    classes: "calendar calendar-js", //field_calendar
     minDate: new Date(),
     toggleSelected: true,
     position: "bottom left",
     offset: 0,
-    inline: true
+    navTitles: {
+        days: 'MM yyyy'
+    },
+    inline: false,
+    clearButton: true
 }
 $('.field_js-calendar input').datepicker(datepickerOptions)
 
+
+let datepickerOptionsRange = {
+    classes: "calendar calendar-js", //field_calendar
+    minDate: new Date(),
+    toggleSelected: true,
+    position: "bottom left",
+    offset: 0,
+    navTitles: {
+        days: 'MM yyyy'
+    },
+    inline: false,
+    range: true,
+    clearButton: true,
+    multipleDatesSeparator: ' - '
+}
+$('.field_js-calendar-range input').datepicker(datepickerOptionsRange)
+
+let calendars = $('.datepicker--buttons')
+calendars.append($('<button class="text text_bold text_ttu text_BC9CFF">применить</button>'))
 
 
 
 import Chart from 'chart.js/auto';
 
+Chart.defaults.font.lineHeight = 1.7;
+// Chart.defaults.plugins.legend.labels.font.lineHeight = 1.7
 var ctx = document.getElementById("myChart");
-var myChart = new Chart(ctx, {
-  type: 'doughnut',
-  
-  options: {
-   	cutout: '92%',
-    rotation: 180,
-    responsive: false,
-    // maintainAspectRatio: true,
-    // aspectRatio: 2.5833,
-    layout: {
-        padding: {
-            left: 0
+if(ctx) {
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        
+        options: {
+             cutout: '92%',
+          rotation: 180,
+          responsive: false,
+          // maintainAspectRatio: true,
+          // aspectRatio: 2.5833,
+          layout: {
+              padding: {
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0
+              }
+          },
+          plugins: {
+            legend: {
+              align: 'end',
+              position: 'right',
+              labels: {
+                  usePointStyle: true,
+                  textAlign: 'left',
+                  boxWidth: 8,
+                  boxHeight: 8,
+                  padding: 0,
+                  // padding: {
+                  //     left: 0
+                  // },
+                  // generateLabels: (a) => {
+                  //     return a.data.labels
+                  //   },
+                  font: {
+                      size: 14,
+                      family: "'Montserrat', sans-serif, Helvetica",
+                      lineHeight: 1.7
+                  }
+              }
+            }
+          }
+        },
+        
+        data: {
+          labels: ["Великолепно", "Хорошо", "Удовлетворительно", "Разочарован"],
+          datasets: [{
+            // label: '# of Tomatoes',
+            data: [130, 60, 70, 0],
+            backgroundColor: [
+                      "#FFE39C",
+                      "#BC9CFF",
+                      "#6FCF97",
+                      "black"
+            ],
+            borderColor: [
+              '#FFFFFF',
+              '#FFFFFF',
+              '#FFFFFF',
+              '#FFFFFF'
+            ],
+            borderWidth: 1,
+            hoverBorderWidth:2
+          }]
         }
-    },
-    plugins: {
-      legend: {
-      align: 'end',
-      position: 'right',
-      labels: {
-        usePointStyle: true,
-        boxWidth: 8,
-        padding: 9,
-        fontFamily: 'Montserrat',
-        fontSize: 14
-        }
-      }
-    }
-    
-  },
-  
-  data: {
-    labels: ["Великолепно", "Хорошо", "Удовлетворительно", "Разочарован"],
-    datasets: [{
-      // label: '# of Tomatoes',
-      data: [130, 60, 70, 0],
-      backgroundColor: [
-                "#FFE39C",
-                "#BC9CFF",
-                "#6FCF97",
-                "black"
-      ],
-      borderColor: [
-        '#FFFFFF',
-        '#FFFFFF',
-        '#FFFFFF',
-        '#FFFFFF'
-      ],
-      borderWidth: 1,
-      hoverBorderWidth:2
-    }]
-  }
-});
+      });
+}
+
 
 // document
 let burger = document.querySelector('.burger-wrap');
@@ -127,7 +181,7 @@ if(burger) {
 
 
 
-// Календарь
+// Номера
 let field = document.querySelectorAll('.dropdown__field');
 let drop = document.querySelectorAll('.dropdown__wrapper');
 let toggleDropdown = function(e, dropIndex) {
@@ -139,18 +193,6 @@ let toggleDropdown = function(e, dropIndex) {
     for (let index = 0; index < field.length; index++) {
         field[index].addEventListener("click", function(e) {toggleDropdown(e, index)});
     }
-        
-// let dateDropdown = document.querySelectorAll('.field_js-calendar');
-// let calendar = document.querySelectorAll('.field_calendar');
-// let calendarDropdown = function(e, dropIndex) {
-//     // console.log(e);
-//     // console.log(e.target);
-//     e.preventDefault();
-//     calendar[dropIndex].classList.toggle("field_calendar-active");
-//     }
-//     for (let index = 0; index < dateDropdown.length; index++) {
-//         dateDropdown[index].addEventListener("click", function(e) {calendarDropdown(e, index)});
-//     }
 
 
 

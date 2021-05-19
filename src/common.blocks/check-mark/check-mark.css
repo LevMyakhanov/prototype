@@ -6,7 +6,7 @@
 .check-mark::after {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 2.2rem;
     margin-top: -0.65rem;
     right: 1.75rem;
     display: block;

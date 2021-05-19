@@ -1,3 +1,14 @@
 mixin slider(classes)
     .slider(class=classes)
         block
+
+mixin slider__range
+    .slider__range&attributes(attributes)
+        block
+
+mixin slider__text(classes)
+    span.text.slider__text(class=classes)
+        span.slider__min 5000
+        span ₽ - 
+        span.slider__max 10000
+        span ₽

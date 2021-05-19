@@ -1,5 +1,6 @@
 @import '~slick-carousel/slick/slick.css';
-@import '~air-datepicker/dist/css/datepicker.min.css';
+@import '~nouislider/dist/nouislider.css';
+/* @import '~air-datepicker/dist/css/datepicker.min.css'; */
 /* @import '~slick-carousel/slick/slick-theme.css'; */
 
 @import 'common.blocks/myReset/myReset.css';
@@ -244,6 +245,7 @@
 .room-details__impression__two-columns {
     display: flex;
     margin-bottom: 3rem;
+    position: relative;
 }
 .room-details__string2 {
     display: flex;
@@ -294,6 +296,12 @@
     align-items: center;
     padding-top: 7rem;
     margin-top: -7rem;
+}
+.diagramm-text {
+    position: absolute;
+    top: 3.7rem;
+    left: 6rem;
+    color: #BC9CFF;
 }
 
 

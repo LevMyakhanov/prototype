@@ -34,8 +34,9 @@
   },
   "dependencies": {
     "air-datepicker": "^2.2.3",
-    "chart.js": "^3.1.1",
+    "chart.js": "^3.2.1",
     "jquery": "^3.6.0",
+    "nouislider": "^15.1.0",
     "slick-carousel": "^1.8.1"
   }
 }
